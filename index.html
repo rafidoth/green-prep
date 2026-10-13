@@ -1199,7 +1199,13 @@ details.sec > summary > .pyq-star-badge {
           <p><b>Cloud Computing Definition:</b> Dynamically scalable, virtualized computing resources delivered on demand over the network.</p>
           <ul>
             <li><b>On-Demand Self-Service:</b> Users provision computing capabilities (server time, network storage) automatically without human intervention from the service provider.</li>
-            <li><b>Broad Network Access:</b> Computing resources are accessible across standard network protocols from heterogeneous client platforms (laptops, mobile phones, workstations).</li>
+            <li><b>Broad Network Access:</b> Capabilities accessible across standard network protocols from heterogeneous client devices:
+              <ul>
+                <li>Desktop workstations</li>
+                <li>Laptops</li>
+                <li>Mobile smartphones &amp; tablets</li>
+              </ul>
+            </li>
             <li><b>Resource Pooling:</b> Provider computing resources are pooled to serve multiple consumers using a multi-tenant model.</li>
             <li><b>Rapid Elasticity:</b> Workloads scale outward or inward rapidly to automatically match real-time demand peaks.</li>
             <li><b>Measured Service:</b> Resource usage is monitored, controlled, and billed based on actual consumption (utility pricing).</li>
@@ -1227,14 +1233,39 @@ details.sec > summary > .pyq-star-badge {
         <div class="sec-body">
           <p><b>Virtualization:</b> The foundational technology of cloud computing that abstracts physical hardware to run multiple isolated virtual environments on a single physical host.</p>
           <ul>
-            <li><b>Physical Server (Host):</b> The underlying hardware containing physical CPUs, memory modules, storage arrays, and network interfaces.</li>
-            <li><b>Hypervisor (Virtual Machine Monitor / VMM):</b> Software layer that manages physical hardware and dynamically allocates virtual resources:
+            <li><b>Physical Server (Host Hardware Components):</b>
               <ul>
-                <li><i>Type-1 (Bare-Metal):</i> Runs directly on host hardware for maximum performance (e.g., VMware ESXi, KVM, Xen, Hyper-V).</li>
-                <li><i>Type-2 (Hosted):</i> Runs on top of a conventional host operating system (e.g., VirtualBox, VMware Workstation).</li>
+                <li>Physical CPUs</li>
+                <li>Memory modules (RAM)</li>
+                <li>Storage arrays</li>
+                <li>Network interfaces (NIC)</li>
               </ul>
             </li>
-            <li><b>Virtual Machines (Guest VMs):</b> Completely isolated software containers running guest operating systems and workloads (e.g., mail servers, web servers, database engines).</li>
+            <li><b>Hypervisor (Virtual Machine Monitor / VMM):</b>
+              <ul>
+                <li><b>Type-1 (Bare-Metal):</b> Runs directly on host hardware:
+                  <ul>
+                    <li>VMware ESXi</li>
+                    <li>KVM</li>
+                    <li>Xen</li>
+                    <li>Microsoft Hyper-V</li>
+                  </ul>
+                </li>
+                <li><b>Type-2 (Hosted):</b> Runs on top of a host operating system:
+                  <ul>
+                    <li>Oracle VirtualBox</li>
+                    <li>VMware Workstation</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><b>Virtual Machines (Guest Workloads):</b>
+              <ul>
+                <li>Mail servers</li>
+                <li>Web servers</li>
+                <li>Database engines</li>
+              </ul>
+            </li>
             <li><span class="star-point">⭐</span><b>Green Computing Benefit (Server Consolidation):</b>
               <ul>
                 <li>Replaces 10–20 lightly loaded physical servers (running at only 5–15% capacity) with <b>1 dense physical server running at 70–80% capacity</b>.</li>
@@ -1258,22 +1289,57 @@ details.sec > summary > .pyq-star-badge {
           <ul>
             <li><span class="star-point">⭐</span><b>IaaS (Infrastructure as a Service):</b>
               <ul>
-                <li><b>What is provided:</b> Raw, dynamically scalable computing resources—virtual machines, block storage, firewalls, and network routing.</li>
-                <li><b>Management responsibility:</b> The provider manages physical hardware, cooling, and virtualization. The <b>client manages operating systems, middleware, runtime, and software applications</b> (e.g., AWS EC2, Google Compute Engine, Microsoft Azure VMs).</li>
+                <li><b>What is provided:</b> Raw, dynamically scalable computing resources:
+                  <ul>
+                    <li>Virtual machine instances</li>
+                    <li>Block &amp; object storage</li>
+                    <li>Firewalls &amp; security boundaries</li>
+                    <li>Software-defined network routing</li>
+                  </ul>
+                </li>
+                <li><b>Management responsibility:</b> The provider manages physical hardware, cooling, and virtualization. The <b>client manages operating systems, middleware, runtime, and software applications</b>.</li>
+                <li><b>Leading IaaS Providers:</b>
+                  <ul>
+                    <li>Amazon Web Services (AWS EC2)</li>
+                    <li>Google Compute Engine (GCE)</li>
+                    <li>Microsoft Azure Virtual Machines</li>
+                  </ul>
+                </li>
                 <li><b>Payment model:</b> Pay-as-you-go utility pricing based on CPU hours, RAM, and gigabytes stored.</li>
                 <li><b>Green sustainability contribution:</b> Dynamic resource elasticity prevents over-provisioning; workloads scale down automatically off-peak to prevent idle electricity waste.</li>
               </ul>
             </li>
             <li><b>PaaS (Platform as a Service):</b>
               <ul>
-                <li><b>What is provided:</b> A pre-configured development and deployment environment (operating systems, programming runtimes, database management, web servers).</li>
-                <li><b>Management responsibility:</b> The provider manages the entire underlying infrastructure and OS. The <b>client manages only their custom code and data</b> (e.g., Google App Engine, AWS Elastic Beanstalk, Heroku).</li>
+                <li><b>What is provided:</b> A pre-configured development and deployment environment:
+                  <ul>
+                    <li>Operating systems</li>
+                    <li>Programming runtimes</li>
+                    <li>Database management systems (DBMS)</li>
+                    <li>Web application servers</li>
+                  </ul>
+                </li>
+                <li><b>Management responsibility:</b> The provider manages the entire underlying infrastructure and OS. The <b>client manages only their custom code and data</b>.</li>
+                <li><b>Leading PaaS Providers:</b>
+                  <ul>
+                    <li>Google App Engine</li>
+                    <li>AWS Elastic Beanstalk</li>
+                    <li>Heroku</li>
+                  </ul>
+                </li>
               </ul>
             </li>
             <li><b>SaaS (Software as a Service):</b>
               <ul>
                 <li><b>What is provided:</b> Fully functional, ready-to-use software applications delivered to users directly through a web browser or API.</li>
-                <li><b>Management responsibility:</b> The cloud provider manages the entire technology stack from hardware to software updates (e.g., Google Workspace, Microsoft 365, Salesforce).</li>
+                <li><b>Management responsibility:</b> The cloud provider manages the entire technology stack from hardware to software updates.</li>
+                <li><b>Leading SaaS Applications:</b>
+                  <ul>
+                    <li>Google Workspace</li>
+                    <li>Microsoft 365</li>
+                    <li>Salesforce</li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
@@ -1291,7 +1357,14 @@ details.sec > summary > .pyq-star-badge {
         <div class="sec-body">
           <ol>
             <li><b>1. Software as a Service (SaaS):</b> End-user applications hosted entirely in the cloud, replacing locally installed desktop software.</li>
-            <li><b>2. Attached Services (Plugins &amp; APIs):</b> Cloud-hosted services that extend and add capabilities to local desktop or mobile applications (e.g., online translation APIs, automated cloud backup plugins, continuous anti-virus definitions, document synchronization).</li>
+            <li><b>2. Attached Services (Plugins &amp; APIs):</b> Cloud-hosted services extending local desktop and mobile applications:
+              <ul>
+                <li>Online translation APIs</li>
+                <li>Automated cloud backup plugins</li>
+                <li>Continuous anti-virus definitions</li>
+                <li>Cloud document synchronization</li>
+              </ul>
+            </li>
             <li><b>3. Cloud Platforms:</b> Integrated suites of infrastructure, storage, and developer toolsets used to build, test, and host custom enterprise web applications.</li>
           </ol>
         </div>
@@ -1308,15 +1381,33 @@ details.sec > summary > .pyq-star-badge {
         <div class="sec-body">
           <p>Four primary deployment models define cloud access, ownership, and governance:</p>
           <ol>
-            <li><b>1. Public Cloud:</b> Infrastructure owned and operated by a third-party cloud service provider, delivered over the public internet to multiple organizations (multi-tenant architecture, highest cost efficiency).</li>
-            <li><b>2. Private Cloud:</b> Infrastructure dedicated exclusively to a single business organization, hosted on-premises or by a third party (maximum security, strict data sovereignty, higher maintenance cost).</li>
-            <li><b>3. Hybrid Cloud:</b> A combination of public and private clouds connected by standardized technology:
+            <li><b>1. Public Cloud:</b> Infrastructure owned by third-party providers, delivered over public internet:
               <ul>
-                <li>Keeps mission-critical and sensitive data in the secure private cloud.</li>
-                <li>Enables <b>cloud bursting</b> to offload non-sensitive compute spikes into the public cloud during heavy traffic.</li>
+                <li>Multi-tenant architecture</li>
+                <li>Highest cost efficiency</li>
+                <li>Dynamic elastic scalability</li>
               </ul>
             </li>
-            <li><b>4. Community Cloud:</b> Shared cloud infrastructure managed jointly by multiple organizations with common regulatory, security, or mission requirements (e.g., healthcare alliances, government agencies).</li>
+            <li><b>2. Private Cloud:</b> Dedicated exclusively to a single business organization:
+              <ul>
+                <li>Maximum security &amp; isolation</li>
+                <li>Strict data sovereignty compliance</li>
+                <li>Higher infrastructure maintenance cost</li>
+              </ul>
+            </li>
+            <li><b>3. Hybrid Cloud:</b> Combines public and private clouds connected by standardized technology:
+              <ul>
+                <li>Keeps mission-critical and sensitive data in secure private cloud</li>
+                <li>Enables <b>cloud bursting</b> to offload compute spikes into public cloud</li>
+              </ul>
+            </li>
+            <li><b>4. Community Cloud:</b> Shared exclusively by organizations with common requirements:
+              <ul>
+                <li>Healthcare alliances</li>
+                <li>Government agencies</li>
+                <li>Educational research consortia</li>
+              </ul>
+            </li>
           </ol>
         </div>
       </details>
@@ -1334,12 +1425,16 @@ details.sec > summary > .pyq-star-badge {
           <ul>
             <li><b>Virtualization:</b> Abstracts physical hardware into flexible, dynamic virtual resource pools.</li>
             <li><b>SOA (Service-Oriented Architecture):</b> Software design approach where business capabilities are modularized into independent, loosely coupled, reusable services.</li>
-            <li><b>Web Services:</b> Standard communication protocols (REST, SOAP, XML, JSON) that allow disparate services to communicate across networks regardless of underlying operating systems.</li>
+            <li><b>Web Services (Standard Communication Protocols):</b>
+              <ul>
+                <li>REST (Representational State Transfer)</li>
+                <li>SOAP (Simple Object Access Protocol)</li>
+                <li>JSON (JavaScript Object Notation)</li>
+                <li>XML (Extensible Markup Language)</li>
+              </ul>
+            </li>
             <li><b>Web 2.0 / Web 3.0 &amp; Mashups:</b> User-facing layer that aggregates data and services from multiple independent web APIs into a single interactive application.</li>
-            <li><b>Integration Pipeline:</b> Hardware is virtualized $
-ightarrow$ SOA structures software into modular services $
-ightarrow$ Web Services interconnect them across the web $
-ightarrow$ Mashups deliver integrated end-user applications.</li>
+            <li><b>Integration Pipeline:</b> Hardware is virtualized &rarr; SOA structures software into modular services &rarr; Web Services interconnect them across the web &rarr; Mashups deliver integrated end-user applications.</li>
           </ul>
           <p><span class="star-point">⭐</span><b>Data Center Network Architecture (Fall 2025 Q8c Core):</b></p>
           <ul>
@@ -1452,21 +1547,68 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <ol>
             <li><b>1. Smart Agriculture (Spring 2025 Q8):</b>
               <ul>
-                <li><b>Implementation:</b> Deploying soil moisture, temperature, and nitrogen-phosphorus-potassium (NPK) sensors across farming plots.</li>
-                <li><b>Sustainability Impact:</b> Enables automated precision drip irrigation and targeted fertilizer delivery; reduces agricultural water consumption by up to 50% and prevents groundwater contamination.</li>
+                <li><b>Implementation:</b>
+                  <ul>
+                    <li>Soil moisture sensors</li>
+                    <li>Temperature sensors</li>
+                    <li>Nitrogen-Phosphorus-Potassium (NPK) sensors</li>
+                  </ul>
+                </li>
+                <li><b>Sustainability Impact:</b>
+                  <ul>
+                    <li>Automated precision drip irrigation</li>
+                    <li>Targeted fertilizer delivery</li>
+                    <li>Reduces water consumption by up to 50%</li>
+                    <li>Prevents groundwater contamination</li>
+                  </ul>
+                </li>
               </ul>
             </li>
             <li><b>2. Smart Cities (Summer 2025 Q7):</b>
               <ul>
-                <li><b>Energy:</b> Adaptive street lighting using motion and ambient light sensors to dim LEDs during empty hours.</li>
-                <li><b>Water Management:</b> Acoustic and flow sensors detecting underground pipe leaks instantly before millions of liters are wasted.</li>
-                <li><b>Waste Management:</b> Ultrasonic fill-level sensors in trash containers optimizing municipal garbage truck pickup routes, reducing diesel fuel consumption and emissions.</li>
+                <li><b>Energy Management:</b>
+                  <ul>
+                    <li>Motion sensors</li>
+                    <li>Ambient light sensors</li>
+                    <li>Adaptive LED street lighting</li>
+                    <li>Reduces energy consumption during empty hours</li>
+                  </ul>
+                </li>
+                <li><b>Water Management:</b>
+                  <ul>
+                    <li>Acoustic sensors</li>
+                    <li>Flow sensors</li>
+                    <li>Detects underground pipe leaks</li>
+                    <li>Prevents water wastage</li>
+                  </ul>
+                </li>
+                <li><b>Waste Management:</b>
+                  <ul>
+                    <li>Ultrasonic fill-level sensors</li>
+                    <li>Optimizes garbage truck routes</li>
+                    <li>Reduces diesel fuel consumption</li>
+                    <li>Lowers emissions</li>
+                  </ul>
+                </li>
               </ul>
             </li>
             <li><b>3. Smart Campuses &amp; Buildings (Spring 2026 Q2):</b>
               <ul>
-                <li><b>Implementation:</b> Deploying IoT passive infrared (PIR) occupancy sensors and ambient light sensors across classrooms and halls.</li>
-                <li><b>Sustainability Impact:</b> Automatically powers down lighting and heating/air-conditioning (HVAC) systems when rooms are vacant, lowering campus electricity bills by 30–40%.</li>
+                <li><b>Implementation:</b>
+                  <ul>
+                    <li>Passive Infrared (PIR) occupancy sensors</li>
+                    <li>Ambient light sensors</li>
+                    <li>Automated lighting systems</li>
+                    <li>Automated Heating, Ventilation, and Air Conditioning (HVAC) systems</li>
+                  </ul>
+                </li>
+                <li><b>Sustainability Impact:</b>
+                  <ul>
+                    <li>Powers down lighting in vacant rooms</li>
+                    <li>Adjusts HVAC systems when rooms are vacant</li>
+                    <li>Reduces electricity bills by 30–40%</li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ol>
@@ -1485,8 +1627,23 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <p><b>Three Foundation Pillars of Wireless Sensor Networks (WSNs):</b></p>
           <ul>
             <li><b>1. Embedded:</b> Ultra-compact processing and storage hardware embedded directly inside physical objects and environments.</li>
-            <li><b>2. Networked:</b> Interconnected nodes communicating wirelessly via low-power protocols (Zigbee, 6LoWPAN, LoRaWAN, BLE).</li>
-            <li><b>3. Sensing:</b> Continuous monitoring of physical conditions (temperature, humidity, pressure, acoustic signals, chemical presence).</li>
+            <li><b>2. Networked (Low-Power Radio Communication Protocols):</b>
+              <ul>
+                <li>Zigbee</li>
+                <li>6LoWPAN</li>
+                <li>LoRaWAN</li>
+                <li>Bluetooth Low Energy (BLE)</li>
+              </ul>
+            </li>
+            <li><b>3. Sensing (Physical Conditions Monitored):</b>
+              <ul>
+                <li>Temperature</li>
+                <li>Humidity</li>
+                <li>Atmospheric pressure</li>
+                <li>Acoustic signals &amp; vibration</li>
+                <li>Chemical &amp; gas presence</li>
+              </ul>
+            </li>
           </ul>
           <p><span class="star-point">⭐</span><b>Multi-Hop (Hop-to-Hop) Routing vs. Direct Transmission:</b></p>
           <ul>
@@ -1509,13 +1666,27 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <p><b>Key IoT Architectural Concepts:</b></p>
           <ul>
             <li><b>Ad-hoc Networking:</b> Decentralized wireless networks that self-configure dynamically without pre-existing fixed infrastructure or central access points.</li>
-            <li><b>MEMS (Micro-Electro-Mechanical Systems):</b> Microscopic systems combining electrical circuitry and mechanical sensors (accelerometers, gyroscopes, pressure diaphragms) fabricated on a single silicon chip.</li>
+            <li><b>MEMS (Micro-Electro-Mechanical Systems Components):</b>
+              <ul>
+                <li>Accelerometers</li>
+                <li>Gyroscopes</li>
+                <li>Pressure diaphragms</li>
+                <li>Micro-actuators</li>
+              </ul>
+            </li>
             <li><b>NEMS (Nano-Electro-Mechanical Systems):</b> Molecular-scale electromechanical devices offering atomic-level sensitivity, extreme miniaturization, and ultra-low power consumption.</li>
           </ul>
           <p><span class="star-point">⭐</span><b>Core Green IoT Power Optimization Techniques (Exam Essentials):</b></p>
           <ul>
             <li><b>Duty Cycling:</b> Scheduling sensor nodes to stay in ultra-low power <b>sleep mode for 90%–99% of the time</b>, waking up for milliseconds only to sample and transmit readings.</li>
-            <li><b>Energy Harvesting:</b> Powering autonomous sensor nodes using ambient energy from the local environment (solar micro-cells, thermal gradients, piezoelectric vibration, ambient radio frequency waves), completely eliminating chemical battery replacement and e-waste.</li>
+            <li><b>Energy Harvesting (Ambient Environmental Sources):</b>
+              <ul>
+                <li>Solar micro-cells</li>
+                <li>Thermal gradients</li>
+                <li>Piezoelectric vibration</li>
+                <li>Ambient radio frequency (RF) waves</li>
+              </ul>
+            </li>
             <li><b>Edge Data Aggregation:</b> Filtering and aggregating sensor data locally at the edge gateway before transmission, preventing power-draining radio transmissions of redundant readings.</li>
           </ul>
         </div>
@@ -1650,7 +1821,14 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <p><span class="star-point">⭐</span><b>Actionable Rules to Avoid Greenwashing:</b></p>
           <ul>
             <li>Never publicize green aspirations in advance before achieving concrete, measurable results.</li>
-            <li>Rely on recognized independent third-party certifications (EPEAT, Energy Star, RoHS, ISO 14001).</li>
+            <li><b>Recognized Independent Third-Party Certifications:</b>
+              <ul>
+                <li>EPEAT (Electronic Product Environmental Assessment Tool)</li>
+                <li>Energy Star</li>
+                <li>RoHS (Restriction of Hazardous Substances)</li>
+                <li>ISO 14001 (Environmental Management Systems)</li>
+              </ul>
+            </li>
             <li>Publish auditable sustainability data with transparent methodologies and open reporting.</li>
           </ul>
         </div>
@@ -1794,7 +1972,13 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <p><b>Sustainable Development Goals (SDGs):</b> 17 global goals established by the United Nations (2030 Agenda) addressing global challenges, including poverty, inequality, climate change, and environmental degradation.</p>
           <p><span class="star-point">⭐</span><b>Five Core SDGs Directly Driven by Green IT (High Exam Yield):</b></p>
           <ul>
-            <li><b>SDG 7 (Affordable and Clean Energy):</b> Powering data centers and cloud computing networks with 100% renewable energy (solar, wind, hydroelectric).</li>
+            <li><b>SDG 7 (Affordable and Clean Energy):</b> Powering data centers and cloud networks with 100% renewable energy:
+              <ul>
+                <li>Solar energy</li>
+                <li>Wind energy</li>
+                <li>Hydroelectric energy</li>
+              </ul>
+            </li>
             <li><b>SDG 9 (Industry, Innovation, and Infrastructure):</b> Designing energy-efficient data center architectures, adopting edge computing, and modernizing IT infrastructure.</li>
             <li><b>SDG 11 (Sustainable Cities and Communities):</b> Deploying Green IoT sensor networks for adaptive street lighting, smart traffic routing, and water leak detection.</li>
             <li><b>SDG 12 (Responsible Consumption and Production):</b> Mitigating electronic waste (e-waste) through modular hardware design, equipment reuse, and certified take-back recycling.</li>
@@ -2056,28 +2240,28 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         <div class="sec-body">
           <p><span class="star-point">⭐</span><b>Five Key Non-IT Functions to Digitize (High Exam Yield - Spring 2026 Q4 &amp; Summer 2025 Q2):</b></p>
           <ol>
-            <li><b>1. Postal Mail &amp; Paper Invoicing $\rightarrow$ Email &amp; Electronic Billing:</b>
+            <li><b>1. Postal Mail &amp; Paper Invoicing $&rarr;$ Email &amp; Electronic Billing:</b>
               <ul>
                 <li>Eliminates paper production, chemical printing inks, envelopes, and fossil fuel transportation emissions.</li>
                 <li>Dramatically speeds up billing cycles and reduces storage archiving costs.</li>
               </ul>
             </li>
-            <li><b>2. Physical Checks &amp; Signatures $\rightarrow$ Digital Payments &amp; E-Signatures:</b>
+            <li><b>2. Physical Checks &amp; Signatures $&rarr;$ Digital Payments &amp; E-Signatures:</b>
               <ul>
                 <li>Replaces physical trips to the bank, paper checks, and physical courier transit with instant electronic fund transfers and cryptographic e-signatures.</li>
               </ul>
             </li>
-            <li><b>3. Traditional Fixed Telephony $\rightarrow$ Cloud VoIP &amp; Unified Messaging:</b>
+            <li><b>3. Traditional Fixed Telephony $&rarr;$ Cloud VoIP &amp; Unified Messaging:</b>
               <ul>
                 <li>Eliminates dedicated copper telephone wiring and specialized PBX hardware boxes by transmitting voice data over existing computer networks.</li>
               </ul>
             </li>
-            <li><b>4. In-Person Conferences $\rightarrow$ Virtual Teleconferencing:</b>
+            <li><b>4. In-Person Conferences $&rarr;$ Virtual Teleconferencing:</b>
               <ul>
                 <li>Replaces carbon-heavy long-distance commercial flights, hotel stays, and rental cars with video conferencing collaboration tools.</li>
               </ul>
             </li>
-            <li><b>5. Daily Office Commuting $\rightarrow$ Remote Work &amp; Telecommuting:</b>
+            <li><b>5. Daily Office Commuting $&rarr;$ Remote Work &amp; Telecommuting:</b>
               <ul>
                 <li>Eliminates vehicle exhaust emissions from daily traffic jams.</li>
                 <li>Allows organizations to downsize physical office real estate, slashing facility heating, lighting, and cooling energy.</li>
@@ -2098,7 +2282,13 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         <div class="sec-body">
           <p><b>Three Categories of Money-Saving Moves:</b></p>
           <ol>
-            <li><b>1. Saves Money &amp; Highly Green:</b> Actions that cut operational expenses while reducing environmental impact (e.g., virtualizing servers, installing smart thermostat controls, deploying automated PC sleep policies).</li>
+            <li><b>1. Saves Money &amp; Highly Green:</b> Cuts operational expenses while slashing carbon footprints:
+              <ul>
+                <li>Virtualizing physical servers</li>
+                <li>Installing smart thermostat controls</li>
+                <li>Deploying automated PC sleep policies</li>
+              </ul>
+            </li>
             <li><b>2. Saves Money &amp; Marginally Green:</b> Bulk purchasing agreements that lower shipping package volume and unit purchase costs, but do not reduce the devices' ongoing operational power draw.</li>
             <li><b>3. Saves Money &amp; Not Green at All:</b> Shifting manufacturing or data operations to regions with loose environmental laws and dirty coal grids, or laying off local staff to increase executive travel.</li>
           </ol>
@@ -2116,7 +2306,13 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         <div class="sec-body">
           <p><b>Three Strategic Approaches to Cost Optimization:</b></p>
           <ol>
-            <li><b>1. Stop Doing Stuff (Elimination):</b> Eliminate unnecessary business travel, cancel redundant software licenses, and stop printing hardcopy internal reports.</li>
+            <li><b>1. Stop Doing Stuff (Elimination):</b>
+              <ul>
+                <li>Eliminate unnecessary business travel</li>
+                <li>Cancel redundant software licenses</li>
+                <li>Stop printing hardcopy internal reports</li>
+              </ul>
+            </li>
             <li><b>2. Do Similar Stuff Differently (Substitution):</b> Replace 250W desktop computers with energy-efficient laptops or tablets; replace physical filing cabinets with secure cloud storage.</li>
             <li><b>3. Do New Stuff (Transformation):</b> Implement automated digital self-service portals and deploy AI-driven energy optimization models.</li>
           </ol>
@@ -2311,12 +2507,25 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         <div class="sec-body">
           <p><b>IT's Dual Role:</b> Information Technology is simultaneously <b>part of the solution</b> and <b>part of the environmental problem</b>.</p>
           <ul>
-            <li><b>Why IT was seen as green:</b> Enabled paperless digital workflows, virtual teleconferencing, and remote coordination; environmental groups rely heavily on technology (websites, social media, scientific modeling).</li>
+            <li><b>Why IT was seen as green:</b> Enabled paperless digital workflows and remote coordination:
+              <ul>
+                <li>Websites &amp; public digital campaigning</li>
+                <li>Social media mobilization</li>
+                <li>Scientific climate modeling &amp; simulation</li>
+              </ul>
+            </li>
             <li><span class="star-point">⭐</span><b>How IT creates environmental problems (4 Core Vectors — High Exam Yield):</b>
               <ul>
                 <li><b>1. Mining rare materials:</b> Manufacturing processors and components requires heavy mining of rare-earth metals, causing severe land destruction, toxic pollution, and high embodied carbon.</li>
                 <li><b>2. Electricity consumption:</b> Always-on computers, servers, high-performance labs, and data centers consume massive grid electricity, driving greenhouse gas emissions.</li>
-                <li><b>3. Electronic waste (E-waste):</b> Rapid hardware turnover leads to discarded devices that leach toxic heavy metals (lead, cadmium, mercury) and non-biodegradable plastics into landfills.</li>
+                <li><b>3. Electronic waste (E-waste):</b> Rapid hardware turnover leads to discarded devices leaching hazardous toxins:
+              <ul>
+                <li>Lead (Pb)</li>
+                <li>Cadmium (Cd)</li>
+                <li>Mercury (Hg)</li>
+                <li>Non-biodegradable plastics &amp; flame retardants</li>
+              </ul>
+            </li>
                 <li><b>4. Worker welfare:</b> Informal, unregulated e-waste handling and factory assembly expose overseas workers to hazardous chemical conditions without protection.</li>
               </ul>
             </li>
@@ -2370,7 +2579,12 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <p><b>Key Geological Terms:</b></p>
           <ul>
             <li><b>Anthropocene:</b> The current unofficial epoch where human activities have become the dominant influence on Earth's climate and ecosystems.</li>
-            <li><b>Geoengineering:</b> Large-scale technological interventions designed to intentionally alter Earth's climate (e.g., solar radiation management, carbon removal).</li>
+            <li><b>Geoengineering:</b> Large-scale technological climate interventions:
+              <ul>
+                <li>Solar radiation management (reflecting sunlight)</li>
+                <li>Atmospheric carbon removal</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </details>
@@ -2480,7 +2694,13 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
             <li><span class="star-point">⭐</span><b>Acute Food and Water Shortages (2060–2069):</b> Severe agricultural yield collapses, desertification, and glacial freshwater depletion peaking between <b>2060 and 2069</b>.</li>
             <li><b>Surge in Fossil Fuel Use:</b> Deepening emissions from increased coal burning, $2\times$ oil consumption, and $3\times$ natural gas use.</li>
             <li><b>Escalation in Extreme Weather:</b> Unprecedented spikes in high-category cyclones, flash floods, megadroughts, and wildfires.</li>
-            <li><b>Unconventional Fossil Fuel Extraction:</b> Greater exploitation of environmentally damaging sources (tar sands, deep-sea drilling, fracking).</li>
+            <li><b>Unconventional Fossil Fuel Extraction:</b> Greater exploitation of environmentally damaging sources:
+              <ul>
+                <li>Tar sands</li>
+                <li>Deep-sea offshore drilling</li>
+                <li>Hydraulic fracturing (fracking)</li>
+              </ul>
+            </li>
             <li><b>Public Defeatism &amp; Hopelessness:</b> Widespread psychological defeatism hindering proactive climate action.</li>
             <li><b>Urgent Warning (IPCC Reports):</b> International scientific assessments stress that delayed action causes irreversible damage.</li>
           </ol>
@@ -2702,7 +2922,16 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
             </li>
             <li><b>3. Material Composition &amp; Non-Toxicity:</b>
               <ul>
-                <li>Strict compliance with <b>RoHS (Restriction of Hazardous Substances)</b>: completely free of lead, mercury, cadmium, hexavalent chromium, and brominated flame retardants (PBB/PBDE).</li>
+                <li><b>RoHS Banned Hazardous Substances:</b>
+                  <ul>
+                    <li>Lead (Pb)</li>
+                    <li>Mercury (Hg)</li>
+                    <li>Cadmium (Cd)</li>
+                    <li>Hexavalent chromium (Cr⁶⁺)</li>
+                    <li>Polybrominated biphenyls (PBB)</li>
+                    <li>Polybrominated diphenyl ethers (PBDE)</li>
+                  </ul>
+                </li>
                 <li>High proportion of post-consumer recycled (PCR) plastics and sustainably sourced aluminum.</li>
               </ul>
             </li>
@@ -2748,7 +2977,12 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
             <li><b>6. Employee Green Initiatives:</b> Active internal green teams and ongoing employee environmental training programs.</li>
             <li><b>7. Verifiable Case Studies:</b> Documented, audited success metrics demonstrating real-world energy and waste reductions.</li>
             <li><b>8. Comprehensive Carbon Accounting:</b> Rigorous public reporting of Scope 1, Scope 2, and Scope 3 greenhouse gas emissions.</li>
-            <li><b>9. Industry Consortium Leadership:</b> Active participation in green computing organizations (e.g., The Green Grid, Responsible Business Alliance).</li>
+            <li><b>9. Industry Consortium Leadership:</b> Active participation in green computing organizations:
+              <ul>
+                <li>The Green Grid</li>
+                <li>Responsible Business Alliance (RBA)</li>
+              </ul>
+            </li>
             <li><b>10. External Third-Party Audits:</b> Independent verification through international standards such as <b>ISO 14001</b> and CDP reporting.</li>
           </ol>
         </div>
@@ -3124,7 +3358,14 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         </summary>
         <div class="sec-body">
           <ul>
-            <li><b>Greenhouse Gases (GHGs):</b> Atmospheric gases ($\text{CO}_2$, $\text{CH}_4$, $\text{N}_2\text{O}$, fluorinated gases) that trap outgoing solar infrared radiation, driving global warming.</li>
+            <li><b>Primary Atmospheric Greenhouse Gases (GHGs):</b>
+              <ul>
+                <li>Carbon dioxide (CO₂)</li>
+                <li>Methane (CH₄)</li>
+                <li>Nitrous oxide (N₂O)</li>
+                <li>Fluorinated synthetic gases (HFCs, PFCs, SF₆)</li>
+              </ul>
+            </li>
             <li><b>IT Contribution:</b> Computing drives emissions through the electricity required to operate hardware and the embodied energy consumed during manufacturing.</li>
             <li><b>Energy vs. Emissions:</b>
               <ul>
@@ -3145,11 +3386,23 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
           <span>9.2 Sources of greenhouse gases and warming</span>
         </summary>
         <div class="sec-body">
-          <p><b>Natural Sources:</b> Volcanic eruptions, forest fires, organic decomposition, animal respiration and digestion.</p>
+          <p><b>Natural Emission Sources:</b></p>
+          <ul>
+            <li>Volcanic eruptions</li>
+            <li>Forest wildfires</li>
+            <li>Organic decomposition</li>
+            <li>Animal respiration &amp; digestion</li>
+          </ul>
           <p><b>Anthropogenic (Human) Sources:</b></p>
           <ul>
             <li><b>Coal Combustion:</b> Primary fossil fuel burned for baseload electric grid power.</li>
-            <li><b>Petroleum (Oil):</b> Refined into gasoline, diesel, and jet fuel for transportation.</li>
+            <li><b>Petroleum (Refined Transportation Fuels):</b>
+              <ul>
+                <li>Gasoline (petrol)</li>
+                <li>Diesel fuel</li>
+                <li>Aviation jet fuel</li>
+              </ul>
+            </li>
             <li><b>Natural Gas:</b> Burned for industrial heating and peak electricity generation.</li>
             <li><b>Hydraulic Fracturing (Fracking):</b> Extraction process causing methane leakage into the atmosphere.</li>
           </ul>
@@ -3226,7 +3479,15 @@ ightarrow$ Mashups deliver integrated end-user applications.</li>
         <div class="sec-body">
           <p><span class="star-point">⭐</span><b>Embodied Energy Definition (Spring 2025 Q7 Exam Core):</b></p>
           <ul>
-            <li>The total cumulative energy consumed across a product's entire pre-use lifecycle—including raw material mining, chemical refining, component fabrication, factory assembly, and worldwide shipping.</li>
+            <li>The total cumulative non-renewable energy consumed across a product's pre-use lifecycle:
+              <ul>
+                <li>Raw material mining</li>
+                <li>Chemical refining</li>
+                <li>Semiconductor component fabrication</li>
+                <li>Factory assembly</li>
+                <li>Worldwide shipping and distribution</li>
+              </ul>
+            </li>
           </ul>
           <p><span class="star-point">⭐</span><b>The Double Environmental Benefit:</b></p>
           <ol>
@@ -3661,7 +3922,14 @@ const PYQ_ANSWERS = {
         </li>
         <li><b>Web Services (The Communication Standard):</b>
           <ul>
-            <li>Provides universal, standardized network protocols (REST, SOAP, XML, JSON).</li>
+            <li><b>Universal Standard Protocols:</b>
+          <ul>
+            <li>REST</li>
+            <li>SOAP</li>
+            <li>XML</li>
+            <li>JSON</li>
+          </ul>
+        </li>
             <li>Enables heterogeneous services running on different operating systems and languages to communicate seamlessly.</li>
           </ul>
         </li>
@@ -3689,18 +3957,55 @@ const PYQ_ANSWERS = {
     title: "Spring 2025 – Question 8 [CO3]",
     marks: "3 + 2 = 5 Marks",
     answerHtml: `
-<h4>1. Smart Agriculture Practices (Part a - 3 Marks)</h4>
+<h4>1. Smart Agriculture Practices (Spring 2025 Q8)</h4>
       <ul>
-        <li><b>Precision Drip Irrigation:</b> Deploy embedded soil moisture and temperature sensors to measure real-time root moisture; activate automated drip valves only when moisture drops below a threshold, <b>cutting agricultural water waste by up to 50%</b>.</li>
-        <li><b>Automated Nutrient Dispensing:</b> Soil NPK (nitrogen, phosphorus, potassium) sensors monitor nutrient depletion, dispensing fertilizer only where needed to prevent chemical groundwater runoff.</li>
-        <li><b>Hop-to-Hop (Multi-Hop) Routing:</b> Field sensor nodes relay readings through intermediate neighbor nodes in short hops to the main gateway, reducing radio transmission power and extending network battery life.</li>
+        <li><b>Implementation:</b>
+          <ul>
+            <li>Soil moisture sensors</li>
+            <li>Temperature sensors</li>
+            <li>Nitrogen-Phosphorus-Potassium (NPK) sensors</li>
+          </ul>
+        </li>
+        <li><b>Sustainability Impact:</b>
+          <ul>
+            <li>Automated precision drip irrigation</li>
+            <li>Targeted fertilizer delivery</li>
+            <li>Reduces water consumption by up to 50%</li>
+            <li>Prevents groundwater contamination</li>
+          </ul>
+        </li>
+        <li><b>Hop-to-Hop (Multi-Hop) Routing:</b>
+          <ul>
+            <li>Nodes relay readings through intermediate neighbor nodes in short hops</li>
+            <li>Drastically reduces radio transmission power ($P \propto d^2$)</li>
+            <li>Extends overall sensor network battery life</li>
+          </ul>
+        </li>
       </ul>
 
-      <h4>2. Edge Computing &amp; Sensor Lifetime Strategies (Part b - 2 Marks)</h4>
+      <h4>2. Edge Computing &amp; Sensor Lifetime Strategies</h4>
       <ul>
-        <li><b>Duty Cycling:</b> Program sensor microcontrollers to stay in ultra-low power <b>sleep mode for 90%–99% of the time</b>, waking up for mere milliseconds only to sample and transmit.</li>
-        <li><b>Ambient Energy Harvesting:</b> Attach solar micro-cells or thermal harvesters to field sensor nodes to recharge them via sunlight, completely eliminating disposable chemical battery replacement and toxic e-waste.</li>
-        <li><b>Edge Data Filtering:</b> Edge gateways aggregate and filter local sensor readings, transmitting data to the cloud only when significant anomalies occur rather than streaming constant redundant packets.</li>
+        <li><b>Duty Cycling:</b>
+          <ul>
+            <li>Nodes operate in deep sleep mode for 90%–99% of the time</li>
+            <li>Wakes up for milliseconds only to sample and transmit</li>
+            <li>Preserves battery charge over multiple growing seasons</li>
+          </ul>
+        </li>
+        <li><b>Ambient Energy Harvesting:</b>
+          <ul>
+            <li>Solar micro-cells</li>
+            <li>Thermal gradient harvesters</li>
+            <li>Eliminates disposable chemical batteries and toxic e-waste</li>
+          </ul>
+        </li>
+        <li><b>Edge Data Filtering:</b>
+          <ul>
+            <li>Edge gateways aggregate and filter local sensor readings</li>
+            <li>Transmits data to cloud only upon detecting significant anomalies</li>
+            <li>Eliminates energy-draining redundant RF packet transmissions</li>
+          </ul>
+        </li>
       </ul>
     `
   },
@@ -3711,33 +4016,51 @@ const PYQ_ANSWERS = {
     title: "Summer 2025 – Question 7",
     marks: "5 Marks",
     answerHtml: `
-<h4>1. Solving Smart City Challenges with Green IoT (Section 2.1)</h4>
+<h4>1. Smart Cities (Summer 2025 Q7)</h4>
       <ul>
-        <li><b>1. Excessive Energy Consumption (Smart Lighting):</b>
+        <li><b>Energy Management:</b>
           <ul>
-            <li>Deploy adaptive LED street lighting equipped with ambient light sensors and motion detection.</li>
-            <li>Lights dim to 20% power during empty midnight hours and dynamically brighten when pedestrian or vehicular motion is detected, saving 40–60% of municipal lighting electricity.</li>
+            <li>Motion sensors</li>
+            <li>Ambient light sensors</li>
+            <li>Adaptive LED street lighting</li>
+            <li>Reduces energy consumption during empty hours (dims to 20% power)</li>
           </ul>
         </li>
-        <li><b>2. Water Wastage (Smart Water Grids):</b>
+        <li><b>Water Management:</b>
           <ul>
-            <li>Install acoustic vibration and water flow sensors along municipal water distribution pipelines.</li>
-            <li>Identifies underground pipe bursts and micro-leaks instantly, preventing clean water loss and protecting infrastructure.</li>
+            <li>Acoustic sensors</li>
+            <li>Flow sensors</li>
+            <li>Detects underground pipe leaks</li>
+            <li>Prevents clean water wastage</li>
           </ul>
         </li>
-        <li><b>3. Poor Waste Management (Smart Waste):</b>
+        <li><b>Waste Management:</b>
           <ul>
-            <li>Install ultrasonic fill-level sensors inside municipal trash containers.</li>
-            <li>Transmits fill percentages to sanitation departments to generate optimized pickup routes for garbage trucks, eliminating fuel waste and carbon emissions from emptying half-empty bins.</li>
+            <li>Ultrasonic fill-level sensors</li>
+            <li>Optimizes garbage truck routes</li>
+            <li>Reduces diesel fuel consumption</li>
+            <li>Lowers carbon emissions</li>
           </ul>
         </li>
       </ul>
 
       <h4>2. Green Communication &amp; Low-Power Protocols (Section 2.2 &amp; 2.3)</h4>
       <ul>
-        <li><b>Low-Power Wireless Protocols:</b> Utilize <b>LoRaWAN</b> and <b>Zigbee</b> for long-range, low-bitrate data transmission instead of power-hungry cellular or Wi-Fi.</li>
-        <li><b>Duty Cycling &amp; Sleep Scheduling:</b> City sensor nodes sleep 95%+ of the time, waking up briefly to transmit small telemetry packets.</li>
-        <li><b>Solar Harvesting:</b> Power outdoor street sensors and waste monitors using miniature solar panels.</li>
+        <li><b>Low-Power Wireless Protocols:</b>
+          <ul>
+            <li>LoRaWAN</li>
+            <li>Zigbee</li>
+            <li>6LoWPAN</li>
+            <li>Bluetooth Low Energy (BLE)</li>
+          </ul>
+        </li>
+        <li><b>Power Optimization Strategies:</b>
+          <ul>
+            <li>Duty cycling (sleeping 95%+ of the time)</li>
+            <li>Solar micro-cell energy harvesting</li>
+            <li>Edge data aggregation and local filtering</li>
+          </ul>
+        </li>
       </ul>
     `
   },
@@ -3748,18 +4071,48 @@ const PYQ_ANSWERS = {
     title: "Spring 2026 – Question 2",
     marks: "5 Marks",
     answerHtml: `
-<h4>1. Reducing Campus Electricity via Green IoT Sensors (Section 2.1)</h4>
+<h4>1. Smart Campuses &amp; Buildings (Spring 2026 Q2)</h4>
       <ul>
-        <li><b>Smart Occupancy &amp; HVAC Control:</b> Deploy Passive Infrared (PIR) occupancy sensors in classrooms, auditoriums, and labs to detect human presence; automatically powers down heating, ventilation, and air-conditioning (HVAC) when rooms are empty, <b>cutting campus electricity use by 30–40%</b>.</li>
-        <li><b>Daylight Harvesting &amp; Smart Lighting:</b> Ambient light sensors measure natural sunlight entering classroom windows; automatically dim artificial LED fixtures when natural daylight is sufficient.</li>
-        <li><b>Automated Lab Power Shutdown:</b> IoT smart plugs turn off idle desktop computers, projectors, and monitors outside scheduled lecture and lab hours.</li>
+        <li><b>Implementation:</b>
+          <ul>
+            <li>Passive Infrared (PIR) occupancy sensors</li>
+            <li>Ambient light sensors</li>
+            <li>Automated lighting systems</li>
+            <li>Automated Heating, Ventilation, and Air Conditioning (HVAC) systems</li>
+            <li>IoT smart plugs for lab computers and projectors</li>
+          </ul>
+        </li>
+        <li><b>Sustainability Impact:</b>
+          <ul>
+            <li>Powers down lighting in vacant rooms</li>
+            <li>Adjusts HVAC systems when rooms are vacant</li>
+            <li>Reduces campus electricity bills by 30–40%</li>
+            <li>Eliminates idle lab power consumption outside scheduled hours</li>
+          </ul>
+        </li>
       </ul>
 
-      <h4>2. Ensuring High Energy Efficiency of the Sensor Network (Section 2.3)</h4>
+      <h4>2. Sensor Network Energy Efficiency (Section 2.3)</h4>
       <ul>
-        <li><b>Duty Cycling:</b> Sensor nodes remain in deep sleep mode for 95%+ of the time, waking up once every 2–5 minutes for a few milliseconds to check occupancy and light levels.</li>
-        <li><b>Ambient Energy Harvesting:</b> Equip indoor sensors with indoor photovoltaic cells (solar micro-cells capturing indoor lighting) and piezoelectric vibration harvesters, eliminating chemical battery replacements.</li>
-        <li><b>Multi-Hop Wireless Routing:</b> Use low-power Zigbee/BLE mesh networking so sensors transmit data over short, low-energy hops to the nearest hallway gateway rather than high-power direct links.</li>
+        <li><b>Duty Cycling:</b>
+          <ul>
+            <li>Nodes sleep 95%+ of the time</li>
+            <li>Wakes up briefly every few minutes to check occupancy and light levels</li>
+          </ul>
+        </li>
+        <li><b>Ambient Energy Harvesting:</b>
+          <ul>
+            <li>Indoor photovoltaic cells (capturing room light)</li>
+            <li>Piezoelectric vibration harvesters</li>
+            <li>Eliminates chemical battery replacement and toxic e-waste</li>
+          </ul>
+        </li>
+        <li><b>Multi-Hop Wireless Routing:</b>
+          <ul>
+            <li>Short low-power mesh hops via Zigbee or BLE</li>
+            <li>Avoids power-hungry direct long-range transmissions</li>
+          </ul>
+        </li>
       </ul>
     `
   },
@@ -3912,7 +4265,7 @@ const PYQ_ANSWERS = {
       <ul>
         <li><b>Securing the Social License to Operate (Section 1.3):</b> Operating clean data centers with renewable energy earns long-term community trust and shields the business from public backlash.</li>
         <li><b>Responsive Feedback Builds High Trust:</b> Pairing eco-friendly infrastructure with an active customer feedback mechanism proves that the company values both environmental and customer welfare, turning clients into loyal advocates.</li>
-        <li><b>The Virtuous Reputation Cycle (Section 1.6):</b> Proven sustainability + high service ratings $ightarrow$ premium brand reputation $ightarrow$ attracts high-paying clients and top engineering talent $ightarrow$ superior business performance and retention.</li>
+        <li><b>The Virtuous Reputation Cycle (Section 1.6):</b> Proven sustainability + high service ratings &rarr; premium brand reputation &rarr; attracts high-paying clients and top engineering talent &rarr; superior business performance and retention.</li>
       </ul>
     `
   },
@@ -3947,9 +4300,9 @@ const PYQ_ANSWERS = {
     answerHtml: `
 <h4>1. Roadmap: Non-IT Functions to Digitize First (Section 2.6)</h4>
       <ol>
-        <li><b>1. Postal Mail &amp; Invoicing $\rightarrow$ Email &amp; E-Invoicing:</b> Eliminates paper, toner, envelopes, courier travel, and postage expenses immediately.</li>
-        <li><b>2. Physical Checks &amp; Signatures $\rightarrow$ Digital Payments &amp; E-Signatures:</b> Replaces physical trips to the bank and courier delivery with secure instant electronic transfers.</li>
-        <li><b>3. Physical Meetings &amp; Travel $\rightarrow$ Virtual Teleconferencing:</b> Replaces car and flight travel with video conferencing, drastically cutting transportation fuel and travel budgets.</li>
+        <li><b>1. Postal Mail &amp; Invoicing $&rarr;$ Email &amp; E-Invoicing:</b> Eliminates paper, toner, envelopes, courier travel, and postage expenses immediately.</li>
+        <li><b>2. Physical Checks &amp; Signatures $&rarr;$ Digital Payments &amp; E-Signatures:</b> Replaces physical trips to the bank and courier delivery with secure instant electronic transfers.</li>
+        <li><b>3. Physical Meetings &amp; Travel $&rarr;$ Virtual Teleconferencing:</b> Replaces car and flight travel with video conferencing, drastically cutting transportation fuel and travel budgets.</li>
       </ol>
 
       <h4>2. Evaluating When Moving to Cloud Services is Advantageous (Section 2.5)</h4>
@@ -4067,31 +4420,31 @@ const PYQ_ANSWERS = {
     answerHtml: `
 <h4>Five Non-IT Functions Digitized &amp; Their Efficiency Improvements (Section 2.6)</h4>
       <ol>
-        <li><b>1. Student Admissions &amp; Paper Mail $\rightarrow$ Digital Application Portal:</b>
+        <li><b>1. Student Admissions &amp; Paper Mail $&rarr;$ Digital Application Portal:</b>
           <ul>
             <li>Replaces physical paper forms, postal envelopes, and courier transport with online admissions.</li>
             <li><i>Efficiency:</i> Eliminates paper manufacturing and delivery emissions; speeds up applicant processing from weeks to minutes.</li>
           </ul>
         </li>
-        <li><b>2. Tuition Fee Checks &amp; Billing $\rightarrow$ Online Payment &amp; E-Invoicing:</b>
+        <li><b>2. Tuition Fee Checks &amp; Billing $&rarr;$ Online Payment &amp; E-Invoicing:</b>
           <ul>
             <li>Replaces manual paper receipts, physical bank drafts, and in-person cashier queues with instant digital bank transfers.</li>
             <li><i>Efficiency:</i> Eliminates banking travel emissions, cuts paper ledger waste, and provides automated financial accounting.</li>
           </ul>
         </li>
-        <li><b>3. Physical Course Handouts &amp; Books $\rightarrow$ Learning Management System (LMS):</b>
+        <li><b>3. Physical Course Handouts &amp; Books $&rarr;$ Learning Management System (LMS):</b>
           <ul>
             <li>Replaces thousands of printed paper lecture handouts, exam booklets, and physical library cards with digital documents.</li>
             <li><i>Efficiency:</i> Cuts campus paper and printing toner consumption by over 70%; enables 24/7 student access from any device.</li>
           </ul>
         </li>
-        <li><b>4. Campus Telephone Network $\rightarrow$ Cloud VoIP &amp; Unified Messaging:</b>
+        <li><b>4. Campus Telephone Network $&rarr;$ Cloud VoIP &amp; Unified Messaging:</b>
           <ul>
             <li>Replaces dedicated copper telecom wiring and proprietary PBX hardware with voice-over-IP software (Zoom/Teams).</li>
             <li><i>Efficiency:</i> Eliminates specialized hardware maintenance and power consumption.</li>
           </ul>
         </li>
-        <li><b>5. Staff Commuting &amp; Administrative Travel $\rightarrow$ Remote Work &amp; Teleconferencing:</b>
+        <li><b>5. Staff Commuting &amp; Administrative Travel $&rarr;$ Remote Work &amp; Teleconferencing:</b>
           <ul>
             <li>Enables staff to conduct administrative meetings virtually and work remotely on select days.</li>
             <li><i>Efficiency:</i> Cuts vehicular fuel emissions and allows the university to downsize lighting and air-conditioning in office complexes.</li>
@@ -4298,7 +4651,14 @@ const PYQ_ANSWERS = {
       <h4>1. Mandatory Green Device Criteria (Section 6.1)</h4>
       <ul>
         <li><b>Energy Efficiency:</b> All computers and displays must be <b>Energy Star</b> compliant and rated <b>EPEAT Silver or Gold</b>.</li>
-        <li><b>Material Non-Toxicity:</b> Hardware must be 100% compliant with <b>RoHS standards</b> (free from lead, mercury, cadmium, and toxic flame retardants).</li>
+        <li><b>Material Non-Toxicity (RoHS Standards):</b> Hardware must be 100% compliant with RoHS:
+          <ul>
+            <li>Lead-free (Pb)</li>
+            <li>Mercury-free (Hg)</li>
+            <li>Cadmium-free (Cd)</li>
+            <li>Free from toxic brominated flame retardants</li>
+          </ul>
+        </li>
         <li><b>Sustainable Packaging:</b> Delivered in bulk or slimline 100% unbleached, recyclable packaging with electronic-only documentation.</li>
         <li><b>Durability &amp; Repairability:</b> Systems must feature modular RAM/storage components for easy upgrades, extending expected life to at least 5 years.</li>
       </ul>
