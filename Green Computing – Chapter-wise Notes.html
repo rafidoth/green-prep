@@ -1,0 +1,3364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Green Computing – Chapter-wise Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --bg-main: #ffffff;
+  --bg-sidebar: #fafbfc;
+  --text-main: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #64748b;
+
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-light: #ecfdf5;
+
+  --divider: #e2e8f0;
+  --divider-subtle: #f1f5f9;
+
+  --note-accent: #d97706;
+  --note-text: #854d0e;
+
+  --sidebar-width: 320px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 32px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll progress bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 999;
+  transition: width 0.1s linear;
+}
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Mobile top navbar */
+.mobile-header {
+  display: none;
+  height: 52px;
+  padding: 0 16px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--divider);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  background: none;
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.mobile-header-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  z-index: 39;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--divider);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  z-index: 40;
+}
+
+.sidebar-inner {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 18px;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.sidebar-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin: 0 0 6px;
+}
+
+.sidebar-sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* Search Box & Controls in Sidebar */
+.controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  background-color: #ffffff;
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+  padding: 8px 30px 8px 32px;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2.5px rgba(5, 150, 105, 0.12);
+}
+
+.search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px;
+  display: none;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.search-clear:hover {
+  color: var(--text-main);
+}
+
+.bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 2px 4px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.btn:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn-sep {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.search-status {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Sidebar Table of Contents */
+.toc {
+  margin-top: 4px;
+}
+
+.toc-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toc-list li {
+  margin: 0;
+}
+
+.toc-list a {
+  display: flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  line-height: 1.35;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+.toc-list a.active {
+  color: var(--accent);
+  background-color: var(--accent-light);
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  min-width: 0;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 48px 48px 120px;
+  transition: max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1), margin 0.28s cubic-bezier(0.16, 1, 0.3, 1), padding 0.28s ease;
+}
+
+.app-layout.has-answer-drawer .content {
+  max-width: none;
+  margin: 0;
+  padding: 40px 36px 120px;
+}
+
+/* Chapters (details.ch) - UNBOXED */
+details.ch {
+  border-top: 1px solid var(--divider);
+  padding: 24px 0 8px;
+  margin: 0;
+}
+
+details.ch:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details.ch > summary {
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+details.ch > summary:hover {
+  color: var(--accent);
+}
+
+/* Custom chevron icon */
+.chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+details[open] > summary > .chevron {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+.ch-content {
+  padding: 6px 0 18px;
+}
+
+/* Sections (details.sec) - UNBOXED */
+details.sec {
+  margin: 16px 0;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--divider);
+  transition: border-color 0.15s ease;
+}
+
+details.sec[open] {
+  border-left-color: var(--accent);
+}
+
+details.sec > summary {
+  cursor: pointer;
+  padding: 3px 0;
+  font-size: 1.03rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+details.sec > summary:hover {
+  color: var(--accent);
+}
+
+.chevron-small {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+details.sec[open] > summary > .chevron-small {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+.sec-body {
+  padding: 6px 0 10px;
+}
+
+/* Typography inside notes */
+p {
+  margin: 8px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+b, strong {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+ul, ol {
+  padding-left: 22px;
+  margin: 8px 0;
+}
+
+li {
+  margin: 5px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+li b {
+  color: var(--text-main);
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin: 4px 0;
+}
+
+/* Note Callout (Unboxed) */
+.note {
+  font-size: 0.92rem;
+  color: var(--note-text);
+  border-left: 2.5px solid var(--note-accent);
+  padding: 4px 0 4px 12px;
+  margin: 10px 0;
+  font-style: normal;
+}
+
+/* Formula Box (Unboxed) */
+.formula {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  background-color: #f8fafc;
+  border-left: 3px solid var(--accent);
+  color: var(--text-main);
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 14px 0;
+  letter-spacing: 0.01em;
+}
+
+/* Table (Unboxed classic book styling) */
+.scroll {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 0.92rem;
+  border-top: 1.5px solid var(--text-main);
+  border-bottom: 1.5px solid var(--text-main);
+}
+
+th {
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--divider);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--divider-subtle);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Back to Top floating button */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--text-muted);
+  border: 1px solid var(--divider);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 90;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Highlight for search match */
+mark {
+  background: rgba(5, 150, 105, 0.15);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mobile-header {
+    display: flex;
+  }
+  .app-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-backdrop.open {
+    display: block;
+    opacity: 1;
+  }
+  .content {
+    padding: 32px 20px 80px;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  #progress-bar, .sidebar, .mobile-header, #back-to-top {
+    display: none !important;
+  }
+  .content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  details.ch {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chevron, .chevron-small {
+    display: none !important;
+  }
+  .ch-content, .sec-body {
+    display: block !important;
+  }
+}
+
+/* --- Previous Year Questions (PYQs) --- */
+.pyq-divider {
+  margin: 28px 0 14px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--divider);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pyq-divider-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+details.sec.pyq-sec {
+  border-left: 3px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 0 8px 8px 0;
+  margin: 12px 0;
+  padding: 8px 14px 8px 16px;
+  transition: all 0.2s ease;
+}
+
+details.sec.pyq-sec[open] {
+  border-left-color: var(--accent);
+  background: #f0fdf4;
+}
+
+details.sec.pyq-sec > summary {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.pyq-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #475569;
+  letter-spacing: 0.02em;
+}
+
+details.sec.pyq-sec[open] .pyq-pill {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.pyq-card {
+  background: #ffffff;
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.pyq-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.08);
+  transform: translateY(-1px);
+}
+
+.pyq-card:hover .pyq-ans-btn {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.pyq-card:last-child {
+  margin-bottom: 4px;
+}
+
+.pyq-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--divider-subtle);
+}
+
+.pyq-qlabel {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.pyq-marks {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #f1f5f9;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.pyq-question-text {
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.pyq-question-text p {
+  margin: 6px 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.pyq-question-text ol, .pyq-question-text ul {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.pyq-question-text li {
+  margin: 4px 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+
+/* --- Right Answer Sidepane Panel (Side-by-Side) --- */
+.answer-drawer {
+  width: 0;
+  min-width: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-main);
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 50;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease, border-color 0.2s ease;
+}
+
+.app-layout.has-answer-drawer .answer-drawer {
+  width: 700px;
+  max-width: 52vw;
+  border-left: 1px solid var(--divider);
+  opacity: 1;
+  visibility: visible;
+  box-shadow: -6px 0 28px rgba(0, 0, 0, 0.06);
+}
+
+.answer-drawer-header {
+  padding: 18px 26px;
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.drawer-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drawer-header-left .pyq-pill {
+  font-size: 0.84rem;
+  padding: 4px 12px;
+}
+
+.drawer-header-left .pyq-marks {
+  font-size: 0.84rem;
+  padding: 4px 10px;
+}
+
+.drawer-close-btn {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.drawer-close-btn:hover {
+  background: #e2e8f0;
+  color: var(--text-main);
+}
+
+.answer-drawer-content {
+  padding: 28px 34px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-qtitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+  margin-bottom: 5px;
+}
+
+.drawer-qsection {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+
+.drawer-qbox {
+  background: #f8fafc;
+  border: 1px solid var(--divider);
+  border-left: 4px solid #64748b;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.drawer-qbox-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 7px;
+}
+
+.drawer-qbox-text {
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.68;
+  color: var(--text-secondary);
+}
+
+.drawer-qbox-text p {
+  margin: 5px 0;
+}
+
+.drawer-ans-body {
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.76;
+  color: var(--text-secondary);
+}
+
+.drawer-ans-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--divider);
+}
+
+.drawer-ans-badge {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 12px;
+  border-radius: 5px;
+}
+
+.drawer-ans-body h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 24px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--divider-subtle);
+}
+
+.drawer-ans-body h4:first-of-type {
+  margin-top: 0;
+}
+
+.drawer-ans-body p {
+  margin: 10px 0;
+}
+
+.drawer-ans-body ul, .drawer-ans-body ol {
+  margin: 8px 0 16px;
+  padding-left: 24px;
+}
+
+.drawer-ans-body li {
+  margin: 8px 0;
+  line-height: 1.72;
+}
+
+.drawer-ans-body b, .drawer-ans-body strong {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.drawer-copy-bar {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer-copy-btn {
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  border: 1px solid var(--divider);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.15s ease;
+}
+
+.drawer-copy-btn:hover {
+  background: #e2e8f0;
+  color: var(--text-main);
+}
+
+.drawer-copy-btn.copied {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.drawer-placeholder {
+  background: #f8fafc;
+  border: 1px dashed var(--divider);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.drawer-placeholder-icon {
+  width: 46px;
+  height: 46px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.drawer-placeholder h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.drawer-placeholder p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (min-width: 1550px) {
+  .app-layout.has-answer-drawer .answer-drawer {
+    width: 780px;
+    max-width: 54vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .app-layout.has-answer-drawer .answer-drawer {
+    width: 600px;
+    max-width: 50vw;
+  }
+}
+
+@media (max-width: 1040px) {
+  .app-layout.has-answer-drawer .answer-drawer {
+    width: 520px;
+    max-width: 50vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-layout.has-answer-drawer .answer-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    max-width: 100vw !important;
+    z-index: 100;
+  }
+  .app-layout.has-answer-drawer .content {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- Mobile top navbar -->
+<header class="mobile-header">
+  <button type="button" class="mobile-menu-btn" id="sidebar-toggle" aria-label="Open contents">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  <span class="mobile-header-title">Green Computing Notes</span>
+</header>
+
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+<div class="app-layout">
+  <!-- Sidebar with Header, Search, Controls & Contents -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-header">
+        <span class="kicker">Exam Prep · 8 Units × 5 = 40</span>
+        <h1 class="sidebar-title">Green Computing</h1>
+        <p class="sidebar-sub">Chapter-wise lecture &amp; textbook study notes.</p>
+      </div>
+
+      <div class="controls-bar" aria-label="Reading Controls">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="notes-search" class="search-input" placeholder="Search notes..." autocomplete="off">
+          <button type="button" id="search-clear-btn" class="search-clear" title="Clear search">&times;</button>
+        </div>
+        <div class="bar">
+          <button type="button" class="btn" onclick="toggleAll(true)">Expand all</button>
+          <span class="btn-sep">·</span>
+          <button type="button" class="btn" onclick="toggleAll(false)">Collapse all</button>
+          <span id="search-status" class="search-status"></span>
+        </div>
+      </div>
+
+      <nav class="toc" aria-label="Table of Contents">
+        <div class="toc-title">Contents</div>
+        <ol class="toc-list">
+          <li><a href="#u1" onclick="handleTocClick('u1')">1. Cloud Computing</a></li>
+          <li><a href="#u2" onclick="handleTocClick('u2')">2. IoT (Green IoT)</a></li>
+          <li><a href="#u3" onclick="handleTocClick('u3')">3. Chapter 1 (+ SDG)</a></li>
+          <li><a href="#u4" onclick="handleTocClick('u4')">4. Chapter 2</a></li>
+          <li><a href="#u5" onclick="handleTocClick('u5')">5. Chapter 3</a></li>
+          <li><a href="#u6" onclick="handleTocClick('u6')">6. Chapter 6</a></li>
+          <li><a href="#u7" onclick="handleTocClick('u7')">7. Book 2 (Ch 1, 5)</a></li>
+          <li><a href="#u8" onclick="handleTocClick('u8')">8. Chapter 9</a></li>
+        </ol>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Content Reading Area -->
+  <main class="content">
+  <!-- 1. Cloud Computing -->
+  <details class="ch" id="u1" open>
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>1. Cloud Computing</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec" open>
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Basics (class-1)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Cloud computing: dynamically scalable, virtualized resources.</li>
+            <li>Six Paradigm (boxed heading; no details in notes).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Virtualization</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>A physical server runs a hypervisor on top of it.</li>
+            <li>The hypervisor hosts several virtual machines (e.g. Veam, email server).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Service models</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>SaaS</b> → software that is hosted in the cloud.</li>
+            <li><b>IaaS</b> → pay as you go (raw networking power, raw storage).</li>
+            <li><b>PaaS</b> → IDE.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Three categories of cloud services</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>SaaS</li>
+            <li>Attached service → plugin</li>
+            <li>Cloud platform</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Types of cloud computing</span>
+        </summary>
+        <div class="sec-body">
+          <ol>
+            <li><b>Public cloud</b> → everyone can use; open for all.</li>
+            <li><b>Private cloud</b> → exclusive use of one client.</li>
+            <li><b>Hybrid cloud</b> → (left blank in notes).</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Other topics listed (class-2, class-3)</span>
+        </summary>
+        <div class="sec-body">
+          <p class="note">Only topic names are in the notes; no details yet.</p>
+          <ul>
+            <li>Public vs private clouds</li>
+            <li>Cloud computing vs cloud services</li>
+            <li>Service oriented architecture</li>
+            <li>Web 2.0 and mashup</li>
+            <li>Pricing</li>
+            <li>Data center network architecture</li>
+          </ul>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Fall 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="f25-q6">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 6</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q6')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A growing e-commerce company expects a massive increase in web traffic during the holiday season. Rather than buying new physical servers, they rent virtual machines, storage, and networking resources from a cloud provider. They configure the operating systems themselves and scale the resources up or down depending on the load.</p><p>Which cloud services model is being used by the company? Mention the key characteristics of this model and explain your logic for choosing this model as your answer. How does adopting this model contribute to green computing and sustainability?</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="f25-q8c">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 8 (c)</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">Data Center Interconnect</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q8c')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>Draw the block diagram of a data center interconnect network.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q1">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 1</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q1')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>Analyze how virtualization, SOA, web services, and Web 3.0/ mashups work together to enable modern cloud computing platforms. Support your answer with an example of a real-world cloud application.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 2. IoT (Green IoT) -->
+  <details class="ch" id="u2" open>
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>2. IoT (Green IoT)</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec" open>
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Green IoT (class-18)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Sustainable development goals (listed as a topic).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Intro to wireless technology</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Key words: Embedded, Networked, Sensing.</li>
+            <li><b>Hop-to-hop communication:</b> nodes close to the gateway communicate with it directly; nodes far from the gateway communicate through another node.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Terms (class-19)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>Ad hoc</b> → no fixed rules.</li>
+            <li><b>MEMS</b> → Micro electro mechanical services (as written in notes).</li>
+            <li><b>NEMS</b> → Nano electro mechanical services.</li>
+          </ul>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q8">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 8 [CO3]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">3 + 2 = 5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q8')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>Sajol Agro &amp; Farms, a large-scale agricultural enterprise, is implementing smart farming practices to improve sustainability by reducing water and fertilizer usage. To do this, they have deployed a vast network of IoT sensors across their fields to collect real-time data on soil moisture, nutrient levels, and weather conditions. However, continuously streaming this massive volume of data to a distant central cloud for analysis is causing high network latency, delaying critical actions like precision irrigation, and resulting in significant energy consumption and data transmission costs.</p><ol type="a"><li>As a Green Computing consultant, propose a solution to address these latency, cost, and energy consumption issues.</li><li>Explain how your proposed architecture differs from a traditional cloud-centric model. What specific benefits does your solution offer in terms of energy efficiency and resource optimization for Verdant Valley Farms?</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q7">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 7</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q7')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A growing smart city is facing challenges with excessive energy consumption, water wastage, and poor waste management. The city council decides to implement an IoT-based Green Management System to make the city more sustainable. The system should use sensors and data analytics to monitor and optimize resource usage in real time. As a Computer Engineer, you are tasked with designing an IoT-based green system to support the city’s sustainability goals. In this connection answer the following questions:</p><ol type="a"><li>What IoT components (sensors, networks, platforms) would you include?</li><li>How would data be collected, processed, and used for decision-making?</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q2">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 2</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q2')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A university plans to reduce its electricity consumption by deploying IoT-enabled smart sensors to monitor classroom occupancy, lighting, air conditioning, and energy usage. The collected data is analyzed in real time to automatically switch off unused devices and optimize energy consumption.</p><p>Explain how IoT technologies can be used to implement this smart energy management system. And discuss how the proposed solution supports the principles of green computing.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 3. Chapter 1 (+ SDG) -->
+  <details class="ch" id="u3">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>3. Chapter 1 (+ SDG)</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.1 Reputation as motivation</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Right thing to do (internal &amp; external)</li>
+            <li>Make money (marketing)</li>
+            <li>Save money (finance)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.2 Avoiding greenwash</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Markets of greenwashing: publicizing in advance.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.3 Social license to operate</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Metric of reputation management.</li>
+            <li>Acceptance of society and community.</li>
+            <li>Ranking &amp; rewards improve it.</li>
+            <li>Examples: tobacco industry, nuclear industry, Apple.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.4 Green computing &amp; your current career</span>
+        </summary>
+        <div class="sec-body">
+          <p>Presenting (justifying) green projects to management:</p>
+          <ul>
+            <li>Save money</li>
+            <li>Reduce risk</li>
+            <li>Sustainability → led, supported, plus</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.5 Green computing and your department</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Internal employees &gt; external consultant.</li>
+            <li>IT department should lead green computing initiatives.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.6 Green recruiting and retention</span>
+        </summary>
+        <div class="sec-body">
+          <p>Young employees from top universities:</p>
+          <ol type="i">
+            <li>Leading indicators</li>
+            <li>Receive modern education</li>
+            <li>CEO bragging about top graduates</li>
+            <li>Success attracts more success</li>
+            <li>Talented employees improve the workplace</li>
+            <li>Green reputation helps retain employees</li>
+          </ol>
+          <p><b>Driving employees away?</b></p>
+          <ol type="i">
+            <li>Public concern is increasing</li>
+            <li>Young generations care more</li>
+            <li>Majority of employees agree</li>
+          </ol>
+          <p><b>Cycle:</b> green computing indicates better reputation → attracts better employees → employee retention → employees speak positively → even better reputation.</p>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.7 Getting word out inside the company</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Include in the planning process</li>
+            <li>Personal meeting</li>
+            <li>Emails to internal mailing lists</li>
+            <li>Internal company newsletters, magazines</li>
+            <li>Presentations to specific people</li>
+            <li>"Lunch and learn"</li>
+            <li>Departmental or company-wide presentations</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>1.8 Getting word out outside the company</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>See competitions / similar companies</li>
+            <li>News release writing</li>
+            <li>VNR (video news releases), 3–5 mins</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>SDG</span>
+        </summary>
+        <div class="sec-body">
+          <p class="note">Sustainable development goals appear in the notes only as a topic name (class-18). No details written.</p>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q1">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 1 [CO1]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q1')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A tech company releases a new line of laptops branded as "EcoSmart Devices." In its marketing materials, the company claims these laptops are "Environmentally Friendly" and have "Zero Environmental Impact." The promotional content highlights a sleek design with minimal packaging and uses green-themed visuals to reinforce the eco-conscious image. However, a recent investigative report reveals that the laptops are built with non-recyclable materials, the manufacturing process consumes high levels of energy from non-renewable sources, and there is no environmental certification or data to support their claims.</p><p>What key issue or practice is being illustrated in this scenario? Identify the misleading elements in the company’s campaign, and discuss the potential consequences of this type of marketing practice for consumers, the environment, and the company itself.</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="s25-q5">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 5 [CO3]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q5')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>Consider a multinational electronics corporation, "GlobalTech Inc.", which previously based its corporate social responsibility program on the Millennium Development Goals (MDGs). With the global transition to the more comprehensive Sustainable Development Goals (SDGs), the company faces increasing pressure to address issues like e-waste from its products and labor conditions in its supply chain. In this context, evolve the company's outdated approach by proposing a robust green computing strategy that addresses the following SDGs:</p><ol type="i"><li>SDG-12: Responsible Consumption and Production</li><li>SDG-8: Decent Work and Economic Growth</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q1">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 1</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q1')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>TechNova Inc. is a mid-sized consumer electronics company recently released a line of wireless earbuds and added a small label on the packaging that says: “Eco-smart packaging: 20% less plastic!” They promoted this feature in ads and social media but didn’t change the product's manufacturing process, energy use, or lifecycle management. The initiative was driven more by the marketing team than by any formal sustainability plan.</p><ol type="a"><li>Based on its approach to sustainability, how would you classify TechNova’s business strategy?</li><li>What kind of green misrepresentation or false advertizing is TechNova engaging in, according to the scenario?</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Fall 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="f25-q1">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 1</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q1')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A technology company advertises its new line of laptops as “100% eco-friendly” and “carbon-neutral”. The marketing campaign highlights recyclable packaging and the use of energy-efficient processors. However, independent reports reveal that the company still relies on coal-based electricity for manufacturing and does not have a transparent e-waste recycling program.</p><p>Identify and explain why this situation can be considered an example of green washing. Suggest two genuine sustainability practices the company should adopt to avoid green washing and truly support environmental goals.</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="f25-q7">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 7</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q7')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A multinational IT company operates a large data center that consumes massive amounts of electricity and produces significant electronic waste due to frequent hardware upgrades. Recent reports show that the data center contributes heavily to carbon emissions because it relies on non-renewable energy sources. To align its operations with the Sustainable Development Goals (SDGs), the company decides to adopt green computing practices.</p><p>As an IT consultant, propose three green computing strategies the company can implement to reduce its environmental impact. Explain how each strategy supports one or more SDGs.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q3">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 3</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q3')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A cloud service company replaces older servers with energy-efficient hardware, uses virtualization to reduce the number of physical machines, and powers part of its data center with renewable energy. At the same time, it implements a customer feedback and rating system to monitor service quality and quickly address user complaints.</p><p>Analyze how combining sustainability initiatives with effective reputation management can improve customer trust and business performance.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 4. Chapter 2 -->
+  <details class="ch" id="u4">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>4. Chapter 2</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.1 Why saving money is green</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Profit = revenues − costs.</li>
+            <li>Saving money may be more powerful than making money.</li>
+            <li>Cost savings continue to repeat year after year.</li>
+            <li>Cost cutting is usually green.</li>
+            <li>Expenditures involve resource use, generate waste products, and have a carbon footprint.</li>
+            <li><b>Megawatts:</b> energy savings are measured in megawatts.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.2 Getting focused on money-saving efforts</span>
+        </summary>
+        <div class="sec-body">
+          <ol type="i">
+            <li>The cost of cost-cutting efforts is more predictable than the cost of revenue-generating efforts.</li>
+            <li>The savings of cost-cutting efforts are more predictable than the revenues from revenue-generating efforts.</li>
+            <li>A cost-cutting effort usually pays off year after year after year.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.3 Implementing energy efficiency</span>
+        </summary>
+        <div class="sec-body">
+          <ol type="i">
+            <li>Changing how current devices are used</li>
+            <li>Buying new devices that are similar to current devices but more energy efficient</li>
+            <li>Buying new devices that are a different class of devices</li>
+          </ol>
+          <p><b>Changing how current devices are used (class-7)</b></p>
+          <ul>
+            <li>Turn off end-user computing devices (monitors, computers, printers) when not in use.</li>
+            <li>Automatic power management.</li>
+            <li>User education is important.</li>
+            <li>Policy can also help.</li>
+            <li>Green computing + employee health.</li>
+            <li><b>Servers:</b> spin up, spin down
+              <ul>
+                <li>Specialized software and hardware</li>
+                <li>More complexity → more failures</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.5 Moving to cloud services</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Cloud providers can be more efficient.</li>
+            <li>Cost and environmental impact go off to the provider.</li>
+            <li>Cloud = automatic green? Depends on efficiency, source of electricity, old infrastructure management.</li>
+            <li>Cloud computing is also a money saver (server, electricity, cooling, maintenance, IT staff, data center space).</li>
+            <li>Large upfront investment + ongoing infrastructure costs; pay for the service you use.</li>
+          </ul>
+          <p><b>Pricing risk</b></p>
+          <ul>
+            <li>Cloud prices can increase (e.g. Illustrator).</li>
+            <li>Do long-term cost analysis.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.6 Digitalizing non-IT functions</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Mail</li>
+            <li>Checks and official documents</li>
+            <li>Telephone</li>
+            <li>Meetings and conferences</li>
+            <li>Going to the office</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.7 Greening your energy-saving moves</span>
+        </summary>
+        <div class="sec-body">
+          <ol type="i">
+            <li>Saves money and traditionally green, e.g. replace old servers with energy-efficient servers.</li>
+            <li>Saves money and not all that green, e.g. bulk purchase agreement of laptops.</li>
+            <li>Saves money and not green at all, e.g. hiring an executive of another country.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>2.8 Money-saving efforts</span>
+        </summary>
+        <div class="sec-body">
+          <ol type="i">
+            <li>Stop doing stuff, e.g. reduce travel budget.</li>
+            <li>Do similar stuff differently, e.g. PC → tablets.</li>
+            <li>Do new stuff, e.g. online documentation instead of physical manuals.</li>
+            <li>Cost saving and product development support each other.</li>
+          </ol>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q2">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 2 [CO2]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q2')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A mid-sized software company, CodeNova, recently decided to upgrade its infrastructure to become more energy-efficient. The company replaced its old servers with energy-efficient cloud-based solutions, switched all office lighting to LED systems, and programmed all devices to enter sleep mode after periods of inactivity. Additionally, they introduced an employee awareness program on energy-saving habits. Six months after implementation, CodeNova reported a 25% reduction in energy consumption and a noticeable drop in their electricity bills.</p><p>Discuss how CodeNova’s implementation of energy-efficient practices positively impacts both the environment and the company. In your answer, explain the environmental benefits of reduced energy consumption and how such initiatives contribute to sustainable development.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q2">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 2</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q2')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A small business plans to transition many of its services to the cloud and digitize previously paper-based non-IT functions to save money and improve sustainability. You’re asked to create a roadmap. What steps would you recommend to ensure the transition is both cost-effective and green?</p><p>Focus on the functions you would digitize first. How would you evaluate when moving to cloud services is advantageous from a cost and energy perspective? Justify your answer.</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="sum25-q6">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 6</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q6')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>After the pandemic, a company shifts to remote work. This reduces commuting but increases household energy use and reliance on cloud storage. Analyze how remote working practices align with green computing principles and contribute to the following SDG:</p><ol type="a"><li>Sustainable cities (SDG 11)</li><li>Climate action (SDG 13)</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Fall 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="f25-q2">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 2</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q2')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>State the concept of <b>Nega watts</b>. A mid-sized software company operates an office with 300 desktop computers, multiple servers, and networking equipment that run continuously, even during non-working hours. The company has noticed a steady increase in electricity bills and a higher carbon footprint due to inefficient energy usage. Management wants to implement energy-efficient green computing practices without affecting employee productivity.</p><p>As an IT manager, identify three energy-efficient green computing measures that can be implemented in the organization. Explain how these measures reduce energy consumption and carbon emissions.</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="f25-q4">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 4</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q4')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A city authority introduces an electronic ticketing system for public transportation that requires dedicated ticketing machines at every station. The machines run continuously, require regular maintenance, and are replaced frequently due to hardware failures. An environmental audit suggests that many users already carry smartphones capable of performing the same function.</p><p>Explain how this system could be redesigned to minimize reliance on dedicated computing devices. Why can computer-less or reduced-computer approaches be more environmentally sustainable? Discuss the benefits and possible challenges of implementing such solutions.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q4">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 4</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q4')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A large university aims to reduce operational costs and improve environmental sustainability by digitizing several non-IT functions. The university is also adopting green computing practices step by step.</p><p>Identify five non-IT functions based on the scenario that have been digitized and explain how digitization improves their efficiency.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 5. Chapter 3 -->
+  <details class="ch" id="u5">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>5. Chapter 3</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.2 What drives the green agenda?</span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Greens:</b> people who strongly support environment protection and sustainability.</p>
+          <ul>
+            <li>Traditional stereotype of greens: business people think greens oppose business.</li>
+            <li>Protecting nature is more important than maximizing profits.</li>
+            <li>Economic growth should not damage the environment.</li>
+            <li>Are greens always against business? This is changing.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.3 Key roots of environmentalism</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Conservation was the beginning (forests, rivers, wildlife, national parks).</li>
+            <li>Pollution became an important concern.</li>
+            <li>Protecting endangered species.</li>
+            <li>Environmental organizations were formed.</li>
+            <li>Environmentalism entered politics, e.g. Green Party of Germany.</li>
+            <li>Sustainability is the core idea.</li>
+            <li>Climate change became a new priority.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.4 Environmentalism and IT</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>IT is both part of the solution and part of the environmental problem.</li>
+            <li>IT was originally seen as environmentally friendly (paperless office, teleconferencing etc.).</li>
+            <li>Environmental organizations actually use technology (websites, social media etc.).</li>
+            <li>IT also creates environmental problems:
+              <ul>
+                <li>Mining rare materials</li>
+                <li>Electricity consumption</li>
+                <li>Electronic waste</li>
+                <li>Worker welfare</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.5 The new imperative of climate change</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Climate change is the biggest driver of green computing.</li>
+          </ul>
+          <p><b>Four levels to the effects of climate change:</b></p>
+          <ol>
+            <li>Laws and regulations (mandatory)</li>
+            <li>Company policies and public statements</li>
+            <li>Personal beliefs</li>
+            <li>How the company should position itself</li>
+          </ol>
+          <ul>
+            <li>Personal beliefs vs professional responsibility.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.6 A brief history of the climate</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Earth's climate has always changed.</li>
+            <li>Snowball Earth (650 million years ago).</li>
+            <li>Earth was also much warmer (about 10°C more; sea level rose).</li>
+            <li>Ice Ages.</li>
+            <li><b>Holocene:</b> the current geological period (12,000 years ago).</li>
+          </ul>
+          <p><b>Why is today's climate change different?</b></p>
+          <ul>
+            <li>Today's warming is occurring over about 100 years → less time to adapt.</li>
+            <li>Rising sea levels; littoral zones are in danger.</li>
+          </ul>
+          <p><b>Anthropocene:</b> human activities became the dominant influence on Earth's environment and climate.</p>
+          <p><b>Geoengineering:</b> large-scale technological methods designed to influence Earth's climate.</p>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.7 Al Gore and climate change (class-9)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Major public advocate for climate change.</li>
+            <li><b>IPCC:</b> international scientific body that assesses scientific knowledge related to climate change.</li>
+            <li>Why didn't government simply solve climate change?
+              <ul>
+                <li>The "Global Coordination" problem</li>
+                <li>International agreements matter</li>
+                <li>Business-level collective action problem</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.8 The 2°C warming "limit"</span>
+        </summary>
+        <div class="sec-body">
+          <p>PPM = parts per million.</p>
+          <div class="scroll">
+            <table>
+              <tr><th>Period</th><th>CO₂ level</th></tr>
+              <tr><td>Pre-industrial</td><td>280 ppm</td></tr>
+              <tr><td>At the time the book was written</td><td>390 ppm</td></tr>
+              <tr><td>Doubling of pre-industrial</td><td>560 ppm</td></tr>
+            </table>
+          </div>
+          <ul>
+            <li>Increases 3 ppm every year.</li>
+            <li><b>Consequences:</b> higher temperature, ice melting, sea level rise, loss of biodiversity, ocean acidification.</li>
+            <li>Cutting emissions by 80% by 2050.</li>
+            <li>Why is reducing CO₂ so difficult? Economic growth, and reducing people's quality of life; developed vs developing countries.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.9 Climate change and IT</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>According to Gartner (handwriting unclear), IT generates about 3% of emissions worldwide.</li>
+            <li>Green computing improves IT's reputation.</li>
+            <li>Direct environmental impact.</li>
+            <li>Indirect environmental impact.</li>
+            <li>Use IT intelligently and efficiently.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.10 What next with climate change?</span>
+        </summary>
+        <div class="sec-body">
+          <ol type="i">
+            <li>Blowing through the 2°C limit</li>
+            <li>Rapid warming this century (4–6°C)</li>
+            <li>Faster sea level rise this century</li>
+            <li>A great die-off in the natural world</li>
+            <li>Food and water shortages (2060–2069)</li>
+            <li>Increased use of coal; 2× of oil, 3× of natural gas (CO₂ emissions)</li>
+            <li>Increases in extreme weather</li>
+            <li>Use of unconditional fossil fuel resources</li>
+            <li>Hopelessness on limiting emissions</li>
+            <li>The 2014 IPCC report</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.11 What it means to "go green"</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>Triple bottom line:</b> people, planet, profit.</li>
+            <li>Traditional business vs green business.</li>
+            <li>Not putting profit first actually leads to more profit in the long run.</li>
+          </ul>
+          <p><b>Five-step process for going green:</b></p>
+          <ol type="i">
+            <li>Think sustainability</li>
+            <li>Analyze business profits</li>
+            <li>Put ideas into 3 buckets (Yes, Maybe, No)</li>
+            <li>Take action</li>
+            <li>Measure and report</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.12 Why IT is a climate change solution</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>Greenability:</b> data centers are fungible; intermittent renewable energy.</li>
+            <li><b>Substitutability:</b> e.g. videoconference.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>3.13 Green development and "going green"</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Green skills can make you attractive to employers.</li>
+            <li>Green projects demonstrate more than environmental awareness.</li>
+            <li>Make your career sustainable.</li>
+          </ul>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q3">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 3 [CO1]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q3')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>The government of a developing country, Zarovia, after reviewing the latest IPCC reports, initiates a national policy aiming to align with the global effort to keep temperature rise below 2°C—ideally targeting 1.5°C. The policy includes transitioning to renewable energy, improving public transportation, enforcing stricter emissions standards for industries, and investing in energy efficiency for urban infrastructure. While some sectors welcome the move, others—particularly in the fossil fuel industry—argue that the transition could slow economic growth and increase unemployment in the short term.</p><p>Discuss the significance of the 2°C warming limit in the context of Zarovia’s climate policy. Why is staying below this threshold critical for both global and national sustainability?</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q4">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 4</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q4')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>The IT sector is rapidly expanding: data centers, cloud computing, crypto currency mining, abundance of smart devices, etc. A 2025 report estimates that the global ICT sector could account for up to 8% of global carbon emissions by 2030 if no corrective action is taken. You are part of a sustainability task force at a global tech company aiming to align operations that support the 2°C limit.</p><p>What concrete steps should your company take to reduce its own impact, and how can it help other industries achieve climate targets through digital innovation?</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Fall 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="f25-q3">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 3</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q3')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A university campus is modernizing its digital infrastructure by introducing smart classrooms, high-performance computing labs, and always-on networking equipment. Although these upgrades improve learning and research capabilities, the university’s annual electricity bill and carbon footprint increase significantly. Additionally, outdated computers and networking devices are being discarded without proper recycling.</p><p>Based on this scenario, analyze how IT systems contribute to environmental problems. Why is it important for a computer engineer to consider environmental sustainability when designing and managing IT systems? Explain how green computing practices can be applied in this context to reduce energy consumption, electronic waste, and environmental impact.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q5">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 5</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q5')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A rapidly developing country continues expanding coal-fired power plants and increasing industrial production to support economic growth. At the same time, transportation and energy demand continue to rise, leading to higher carbon dioxide (CO₂) emissions each year. Climate analysts warn that if such trends continue globally, Earth’s average surface temperature may exceed the 2°C threshold.</p><p>Discuss the consequences of allowing Earth’s average surface temperature to rise beyond 2°C.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 6. Chapter 6 -->
+  <details class="ch" id="u6">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>6. Chapter 6</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>6.1 What makes a device green? (class-10)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Smallest class of device</li>
+            <li>Smaller size</li>
+            <li>Lower weight</li>
+            <li>Longer battery life</li>
+            <li>Lower power usage per hour</li>
+            <li>Green packaging</li>
+            <li>Slimline packaging</li>
+            <li>Slimline or electronic documentation</li>
+            <li>Volume purchase option</li>
+            <li>Meets or exceeds Energy Star standards</li>
+            <li>Products free of hazardous substances</li>
+            <li>Use of recycled plastics</li>
+            <li>Durability</li>
+            <li>Ease of repair</li>
+            <li>Product take back</li>
+            <li>Reusability</li>
+            <li>Supplier green goodness</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>6.2 What makes a supplier green?</span>
+        </summary>
+        <div class="sec-body">
+          <ol>
+            <li>Leadership commitment</li>
+            <li>Company-wide commitment</li>
+            <li>Long-standing commitment</li>
+            <li>Green supply chain</li>
+            <li>Leading point in marketing</li>
+            <li>Promotion to employees</li>
+            <li>Case studies</li>
+            <li>Carbon footprint assessment</li>
+            <li>Industry leadership</li>
+            <li>External verification</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Why greener companies are better suppliers</span>
+        </summary>
+        <div class="sec-body">
+          <p>Three major reasons:</p>
+          <ol>
+            <li>The peacock effect (pointing to "unwanted" in the notes)</li>
+            <li>The serendipity effect</li>
+            <li>Longer-term orientation</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>6.4 Giving suppliers and vendors feedback</span>
+        </summary>
+        <div class="sec-body">
+          <ol>
+            <li>Tell them what you're going to tell them.</li>
+            <li>Tell them.</li>
+            <li>Tell them what you've told them.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>6.5 Publicizing your selection process and the winner</span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Benefits:</b></p>
+          <ul>
+            <li>Enhanced vendor participation</li>
+            <li>A greener offer</li>
+            <li>Better financial terms</li>
+            <li>Better support</li>
+            <li>Better products</li>
+          </ul>
+          <p><b>Suggestions to follow in publicity efforts:</b></p>
+          <ul>
+            <li>Keep it low key</li>
+            <li>Keep it positive</li>
+            <li>Measure success</li>
+          </ul>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q4">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 4 [CO2]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q4')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>ABC Tech has recently announced its commitment to becoming carbon-neutral. The company decided to shift to green devices and work only with green-certified suppliers. It begins designing laptops and smartphones using recyclable materials, energy-efficient components, and modular parts to extend product lifespan. ABC Tech also revises its supply chain policy to only partner with suppliers who meet strict environmental standards—such as using renewable energy, minimizing water waste, and maintaining ethical labor practices. While the move increases production costs slightly, it enhances the company's brand image and meets growing consumer demand for environmentally responsible products.</p><p>Analyze how this focus on green devices and green suppliers contributes to environmental sustainability. What are the potential long-term benefits and challenges of this approach from both an environmental and business perspective?</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q3">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 3</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q3')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>ABC is a startup deciding between purchasing high-end laptops from Supplier A (non-green certified but well-established) or mid-tier laptops from Supplier B that claim lower power-consumption and support take-back/disposal programmes. They also expect rapid turnover of devices in 3 years. As the IT consultant of ABC, how would you advise them on the green computing decision given their business model of frequent refresh and replacement?</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q6">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 6</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q6')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A software company is planning to upgrade all office computers to support business expansion and replace older systems. Management wants to reduce environmental impact and align procurement decisions with sustainability goals.</p><p>Propose a sample buying statement explaining how the company will make environmentally friendly purchasing decisions by considering green devices and suppliers.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 7. Book 2 (Ch 1, 5) -->
+  <details class="ch" id="u7">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>7. Book 2 (Ch 1, 5)</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Chapter 1</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Parallel vs (comparison left unfinished in notes).</li>
+            <li>Tight coupling &amp; loose coupling.</li>
+            <li><b>Amdahl's law:</b> the limits of parallelism.</li>
+          </ul>
+          <div class="formula">Speedup ≤ 1 / ( S + (1 − S) / N )</div>
+          <ul>
+            <li>Comparisons (heading only; no details in notes).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Chapter 5</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>Hot data</b> → frequently used data → keep in faster storage to access easily.</li>
+            <li><b>Cold data</b> → less used data.</li>
+            <li>SSD → tier hot; HDD → tier cold.</li>
+          </ul>
+          <p><b>Spin down and PUE (class-13)</b></p>
+          <ul>
+            <li>Spin down → target cold data.</li>
+            <li><b>PUE</b> = total facility power / IT equipment power.</li>
+            <li>Facility power → maintain power.</li>
+            <li>A value closer to 1 is most efficient.</li>
+          </ul>
+          <p><b>Energy vs reliability</b></p>
+          <ul>
+            <li>Mechanical stress</li>
+            <li>Thermal cycling</li>
+            <li>Decreased lifetime</li>
+          </ul>
+          <p>Cycle: Active → idle → spin down. Temperature rises when active; spin up and temperature falls on spin down.</p>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q6">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 6 [CO2]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q6')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>AetherCloud Solutions is a rapidly expanding cloud service provider. They are planning a new flagship data center at Notun Bazar to manage its growth. The company's key objectives are to significantly reduce the high operational costs of its current facilities and to meet the growing demand from corporate clients for environmentally sustainable services.</p><p>As the lead Green Computing consultant for this project, provide a proposal for designing this green data center, focusing your recommendations on the following two foundational areas: Building infrastructure and Power Supply Considerations.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q8">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 8</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q8')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A large university plans to build a new data center to support its cloud computing, AI research, and digital learning platforms. However, the administration is concerned about the high energy consumption and carbon emissions associated with traditional data centers. They want the new facility to be environmentally sustainable, energy-efficient, and aligned with the principles of green computing. As the lead system designer, you are asked to propose a design plan for a Green Data Center that supports the university’s sustainability vision. Based on this scenario, answer the following questions:</p><ol type="a"><li>What key technologies and architectural choices would you include to make the data center energy-efficient?</li><li>How would renewable energy sources and smart cooling systems be integrated?</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Fall 2025</span>
+          <span class="pyq-pill">2 Questions</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="f25-q5">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 5</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q5')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A small data center is trying to reduce execution time by adding more processors. After reviewing their entire codebase and system architecture, engineers found that at most 80% code running on their system can be parallelized. What is the theoretical speedup when using:</p><ol type="a"><li>16 processors</li><li>12 processors</li></ol><p>What happens to the speedup predicted by Amdahl’s Law when the number of processors approaches infinity? Explain briefly.</p>
+            </div>
+          </div>
+          <div class="pyq-card" data-qid="f25-q8ab">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Fall 2025 – Question 8 (a & b)</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">Hot/Cold Data & Disk Power State</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('f25-q8ab')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>Explain the concept of Hot Data and Cold Data. State the impact of disk power state on the storage.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q7">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 7</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q7')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <ol type="a"><li>A cloud computing company is upgrading its data center to improve performance for processing large-scale scientific simulations. Engineers analyze the workload and find that 80% of the application code can be parallelized and executed across multiple processors. If the company wants to achieve a theoretical speedup of 4, determine the minimum number of processors required.</li><li>Disk spin-down can potentially reduce energy consumption by 20% to 50% in large-scale storage clusters. Analyze the trade-off between energy savings and system performance.</li></ol>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- 8. Chapter 9 -->
+  <details class="ch" id="u8">
+    <summary>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>8. Chapter 9</span>
+    </summary>
+    <div class="ch-content">
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.1 Why greenhouse gas emissions are important</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Major cause of global warming.</li>
+            <li>IT contributes through the energy required to manufacture and operate electronic devices.</li>
+            <li>Greenhouse gases are gases in the atmosphere that trap heat, e.g. CO₂, CH₄.</li>
+            <li><b>Energy vs GHG emissions:</b>
+              <ul>
+                <li>Energy consumption = how much electricity / fuel is used.</li>
+                <li>GHG emissions = how much greenhouse gas is released as a result.</li>
+              </ul>
+            </li>
+            <li>Carbon emissions = energy consumed × emission factor.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.2 Sources of greenhouse gases and warming</span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Natural:</b> volcanic eruptions, fires, decomposition, respiration and digestion.</p>
+          <p><b>Human:</b> burning coal; burning oil (including diesel and gasoline); burning natural gas; fracking for gas.</p>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.3 Is there still doubt about climate change?</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Yes, there are doubters, but not significant doubt in mainstream climate science.</li>
+            <li>Some people question or reject aspects of climate change.</li>
+            <li>We should respect scientific evidence when evaluating environmental problems.</li>
+            <li><b>Facts:</b> strong scientific evidence.</li>
+            <li><b>Solutions / policies:</b> reasonable debate.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.4 Why are there still doubters and deniers?</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>People don't like facts that may lead to uncomfortable consequences (psychological resistance).</li>
+            <li>Being skeptical is not automatically bad; sometimes it means asking for evidence and testing claims.</li>
+            <li>Disinformation campaigns create public uncertainty.</li>
+            <li>Public opinion can be influenced not only by scientific evidence but also by economic interests, political communication, and media.</li>
+            <li><b>Echo chamber:</b> an environment where people mostly encounter information that agrees with what they already believe.</li>
+          </ul>
+          <p><b>Many reasons to do green computing, believing in it or not:</b></p>
+          <ol>
+            <li>Saving money</li>
+            <li>Reducing business risk</li>
+            <li>Cutting pollution</li>
+            <li>Treating people better</li>
+            <li>Attracting and retaining customers, employees and supply-chain partners</li>
+            <li>Complying with current and likely future regulations</li>
+            <li>Positive publicity for the IT group and company</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.6 What's next with climate change? (class-14)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Climate change news tracking weather extremes.</li>
+            <li>A steady increase in events related to climate change.</li>
+            <li>Gradual decrease in doubt and denial as facts accumulate.</li>
+            <li>Climate change becoming "normal".</li>
+            <li>Disproportionate rewards to early adopters.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.7 Reducing emissions I: embodied energy</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Energy used to manufacture, transport, and build a product before it is used is called <b>embodied energy</b>.</li>
+            <li>Reducing embodied energy gives double benefits:
+              <ol type="i">
+                <li>Lower manufacturing or construction emissions</li>
+                <li>Lower operating emissions</li>
+              </ol>
+            </li>
+            <li><b>Example:</b> tablet vs laptop (embodied energy ⅓, 90% less operating emissions).</li>
+            <li><b>Data center trade-off:</b> a new building needs embodied energy, but long-term energy savings may be much greater.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.8 Reducing emissions II: daily energy use (class-15)</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Reducing electricity use generally reduces the greenhouse gas footprint, but it also depends on the source of electricity.</li>
+          </ul>
+          <div class="scroll">
+            <table>
+              <thead>
+                <tr><th>Source</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Coal</td><td>Cheap but high carbon emission.</td></tr>
+                <tr><td>Oil</td><td>Small but declining source of electricity; more valuable for transportation, petrochemical products etc.</td></tr>
+                <tr><td>Natural gas</td><td>Lower carbon footprint than coal (¼) and oil (½), but fracking can cause environmental problems.</td></tr>
+                <tr><td>Hydroelectric</td><td>Renewable, cheap, low emission. New dams can cause environmental damage.</td></tr>
+                <tr><td>Solar and wind</td><td>Renewable, low emission, increasing steadily.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.9 Reducing emissions III: using different sources</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Use cleaner energy (reduce dependency on coal); get more natural gas and renewable energy.</li>
+            <li>Reduce peak energy demand.</li>
+            <li>Use solar energy.</li>
+            <li>Solar thermal (sunlight to heat).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>9.10 Reducing emissions IV: supply chain success</span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li>Cut at home.</li>
+            <li>Pocket outsourcing savings.</li>
+            <li>Sweat your supply chain.</li>
+            <li>Consider nonuse.</li>
+            <li>Repeat (last word unclear in notes).</li>
+          </ul>
+        </div>
+      </details>
+      <!-- Previous Year Questions Section -->
+      <div class="pyq-divider">
+        <span class="pyq-divider-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Previous Year Questions
+        </span>
+      </div>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s25-q7">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2025 – Question 7 [CO1]</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s25-q7')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>What is Embodied Energy? Discuss how understanding and reducing a product's embodied energy can be a key strategy for lowering its overall greenhouse gas emissions.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Summer 2025</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="sum25-q5">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Summer 2025 – Question 5</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('sum25-q5')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A tech company operates a regional data-center and some remote branch offices. They discover that the vast majority of their IT energy use comes from equipment running 24/7 (even when idle) and the cooling systems in the data-center are outdated. A recent internal survey shows that the IT division accounts for 30% of the company’s total emissions (electricity use + upstream hardware manufacturing). The VP of IT wants you to propose a pilot project that targets both Energy Consumption and Greenhouse Gas Emissions reduction. Explain your proposal in detail.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="sec pyq-sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span>Spring 2026</span>
+          <span class="pyq-pill">1 Question</span>
+        </summary>
+        <div class="sec-body pyq-body">
+          <div class="pyq-card" data-qid="s26-q8">
+            <div class="pyq-card-header">
+              <span class="pyq-qlabel">Spring 2026 – Question 8</span>
+              <div class="pyq-header-actions">
+                <span class="pyq-marks">5 Marks</span>
+                <button type="button" class="pyq-ans-btn" onclick="openAnswerDrawer('s26-q8')" title="View answer and notes breakdown">
+                  <span>Answer</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="pyq-question-text">
+              <p>A company notices that its electricity bills and carbon footprint have been increasing due to heavy daily energy consumption in offices, including lighting, air conditioning, computers, and other electrical equipment. Management decides to adopt more sustainable energy practices and encourage employees to reduce environmental impact by changing everyday energy usage habits.</p><p>Explain the steps that can be taken in daily energy use by the company to reduce greenhouse gas emissions.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+  </main>
+  <!-- Right Sidepane Model Answer Panel -->
+  <aside class="answer-drawer" id="answer-drawer" aria-label="Question Model Answer Panel" aria-hidden="true">
+    <div class="answer-drawer-header">
+      <div class="drawer-header-left">
+        <span class="pyq-pill" id="ans-trimester">Trimester</span>
+        <span class="pyq-marks" id="ans-marks">Marks</span>
+      </div>
+      <button type="button" class="drawer-close-btn" onclick="closeAnswerDrawer()" title="Close answer sidepane" aria-label="Close answer sidepane">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="answer-drawer-content" id="answer-drawer-content">
+      <!-- Populated dynamically -->
+    </div>
+  </aside>
+</div>
+
+<button type="button" id="back-to-top" title="Back to top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script>
+// Sidebar drawer for mobile
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+
+function openSidebar() {
+  if (sidebar) sidebar.classList.add('open');
+  if (sidebarBackdrop) sidebarBackdrop.classList.add('open');
+}
+
+function closeSidebar() {
+  if (sidebar) sidebar.classList.remove('open');
+  if (sidebarBackdrop) sidebarBackdrop.classList.remove('open');
+}
+
+if (sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+
+function handleTocClick(id) {
+  openChapter(id);
+  closeSidebar();
+}
+
+// Expand / Collapse all
+function toggleAll(open) {
+  document.querySelectorAll('details').forEach(function(d) {
+    d.open = open;
+  });
+}
+
+// Open specific chapter by ID
+function openChapter(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.open = true;
+    // Also open its inner sections for convenience
+    el.querySelectorAll('details.sec').forEach(function(s) { s.open = true; });
+  }
+}
+
+// Active TOC Highlight on Scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      document.querySelectorAll('.toc-list a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+document.querySelectorAll('details.ch').forEach(ch => observer.observe(ch));
+
+// Reading progress & back to top visibility
+window.addEventListener('scroll', function() {
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (window.scrollY / (docHeight || 1)) * 100;
+  const pb = document.getElementById('progress-bar');
+  if (pb) pb.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+
+  const btt = document.getElementById('back-to-top');
+  if (btt) {
+    if (window.scrollY > 350) {
+      btt.classList.add('visible');
+    } else {
+      btt.classList.remove('visible');
+    }
+  }
+}, { passive: true });
+
+// Search / Filter
+const searchInput = document.getElementById('notes-search');
+const searchClearBtn = document.getElementById('search-clear-btn');
+const searchStatus = document.getElementById('search-status');
+
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+    
+    if (query.length > 0) {
+      if (searchClearBtn) searchClearBtn.style.display = 'block';
+      let totalMatches = 0;
+
+      const chapters = document.querySelectorAll('details.ch');
+      chapters.forEach(function(ch) {
+        let chHasMatch = false;
+        const sections = ch.querySelectorAll('details.sec');
+
+        sections.forEach(function(sec) {
+          const text = sec.textContent.toLowerCase();
+          if (text.includes(query)) {
+            sec.style.display = '';
+            sec.open = true;
+            chHasMatch = true;
+            totalMatches++;
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+
+        
+        const pyqDividers = ch.querySelectorAll('.pyq-divider');
+        const hasPyqMatch = Array.from(sections).some(sec => sec.classList.contains('pyq-sec') && sec.style.display !== 'none');
+        pyqDividers.forEach(d => { d.style.display = hasPyqMatch ? '' : 'none'; });
+
+        if (chHasMatch) {
+          ch.style.display = '';
+          ch.open = true;
+        } else {
+          ch.style.display = 'none';
+        }
+      });
+
+      if (searchStatus) {
+        searchStatus.style.display = 'inline-block';
+        searchStatus.textContent = totalMatches + ' matching ' + (totalMatches === 1 ? 'section' : 'sections');
+      }
+    } else {
+      resetSearch();
+    }
+  });
+}
+
+function resetSearch() {
+  if (searchInput) searchInput.value = '';
+  if (searchClearBtn) searchClearBtn.style.display = 'none';
+  if (searchStatus) searchStatus.style.display = 'none';
+  
+  
+  document.querySelectorAll('.pyq-divider').forEach(function(d) {
+    d.style.display = '';
+  });
+
+  document.querySelectorAll('details.ch, details.sec').forEach(function(d) {
+    d.style.display = '';
+  });
+}
+
+if (searchClearBtn) {
+  searchClearBtn.addEventListener('click', function() {
+    resetSearch();
+    if (searchInput) searchInput.focus();
+  });
+}
+
+
+// ==========================================
+// PYQ Answers Database & Side-by-Side Modal
+// ==========================================
+const PYQ_ANSWERS = {
+  "s25-q3": {
+    qid: "s25-q3",
+    chapterTitle: "5. Chapter 3",
+    trimester: "Spring 2025",
+    title: "Spring 2025 – Question 3 [CO1]",
+    marks: "5 Marks",
+    answerHtml: `
+      <h4>1. Significance of the 2°C Limit in Zarovia's Policy</h4>
+      <ul>
+        <li><b>Scientific Ceiling (IPCC):</b> 2°C is the globally accepted threshold set by the IPCC to avoid irreversible, self-reinforcing planetary tipping points.</li>
+        <li><b>Atmospheric CO₂ Budget:</b> Pre-industrial CO₂ was <b>280 ppm</b>; current levels are ~<b>390 ppm</b> (rising by <b>3 ppm/year</b>); doubling is <b>560 ppm</b>. Staying below 2°C requires an <b>80% cut in global emissions by 2050</b>.</li>
+        <li><b>Policy Direction:</b> Provides Zarovia with a binding standard to shift from coal to renewables, invest in electric transit, and enforce industrial emissions limits.</li>
+      </ul>
+
+      <h4>2. Why Staying Below 2°C is Critical for Global Sustainability</h4>
+      <ul>
+        <li><b>Prevents Runaway Warming:</b> Breaching 2°C triggers positive feedback loops, causing global temperatures to spike by <b>4°C to 6°C</b> this century.</li>
+        <li><b>Prevents Sea Level Rise:</b> Polar ice melting threatens coastal settlements and <b>littoral zones</b> worldwide.</li>
+        <li><b>Averts Mass Extinction:</b> Prevents <i>"a great die-off in the natural world"</i> and ocean acidification that destroys marine food chains.</li>
+        <li><b>Global Food &amp; Water Security:</b> Prevents severe agricultural collapse and freshwater shortages projected for <b>2060–2069</b>.</li>
+      </ul>
+
+      <h4>3. Why Staying Below 2°C is Critical for Zarovia's National Sustainability</h4>
+      <ul>
+        <li><b>Vulnerability of Developing Nations:</b> Developing countries suffer worst from extreme floods, droughts, and heatwaves due to weaker infrastructure.</li>
+        <li><b>Long-Term Economy vs Short-Term Disruption:</b> While the fossil fuel sector fears short-term job loss, unchecked climate destruction would wreck agriculture, health, and urban infrastructure.</li>
+        <li><b>Triple Bottom Line (People, Planet, Profit):</b> Developing green transit and renewable energy creates sustainable local jobs and energy independence.</li>
+      </ul>
+    `
+  },
+  "sum25-q4": {
+    qid: "sum25-q4",
+    chapterTitle: "5. Chapter 3",
+    trimester: "Summer 2025",
+    title: "Summer 2025 – Question 4",
+    marks: "5 Marks",
+    answerHtml: `
+      <h4>1. Concrete Steps to Reduce Company's Own Impact (Internal)</h4>
+      <ul>
+        <li><b>Leverage "Greenability" (Dynamic Workloads):</b> Data center workloads are <i>fungible</i> (flexible); shift heavy compute/batch jobs to regions and times with surplus renewable energy (solar/wind).</li>
+        <li><b>100% Renewable Power:</b> Power all data centers and cloud facilities through renewable energy contracts, cutting grid coal dependency.</li>
+        <li><b>Server Virtualization:</b> Consolidate multiple virtual machines onto fewer physical servers; turn off and decommission idle hardware to cut power waste.</li>
+        <li><b>Hardware Lifecycle &amp; E-Waste:</b> Extend server life cycles, repair modular parts, and partner only with certified e-waste recyclers.</li>
+        <li><b>Follow the 5-Step Process:</b> (1) Think sustainability → (2) Analyze profits → (3) Sort ideas (Yes/Maybe/No) → (4) Take action → (5) Measure and report.</li>
+      </ul>
+
+      <h4>2. Helping Other Industries via Digital Innovation (External)</h4>
+      <ul>
+        <li><b>Leverage "Substitutability" (Replacing Physical with Digital):</b>
+          <ul>
+            <li><b>Teleconferencing &amp; Remote Work:</b> Replace high-emission business travel and daily commutes with video conferencing and cloud collaboration.</li>
+            <li><b>Paperless Dematerialization:</b> Replace physical paper, shipping, and storage with digital workflows and cloud documents.</li>
+          </ul>
+        </li>
+        <li><b>Smart IoT &amp; Optimization Software:</b> Provide AI and IoT tools for transport, logistics, and factories to optimize vehicle routes and HVAC energy use.</li>
+        <li><b>Smart Energy Grids:</b> Develop software to help utilities balance supply and demand for intermittent renewable energy.</li>
+      </ul>
+    `
+  },
+  "f25-q3": {
+    qid: "f25-q3",
+    chapterTitle: "5. Chapter 3",
+    trimester: "Fall 2025",
+    title: "Fall 2025 – Question 3",
+    marks: "5 Marks",
+    answerHtml: `
+      <h4>1. How IT Systems Contribute to Environmental Problems (4 Core Vectors)</h4>
+      <ul>
+        <li><b>1. Electricity Consumption:</b> Always-on servers, switches, and high-performance labs consume massive electrical power, generating greenhouse gases.</li>
+        <li><b>2. Electronic Waste (E-Waste):</b> Outdated computers discarded without proper recycling leach toxic heavy metals (lead, mercury, cadmium) into landfills and water.</li>
+        <li><b>3. Mining Rare Materials:</b> Hardware manufacturing requires intensive mining of rare-earth metals, causing habitat destruction, pollution, and high embodied emissions.</li>
+        <li><b>4. Worker Welfare:</b> Unsafe informal recycling in developing nations exposes workers to toxic chemical fumes without protection.</li>
+      </ul>
+
+      <h4>2. Why Computer Engineers Must Consider Sustainability</h4>
+      <ul>
+        <li><b>Professional Responsibility:</b> Regardless of personal beliefs, engineers have an ethical duty to design energy-efficient systems and comply with environmental laws.</li>
+        <li><b>Long-Term Architectural Impact:</b> Hardware specifications and software efficiency decisions made at design time dictate energy use for years of operation.</li>
+        <li><b>Career &amp; Institutional Value:</b> Green computing skills lower operational costs, enhance company reputation, and make engineers highly attractive to employers.</li>
+      </ul>
+
+      <h4>3. Campus Green Computing Practices to Apply</h4>
+      <ul>
+        <li><b>Automated Power Management:</b> Automatically shut down smart classroom displays, PC monitors, and lab machines outside university hours; enforce sleep modes.</li>
+        <li><b>HPC Workload Virtualization:</b> Consolidate compute jobs across virtual machines and dynamically power down idle server blades.</li>
+        <li><b>Certified Take-Back &amp; Recycling:</b> Establish an official campus take-back program and dispose of e-waste only through certified recyclers.</li>
+        <li><b>Hardware Lifecycle Extension:</b> Upgrade RAM and SSDs to extend PC lifespans from 3 to 5–6 years; repurpose older PCs as library/kiosk terminals.</li>
+      </ul>
+    `
+  },
+  "s26-q5": {
+    qid: "s26-q5",
+    chapterTitle: "5. Chapter 3",
+    trimester: "Spring 2026",
+    title: "Spring 2026 – Question 5",
+    marks: "5 Marks",
+    answerHtml: `
+      <h4>1. Context of the 2°C Threshold (Section 3.8)</h4>
+      <ul>
+        <li><b>Pre-industrial CO₂:</b> 280 ppm → current level: ~390 ppm (rising by <b>3 ppm/year</b>) → doubling: <b>560 ppm</b>.</li>
+        <li>Breaching 2°C triggers uncontrollable planetary feedback loops and runaway warming.</li>
+      </ul>
+
+      <h4>2. Key Consequences of Exceeding 2°C (Section 3.8 &amp; 3.10)</h4>
+      <ul>
+        <li><b>1. Rapid Warming of 4°C to 6°C:</b> Self-amplifying feedbacks (melting polar ice, thawing permafrost releasing methane) accelerate global heating to <b>4°C–6°C</b> this century.</li>
+        <li><b>2. Faster Sea Level Rise:</b> Melting ice caps and glaciers cause rapid sea level rise, submerging coastal and <b>littoral zones</b> and displacing coastal populations.</li>
+        <li><b>3. "A Great Die-Off in the Natural World":</b> Because warming happens in only 100 years, ecosystems cannot adapt, leading to catastrophic mass extinction of plants and animals.</li>
+        <li><b>4. Severe Food &amp; Water Shortages (2060–2069):</b> Global crop yields collapse and glacial freshwater reserves deplete, causing widespread acute famines and water crises by <b>2060–2069</b>.</li>
+        <li><b>5. Extreme Weather Spikes:</b> Dramatic increase in high-category cyclones, flash floods, megadroughts, and deadly heatwaves.</li>
+        <li><b>6. Ocean Acidification:</b> High atmospheric CO₂ dissolves into oceans, destroying coral reefs and marine food chains.</li>
+        <li><b>7. Economic &amp; Health Collapse:</b> For developing countries relying on coal, resulting agricultural and infrastructure destruction far outweighs short-term industrial gains.</li>
+      </ul>
+    `
+  }
+};
+
+// Open Drawer Function
+function openAnswerDrawer(qid) {
+  const layout = document.querySelector('.app-layout');
+  const drawer = document.getElementById('answer-drawer');
+  const content = document.getElementById('answer-drawer-content');
+  const trimesterBadge = document.getElementById('ans-trimester');
+  const marksBadge = document.getElementById('ans-marks');
+  
+  if (!drawer || !content) return;
+
+  // Find card in DOM to get context
+  const card = document.querySelector(`.pyq-card[data-qid="${qid}"]`);
+  let qText = '';
+  let qLabel = 'Question Details';
+  let marks = '5 Marks';
+  let trimester = 'Exam Question';
+  let chapterTitle = 'Green Computing';
+
+  if (card) {
+    const qlabelEl = card.querySelector('.pyq-qlabel');
+    const marksEl = card.querySelector('.pyq-marks');
+    const textEl = card.querySelector('.pyq-question-text');
+    if (qlabelEl) qLabel = qlabelEl.textContent.trim();
+    if (marksEl) marks = marksEl.textContent.trim();
+    if (textEl) qText = textEl.innerHTML.trim();
+    
+    // Extract trimester
+    const triDetails = card.closest('details.pyq-sec');
+    if (triDetails) {
+      const triSpan = triDetails.querySelector('summary > span');
+      if (triSpan) trimester = triSpan.textContent.trim();
+    }
+    
+    // Extract chapter
+    const chDetails = card.closest('details.ch');
+    if (chDetails) {
+      const chSpan = chDetails.querySelector('summary > span');
+      if (chSpan) chapterTitle = chSpan.textContent.trim();
+    }
+  }
+
+  // Update header badges
+  if (trimesterBadge) trimesterBadge.textContent = trimester;
+  if (marksBadge) marksBadge.textContent = marks;
+
+  // Check if we have pre-written answer
+  const answerData = PYQ_ANSWERS[qid];
+
+  if (answerData) {
+    content.innerHTML = `
+      <div class="drawer-qtitle">${answerData.title}</div>
+      <div class="drawer-qsection">${chapterTitle}</div>
+
+      <div class="drawer-qbox">
+        <div class="drawer-qbox-label">Question Prompt</div>
+        <div class="drawer-qbox-text">${qText}</div>
+      </div>
+
+      <div class="drawer-ans-body" id="model-answer-text">
+        <div class="drawer-ans-header">
+          <span class="drawer-ans-badge">Model Answer</span>
+          <span class="pyq-marks">${marks}</span>
+        </div>
+        ${answerData.answerHtml}
+      </div>
+
+      <div class="drawer-copy-bar">
+        <button type="button" class="drawer-copy-btn" id="copy-ans-btn" onclick="copyDrawerAnswer()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Copy Answer</span>
+        </button>
+      </div>
+    `;
+  } else {
+    // Placeholder for other questions
+    content.innerHTML = `
+      <div class="drawer-qtitle">${qLabel}</div>
+      <div class="drawer-qsection">${chapterTitle}</div>
+
+      <div class="drawer-qbox">
+        <div class="drawer-qbox-label">Question Prompt</div>
+        <div class="drawer-qbox-text">${qText}</div>
+      </div>
+
+      <div class="drawer-placeholder">
+        <div class="drawer-placeholder-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        </div>
+        <h4>Model Answer In Preparation</h4>
+        <p>Complete memorizable model answers are currently live for <b>5. Chapter 3</b>. Answers for this question will be available soon.</p>
+      </div>
+    `;
+  }
+
+  // Shift center view to left and pop up answer on right
+  if (layout) layout.classList.add('has-answer-drawer');
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+  content.scrollTop = 0;
+}
+
+function closeAnswerDrawer() {
+  const layout = document.querySelector('.app-layout');
+  const drawer = document.getElementById('answer-drawer');
+  if (layout) layout.classList.remove('has-answer-drawer');
+  if (drawer) {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+}
+
+// Copy Answer text to clipboard
+function copyDrawerAnswer() {
+  const ansEl = document.getElementById('model-answer-text');
+  const btn = document.getElementById('copy-ans-btn');
+  if (!ansEl) return;
+
+  const textToCopy = ansEl.innerText || ansEl.textContent;
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    if (btn) {
+      const originalHTML = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Copied!</span>
+      `;
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    }
+  });
+}
+
+// Card click opens drawer
+document.querySelectorAll('.pyq-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.pyq-ans-btn')) return;
+    const qid = card.getAttribute('data-qid');
+    if (qid) openAnswerDrawer(qid);
+  });
+});
+
+// Keyboard ESC listener
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeAnswerDrawer();
+  }
+});
+
+</script>
+
+</body>
+</html>
