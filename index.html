@@ -1190,67 +1190,28 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec" open>
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Basics (class-1)</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Basics (class-1)</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Cloud Computing Definition:</b> Dynamically scalable, virtualized computing resources delivered on demand over the network.</p>
           <ul>
-            <li>Cloud computing: dynamically scalable, virtualized resources.</li>
-            <li>Six Paradigm (boxed heading; no details in notes).</li>
+            <li><b>On-Demand Self-Service:</b> Users provision computing capabilities (server time, network storage) automatically without human intervention from the service provider.</li>
+            <li><b>Broad Network Access:</b> Computing resources are accessible across standard network protocols from heterogeneous client platforms (laptops, mobile phones, workstations).</li>
+            <li><b>Resource Pooling:</b> Provider computing resources are pooled to serve multiple consumers using a multi-tenant model.</li>
+            <li><b>Rapid Elasticity:</b> Workloads scale outward or inward rapidly to automatically match real-time demand peaks.</li>
+            <li><b>Measured Service:</b> Resource usage is monitored, controlled, and billed based on actual consumption (utility pricing).</li>
           </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Virtualization</span>
-        </summary>
-        <div class="sec-body">
-          <ul>
-            <li>A physical server runs a hypervisor on top of it.</li>
-            <li>The hypervisor hosts several virtual machines (e.g. Veam, email server).</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Service models</span>
-        </summary>
-        <div class="sec-body">
-          <ul>
-            <li><b>SaaS</b> → software that is hosted in the cloud.</li>
-            <li><b>IaaS</b> → pay as you go (raw networking power, raw storage).</li>
-            <li><b>PaaS</b> → IDE.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Three categories of cloud services</span>
-        </summary>
-        <div class="sec-body">
-          <ul>
-            <li>SaaS</li>
-            <li>Attached service → plugin</li>
-            <li>Cloud platform</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Types of cloud computing</span>
-        </summary>
-        <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>The Six Computing Paradigms (Historical Evolution):</b></p>
           <ol>
-            <li><b>Public cloud</b> → everyone can use; open for all.</li>
-            <li><b>Private cloud</b> → exclusive use of one client.</li>
-            <li><b>Hybrid cloud</b> → (left blank in notes).</li>
+            <li><b>Centralized Computing (Mainframes):</b> All processing occurs on a single large central computer accessed by dumb terminals.</li>
+            <li><b>Distributed Computing (Client-Server):</b> Workloads split between local client machines and back-end database servers over a network.</li>
+            <li><b>Cluster Computing:</b> Multiple interconnected standalone computers working together as a single unified computing resource with shared memory or fast interconnects.</li>
+            <li><b>Grid Computing:</b> Geographically dispersed, heterogeneous computing systems combined into a virtual supercomputer for massive batch tasks.</li>
+            <li><b>Utility Computing:</b> Packaging computing power and storage as a metered service, similar to traditional public utilities (water and electricity).</li>
+            <li><b>Cloud Computing:</b> Modern convergence of utility computing, virtualization, and elastic distributed systems on demand.</li>
           </ol>
         </div>
       </details>
@@ -1258,17 +1219,130 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Other topics listed (class-2, class-3)</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Virtualization</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <p class="note">Only topic names are in the notes; no details yet.</p>
+          <p><b>Virtualization:</b> The foundational technology of cloud computing that abstracts physical hardware to run multiple isolated virtual environments on a single physical host.</p>
           <ul>
-            <li>Public vs private clouds</li>
-            <li>Cloud computing vs cloud services</li>
-            <li>Service oriented architecture</li>
-            <li>Web 2.0 and mashup</li>
-            <li>Pricing</li>
-            <li>Data center network architecture</li>
+            <li><b>Physical Server (Host):</b> The underlying hardware containing physical CPUs, memory modules, storage arrays, and network interfaces.</li>
+            <li><b>Hypervisor (Virtual Machine Monitor / VMM):</b> Software layer that manages physical hardware and dynamically allocates virtual resources:
+              <ul>
+                <li><i>Type-1 (Bare-Metal):</i> Runs directly on host hardware for maximum performance (e.g., VMware ESXi, KVM, Xen, Hyper-V).</li>
+                <li><i>Type-2 (Hosted):</i> Runs on top of a conventional host operating system (e.g., VirtualBox, VMware Workstation).</li>
+              </ul>
+            </li>
+            <li><b>Virtual Machines (Guest VMs):</b> Completely isolated software containers running guest operating systems and workloads (e.g., mail servers, web servers, database engines).</li>
+            <li><span class="star-point">⭐</span><b>Green Computing Benefit (Server Consolidation):</b>
+              <ul>
+                <li>Replaces 10–20 lightly loaded physical servers (running at only 5–15% capacity) with <b>1 dense physical server running at 70–80% capacity</b>.</li>
+                <li>Dramatically reduces data center electricity consumption, cuts cooling demands, and lowers embodied hardware manufacturing carbon.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Service models</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p>The standard SPI cloud delivery models define who manages which layer of the technology stack:</p>
+          <ul>
+            <li><span class="star-point">⭐</span><b>IaaS (Infrastructure as a Service):</b>
+              <ul>
+                <li><b>What is provided:</b> Raw, dynamically scalable computing resources—virtual machines, block storage, firewalls, and network routing.</li>
+                <li><b>Management responsibility:</b> The provider manages physical hardware, cooling, and virtualization. The <b>client manages operating systems, middleware, runtime, and software applications</b> (e.g., AWS EC2, Google Compute Engine, Microsoft Azure VMs).</li>
+                <li><b>Payment model:</b> Pay-as-you-go utility pricing based on CPU hours, RAM, and gigabytes stored.</li>
+                <li><b>Green sustainability contribution:</b> Dynamic resource elasticity prevents over-provisioning; workloads scale down automatically off-peak to prevent idle electricity waste.</li>
+              </ul>
+            </li>
+            <li><b>PaaS (Platform as a Service):</b>
+              <ul>
+                <li><b>What is provided:</b> A pre-configured development and deployment environment (operating systems, programming runtimes, database management, web servers).</li>
+                <li><b>Management responsibility:</b> The provider manages the entire underlying infrastructure and OS. The <b>client manages only their custom code and data</b> (e.g., Google App Engine, AWS Elastic Beanstalk, Heroku).</li>
+              </ul>
+            </li>
+            <li><b>SaaS (Software as a Service):</b>
+              <ul>
+                <li><b>What is provided:</b> Fully functional, ready-to-use software applications delivered to users directly through a web browser or API.</li>
+                <li><b>Management responsibility:</b> The cloud provider manages the entire technology stack from hardware to software updates (e.g., Google Workspace, Microsoft 365, Salesforce).</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Three categories of cloud services</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <ol>
+            <li><b>1. Software as a Service (SaaS):</b> End-user applications hosted entirely in the cloud, replacing locally installed desktop software.</li>
+            <li><b>2. Attached Services (Plugins &amp; APIs):</b> Cloud-hosted services that extend and add capabilities to local desktop or mobile applications (e.g., online translation APIs, automated cloud backup plugins, continuous anti-virus definitions, document synchronization).</li>
+            <li><b>3. Cloud Platforms:</b> Integrated suites of infrastructure, storage, and developer toolsets used to build, test, and host custom enterprise web applications.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Types of cloud computing</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p>Four primary deployment models define cloud access, ownership, and governance:</p>
+          <ol>
+            <li><b>1. Public Cloud:</b> Infrastructure owned and operated by a third-party cloud service provider, delivered over the public internet to multiple organizations (multi-tenant architecture, highest cost efficiency).</li>
+            <li><b>2. Private Cloud:</b> Infrastructure dedicated exclusively to a single business organization, hosted on-premises or by a third party (maximum security, strict data sovereignty, higher maintenance cost).</li>
+            <li><b>3. Hybrid Cloud:</b> A combination of public and private clouds connected by standardized technology:
+              <ul>
+                <li>Keeps mission-critical and sensitive data in the secure private cloud.</li>
+                <li>Enables <b>cloud bursting</b> to offload non-sensitive compute spikes into the public cloud during heavy traffic.</li>
+              </ul>
+            </li>
+            <li><b>4. Community Cloud:</b> Shared cloud infrastructure managed jointly by multiple organizations with common regulatory, security, or mission requirements (e.g., healthcare alliances, government agencies).</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Other topics listed (class-2, class-3)</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>How Core Enabling Technologies Work Together (Spring 2026 Q1 Core):</b></p>
+          <ul>
+            <li><b>Virtualization:</b> Abstracts physical hardware into flexible, dynamic virtual resource pools.</li>
+            <li><b>SOA (Service-Oriented Architecture):</b> Software design approach where business capabilities are modularized into independent, loosely coupled, reusable services.</li>
+            <li><b>Web Services:</b> Standard communication protocols (REST, SOAP, XML, JSON) that allow disparate services to communicate across networks regardless of underlying operating systems.</li>
+            <li><b>Web 2.0 / Web 3.0 &amp; Mashups:</b> User-facing layer that aggregates data and services from multiple independent web APIs into a single interactive application.</li>
+            <li><b>Integration Pipeline:</b> Hardware is virtualized $ightarrow$ SOA structures software into modular services $ightarrow$ Web Services interconnect them across the web $ightarrow$ Mashups deliver integrated end-user applications.</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>Data Center Network Architecture (Fall 2025 Q8c Core):</b></p>
+          <ul>
+            <li><b>Core Layer:</b> High-speed backbone switching incoming and outgoing data traffic between data centers and the public internet.</li>
+            <li><b>Aggregation Layer:</b> Middle tier linking access switches, providing load balancing, routing policies, and firewall protection.</li>
+            <li><b>Access / Edge Layer (Top-of-Rack / ToR Switches):</b> Direct network connection point for servers located within each equipment rack.</li>
           </ul>
         </div>
       </details>
@@ -1355,11 +1429,67 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec" open>
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Green IoT (class-18)</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Green IoT (class-18)</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Green IoT Definition:</b> Designing, deploying, and operating Internet of Things (IoT) devices, networks, and data infrastructure with minimal energy consumption and carbon emissions, while using IoT data to eliminate waste in other industries.</p>
           <ul>
-            <li>Sustainable development goals (listed as a topic).</li>
+            <li><b>Core Objectives:</b>
+              <ul>
+                <li>Minimize greenhouse gas emissions across the full sensor lifecycle.</li>
+                <li>Design ultra-low-power microcontrollers and low-power radio communication protocols.</li>
+                <li>Reduce toxic e-waste by replacing chemical batteries with ambient energy harvesting.</li>
+              </ul>
+            </li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>Three High-Yield Real-World Applications (Exam Favorites):</b></p>
+          <ol>
+            <li><b>1. Smart Agriculture (Spring 2025 Q8):</b>
+              <ul>
+                <li><b>Implementation:</b> Deploying soil moisture, temperature, and nitrogen-phosphorus-potassium (NPK) sensors across farming plots.</li>
+                <li><b>Sustainability Impact:</b> Enables automated precision drip irrigation and targeted fertilizer delivery; reduces agricultural water consumption by up to 50% and prevents groundwater contamination.</li>
+              </ul>
+            </li>
+            <li><b>2. Smart Cities (Summer 2025 Q7):</b>
+              <ul>
+                <li><b>Energy:</b> Adaptive street lighting using motion and ambient light sensors to dim LEDs during empty hours.</li>
+                <li><b>Water Management:</b> Acoustic and flow sensors detecting underground pipe leaks instantly before millions of liters are wasted.</li>
+                <li><b>Waste Management:</b> Ultrasonic fill-level sensors in trash containers optimizing municipal garbage truck pickup routes, reducing diesel fuel consumption and emissions.</li>
+              </ul>
+            </li>
+            <li><b>3. Smart Campuses &amp; Buildings (Spring 2026 Q2):</b>
+              <ul>
+                <li><b>Implementation:</b> Deploying IoT passive infrared (PIR) occupancy sensors and ambient light sensors across classrooms and halls.</li>
+                <li><b>Sustainability Impact:</b> Automatically powers down lighting and heating/air-conditioning (HVAC) systems when rooms are vacant, lowering campus electricity bills by 30–40%.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Intro to wireless technology</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Three Foundation Pillars of Wireless Sensor Networks (WSNs):</b></p>
+          <ul>
+            <li><b>1. Embedded:</b> Ultra-compact processing and storage hardware embedded directly inside physical objects and environments.</li>
+            <li><b>2. Networked:</b> Interconnected nodes communicating wirelessly via low-power protocols (Zigbee, 6LoWPAN, LoRaWAN, BLE).</li>
+            <li><b>3. Sensing:</b> Continuous monitoring of physical conditions (temperature, humidity, pressure, acoustic signals, chemical presence).</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>Multi-Hop (Hop-to-Hop) Routing vs. Direct Transmission:</b></p>
+          <ul>
+            <li><b>Direct Communication:</b> Nodes near the central gateway transmit data packets directly over short distances.</li>
+            <li><b>Hop-to-Hop Routing:</b> Distant nodes route packets through intermediate neighboring nodes in short steps.</li>
+            <li><b>Energy Advantage:</b> RF transmission power increases exponentially with distance ($P \propto d^2$ in free space, $d^4$ with obstacles); multi-hop routing preserves battery life by replacing one long transmission with multiple low-power hops.</li>
           </ul>
         </div>
       </details>
@@ -1367,26 +1497,23 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Intro to wireless technology</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Terms (class-19)</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Key IoT Architectural Concepts:</b></p>
           <ul>
-            <li>Key words: Embedded, Networked, Sensing.</li>
-            <li><b>Hop-to-hop communication:</b> nodes close to the gateway communicate with it directly; nodes far from the gateway communicate through another node.</li>
+            <li><b>Ad-hoc Networking:</b> Decentralized wireless networks that self-configure dynamically without pre-existing fixed infrastructure or central access points.</li>
+            <li><b>MEMS (Micro-Electro-Mechanical Systems):</b> Microscopic systems combining electrical circuitry and mechanical sensors (accelerometers, gyroscopes, pressure diaphragms) fabricated on a single silicon chip.</li>
+            <li><b>NEMS (Nano-Electro-Mechanical Systems):</b> Molecular-scale electromechanical devices offering atomic-level sensitivity, extreme miniaturization, and ultra-low power consumption.</li>
           </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Terms (class-19)</span>
-        </summary>
-        <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Core Green IoT Power Optimization Techniques (Exam Essentials):</b></p>
           <ul>
-            <li><b>Ad hoc</b> → no fixed rules.</li>
-            <li><b>MEMS</b> → Micro electro mechanical services (as written in notes).</li>
-            <li><b>NEMS</b> → Nano electro mechanical services.</li>
+            <li><b>Duty Cycling:</b> Scheduling sensor nodes to stay in ultra-low power <b>sleep mode for 90%–99% of the time</b>, waking up for milliseconds only to sample and transmit readings.</li>
+            <li><b>Energy Harvesting:</b> Powering autonomous sensor nodes using ambient energy from the local environment (solar micro-cells, thermal gradients, piezoelectric vibration, ambient radio frequency waves), completely eliminating chemical battery replacement and e-waste.</li>
+            <li><b>Edge Data Aggregation:</b> Filtering and aggregating sensor data locally at the edge gateway before transmission, preventing power-draining radio transmissions of redundant readings.</li>
           </ul>
         </div>
       </details>
@@ -1482,13 +1609,46 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.1 Reputation as motivation</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.1 Reputation as motivation</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Three Primary Drivers of Corporate Green Computing:</b></p>
+          <ol>
+            <li><b>1. Doing the Right Thing (Ethics):</b> Fulfilling social and environmental obligations to employees, local communities, and future generations.</li>
+            <li><b>2. Making Money (Marketing &amp; Revenue):</b> Winning customer trust, qualifying for eco-conscious enterprise bids, and expanding market share through proven sustainability credentials.</li>
+            <li><b>3. Saving Money (Finance &amp; Operations):</b> Direct financial savings achieved by lowering power consumption, reducing cooling demands, and extending IT hardware lifecycles.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.2 Avoiding greenwash</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Greenwashing:</b> The deceptive practice of misleading consumers regarding the environmental practices of an organization or the environmental performance of a product.</p>
+          <p><span class="star-point">⭐</span><b>The Seven Sins of Greenwashing (Exam Must-Know):</b></p>
+          <ol>
+            <li><b>1. Sin of the Hidden Trade-off:</b> Emphasizing a single green attribute (e.g., recycled cardboard box) while concealing massive core environmental damage (e.g., toxic chemical manufacturing and heavy carbon emissions).</li>
+            <li><b>2. Sin of No Proof:</b> Asserting environmental performance without accessible supporting data or third-party certification.</li>
+            <li><b>3. Sin of Vagueness:</b> Using ill-defined buzzwords like "eco-friendly," "green," or "all-natural" that lack standardized, measurable definitions.</li>
+            <li><b>4. Sin of Irrelevance:</b> Advertising compliance with a standard that is already mandated by law for all manufacturers (e.g., claiming "CFC-free" when CFCs are globally banned by treaty).</li>
+            <li><b>5. Sin of Lesser of Two Evils:</b> Promoting an eco-friendly feature on a product category that is inherently harmful to the environment.</li>
+            <li><b>6. Sin of Fibbing:</b> Making claims that are completely false or forged.</li>
+            <li><b>7. Sin of False Labels:</b> Displaying self-created graphics that falsely mimic independent, third-party eco-certification endorsements.</li>
+          </ol>
+          <p><span class="star-point">⭐</span><b>Actionable Rules to Avoid Greenwashing:</b></p>
           <ul>
-            <li>Right thing to do (internal &amp; external)</li>
-            <li>Make money (marketing)</li>
-            <li>Save money (finance)</li>
+            <li>Never publicize green aspirations in advance before achieving concrete, measurable results.</li>
+            <li>Rely on recognized independent third-party certifications (EPEAT, Energy Star, RoHS, ISO 14001).</li>
+            <li>Publish auditable sustainability data with transparent methodologies and open reporting.</li>
           </ul>
         </div>
       </details>
@@ -1496,11 +1656,24 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.2 Avoiding greenwash</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.3 Social license to operate</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Social License to Operate (SLO):</b> The ongoing acceptance, trust, and approval granted by local communities and broader society for an organization to conduct its business activities.</p>
           <ul>
-            <li>Markets of greenwashing: publicizing in advance.</li>
+            <li><b>SLO vs. Legal License:</b> A legal permit is issued by government authorities; a Social License is informal, unwritten, and must be continually earned through ethical behavior.</li>
+            <li><b>Ease of Loss:</b> A legal permit remains valid until officially revoked, whereas an SLO can be instantly destroyed by corporate environmental negligence or public scandal.</li>
+            <li><span class="star-point">⭐</span><b>IT Relevance (Data Centers):</b>
+              <ul>
+                <li>Hyperscale data centers draw massive electrical power from local municipal grids and consume regional water supplies for evaporative cooling.</li>
+                <li>Without strong community trust and local benefits, surrounding communities oppose permits, protest facility expansion, and demand strict regulatory limits.</li>
+              </ul>
+            </li>
+            <li><b>Preserving an SLO:</b> Investing in local green jobs, funding local renewable energy projects, and reporting environmental impact with full transparency.</li>
+            <li><b>Industry Precedents:</b> Tobacco and nuclear power lost public trust and suffered crippling regulatory crackdowns; modern technology firms protect their SLO through carbon-neutral commitments.</li>
           </ul>
         </div>
       </details>
@@ -1508,30 +1681,24 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.3 Social license to operate</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.4 Green computing & your current career</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <ul>
-            <li>Metric of reputation management.</li>
-            <li>Acceptance of society and community.</li>
-            <li>Ranking &amp; rewards improve it.</li>
-            <li>Examples: tobacco industry, nuclear industry, Apple.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.4 Green computing &amp; your current career</span>
-        </summary>
-        <div class="sec-body">
-          <p>Presenting (justifying) green projects to management:</p>
-          <ul>
-            <li>Save money</li>
-            <li>Reduce risk</li>
-            <li>Sustainability → led, supported, plus</li>
-          </ul>
+          <p><b>Three Winning Arguments to Justify Green Projects to Executive Management:</b></p>
+          <ol>
+            <li><b>1. Save Money:</b> Quantify clear return on investment (ROI) via lower power utility bills, reduced server counts, and lower cooling overhead.</li>
+            <li><b>2. Reduce Business Risk:</b> Protect the company against future carbon taxes, rising energy prices, and e-waste regulatory fines.</li>
+            <li><b>3. Strategic Sustainability:</b> Align the project with corporate sustainability goals:
+              <ul>
+                <li><i>Led:</i> IT proactively pioneers enterprise-wide green policies.</li>
+                <li><i>Supported:</i> IT delivers the infrastructure for corporate green goals.</li>
+                <li><i>Plus:</i> Green benefits delivered as an added bonus alongside primary business performance upgrades.</li>
+              </ul>
+            </li>
+          </ol>
         </div>
       </details>
 
@@ -1542,8 +1709,8 @@ details.sec > summary > .pyq-star-badge {
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Internal employees &gt; external consultant.</li>
-            <li>IT department should lead green computing initiatives.</li>
+            <li><b>Internal Teams &gt; External Consultants:</b> Internal IT professionals understand institutional workflows, command greater trust from colleagues, and maintain long-term ownership of green practices.</li>
+            <li><b>IT as the Natural Pioneer:</b> Because information technology touches every workflow across modern corporations, the IT department is uniquely positioned to drive enterprise-wide sustainability.</li>
           </ul>
         </div>
       </details>
@@ -1551,42 +1718,63 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.6 Green recruiting and retention</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.6 Green recruiting and retention</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <p>Young employees from top universities:</p>
-          <ol type="i">
-            <li>Leading indicators</li>
-            <li>Receive modern education</li>
-            <li>CEO bragging about top graduates</li>
-            <li>Success attracts more success</li>
-            <li>Talented employees improve the workplace</li>
-            <li>Green reputation helps retain employees</li>
+          <p><b>Attracting Top Modern Talent:</b></p>
+          <ul>
+            <li>High-performing university graduates actively evaluate prospective employers based on corporate social responsibility and environmental values.</li>
+            <li>A verifiable green reputation serves as a decisive recruitment advantage in competitive technology hiring.</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>The Virtuous Talent Retention Cycle:</b></p>
+          <ol>
+            <li>Proactive green computing practices elevate corporate brand reputation.</li>
+            <li>High corporate reputation attracts talented, mission-driven employees.</li>
+            <li>Purpose-driven work increases employee job satisfaction and long-term retention.</li>
+            <li>Proud employees advocate positively for the company across industry networks.</li>
+            <li>Positive employee advocacy further magnifies corporate reputation.</li>
           </ol>
-          <p><b>Driving employees away?</b></p>
-          <ol type="i">
-            <li>Public concern is increasing</li>
-            <li>Young generations care more</li>
-            <li>Majority of employees agree</li>
-          </ol>
-          <p><b>Cycle:</b> green computing indicates better reputation → attracts better employees → employee retention → employees speak positively → even better reputation.</p>
         </div>
       </details>
 
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.7 Getting word out inside the company</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.7 Getting word out inside the company</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Seven Proven Internal Communication Channels:</b></p>
+          <ol>
+            <li><b>Collaborative Planning:</b> Include cross-departmental stakeholders early in project design.</li>
+            <li><b>One-on-One Briefings:</b> Secure executive buy-in through personal leadership meetings.</li>
+            <li><b>Targeted Email Updates:</b> Send focused, brief updates to internal team mailing lists.</li>
+            <li><b>Company Publications:</b> Highlight energy savings in company newsletters and intranet posts.</li>
+            <li><b>Executive ROI Briefings:</b> Deliver concise cost-benefit presentations to finance leaders.</li>
+            <li><b>"Lunch and Learn" Workshops:</b> Host informal midday sessions demonstrating practical office energy-saving tips.</li>
+            <li><b>Town Hall Celebrations:</b> Publicly celebrate achieved energy reduction milestones at company-wide gatherings.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">1.8 Getting word out outside the company</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Include in the planning process</li>
-            <li>Personal meeting</li>
-            <li>Emails to internal mailing lists</li>
-            <li>Internal company newsletters, magazines</li>
-            <li>Presentations to specific people</li>
-            <li>"Lunch and learn"</li>
-            <li>Departmental or company-wide presentations</li>
+            <li><b>Competitor Benchmarking:</b> Analyze the public environmental disclosures of industry peers to identify best practices.</li>
+            <li><b>Fact-Based Press Releases:</b> Focus on quantitative, verifiable milestones (e.g., 30% reduction in data center power) rather than vague claims.</li>
+            <li><b>Video News Releases (VNRs):</b> Produce concise (3–5 minute) video case studies showing real hardware upgrades, solar installations, and recycling programs.</li>
           </ul>
         </div>
       </details>
@@ -1594,24 +1782,21 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>1.8 Getting word out outside the company</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">SDG</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Sustainable Development Goals (SDGs):</b> 17 global goals established by the United Nations (2030 Agenda) addressing global challenges, including poverty, inequality, climate change, and environmental degradation.</p>
+          <p><span class="star-point">⭐</span><b>Five Core SDGs Directly Driven by Green IT (High Exam Yield):</b></p>
           <ul>
-            <li>See competitions / similar companies</li>
-            <li>News release writing</li>
-            <li>VNR (video news releases), 3–5 mins</li>
+            <li><b>SDG 7 (Affordable and Clean Energy):</b> Powering data centers and cloud computing networks with 100% renewable energy (solar, wind, hydroelectric).</li>
+            <li><b>SDG 9 (Industry, Innovation, and Infrastructure):</b> Designing energy-efficient data center architectures, adopting edge computing, and modernizing IT infrastructure.</li>
+            <li><b>SDG 11 (Sustainable Cities and Communities):</b> Deploying Green IoT sensor networks for adaptive street lighting, smart traffic routing, and water leak detection.</li>
+            <li><b>SDG 12 (Responsible Consumption and Production):</b> Mitigating electronic waste (e-waste) through modular hardware design, equipment reuse, and certified take-back recycling.</li>
+            <li><b>SDG 13 (Climate Action):</b> Decarbonizing enterprise computing operations and substituting carbon-intensive physical travel with digital collaboration.</li>
           </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>SDG</span>
-        </summary>
-        <div class="sec-body">
-          <p class="note">Sustainable development goals appear in the notes only as a topic name (class-18). No details written.</p>
         </div>
       </details>
       <!-- Previous Year Questions Section -->
@@ -1760,56 +1945,21 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.1 Why saving money is green</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.1 Why saving money is green</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>The Economic Equation:</b> $\text{Profit} = \text{Revenues} - \text{Costs}$.</p>
           <ul>
-            <li>Profit = revenues − costs.</li>
-            <li>Saving money may be more powerful than making money.</li>
-            <li>Cost savings continue to repeat year after year.</li>
-            <li>Cost cutting is usually green.</li>
-            <li>Expenditures involve resource use, generate waste products, and have a carbon footprint.</li>
-            <li><b>Megawatts:</b> energy savings are measured in megawatts.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.2 Getting focused on money-saving efforts</span>
-        </summary>
-        <div class="sec-body">
-          <ol type="i">
-            <li>The cost of cost-cutting efforts is more predictable than the cost of revenue-generating efforts.</li>
-            <li>The savings of cost-cutting efforts are more predictable than the revenues from revenue-generating efforts.</li>
-            <li>A cost-cutting effort usually pays off year after year after year.</li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.3 Implementing energy efficiency</span>
-        </summary>
-        <div class="sec-body">
-          <ol type="i">
-            <li>Changing how current devices are used</li>
-            <li>Buying new devices that are similar to current devices but more energy efficient</li>
-            <li>Buying new devices that are a different class of devices</li>
-          </ol>
-          <p><b>Changing how current devices are used (class-7)</b></p>
-          <ul>
-            <li>Turn off end-user computing devices (monitors, computers, printers) when not in use.</li>
-            <li>Automatic power management.</li>
-            <li>User education is important.</li>
-            <li>Policy can also help.</li>
-            <li>Green computing + employee health.</li>
-            <li><b>Servers:</b> spin up, spin down
+            <li><b>100% Bottom-Line Impact:</b> Every dollar saved in IT operational costs flows 100% directly into net corporate profit, whereas an additional dollar of revenue yields only fractional profit margin after costs.</li>
+            <li><b>Compounding Annual Savings:</b> Once implemented, energy efficiency improvements deliver financial savings year after year.</li>
+            <li><b>Cost Cutting is Inherently Green:</b> Every business expenditure consumes physical resources, burns electricity, generates waste, and carries a carbon footprint. Cutting waste cuts carbon.</li>
+            <li><span class="star-point">⭐</span><b>The Concept of Negawatts (Exam Favorite - Fall 2025 Q2):</b>
               <ul>
-                <li>Specialized software and hardware</li>
-                <li>More complexity → more failures</li>
+                <li><b>Definition:</b> A theoretical unit of electrical power representing an amount of <b>energy saved through conservation and efficiency rather than generated</b>.</li>
+                <li><b>Origin &amp; Significance:</b> Coined by energy analyst Amory Lovins; saving one watt of energy (a Negawatt) is vastly cheaper, cleaner, and faster to implement than building new power plants to generate an additional watt of electricity.</li>
               </ul>
             </li>
           </ul>
@@ -1819,50 +1969,17 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.5 Moving to cloud services</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.2 Getting focused on money-saving efforts</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <ul>
-            <li>Cloud providers can be more efficient.</li>
-            <li>Cost and environmental impact go off to the provider.</li>
-            <li>Cloud = automatic green? Depends on efficiency, source of electricity, old infrastructure management.</li>
-            <li>Cloud computing is also a money saver (server, electricity, cooling, maintenance, IT staff, data center space).</li>
-            <li>Large upfront investment + ongoing infrastructure costs; pay for the service you use.</li>
-          </ul>
-          <p><b>Pricing risk</b></p>
-          <ul>
-            <li>Cloud prices can increase (e.g. Illustrator).</li>
-            <li>Do long-term cost analysis.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.6 Digitalizing non-IT functions</span>
-        </summary>
-        <div class="sec-body">
-          <ul>
-            <li>Mail</li>
-            <li>Checks and official documents</li>
-            <li>Telephone</li>
-            <li>Meetings and conferences</li>
-            <li>Going to the office</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.7 Greening your energy-saving moves</span>
-        </summary>
-        <div class="sec-body">
-          <ol type="i">
-            <li>Saves money and traditionally green, e.g. replace old servers with energy-efficient servers.</li>
-            <li>Saves money and not all that green, e.g. bulk purchase agreement of laptops.</li>
-            <li>Saves money and not green at all, e.g. hiring an executive of another country.</li>
+          <p><b>Three Predictability Advantages of Cost-Saving Over Revenue-Generating Efforts:</b></p>
+          <ol>
+            <li><b>1. Predictable Implementation Costs:</b> The cost of purchasing energy-efficient hardware or configuring power management software is precise and controllable.</li>
+            <li><b>2. Predictable Financial Returns:</b> Kilowatt-hour savings and utility tariff reductions can be forecasted with high mathematical precision compared to volatile sales forecasts.</li>
+            <li><b>3. Continuous Recurring Payoff:</b> A single energy efficiency project generates cumulative operational savings across every subsequent budget year.</li>
           </ol>
         </div>
       </details>
@@ -1870,14 +1987,135 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>2.8 Money-saving efforts</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.3 Implementing energy efficiency</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <ol type="i">
-            <li>Stop doing stuff, e.g. reduce travel budget.</li>
-            <li>Do similar stuff differently, e.g. PC → tablets.</li>
-            <li>Do new stuff, e.g. online documentation instead of physical manuals.</li>
-            <li>Cost saving and product development support each other.</li>
+          <p><b>Three Progressive Tiers of IT Energy Efficiency:</b></p>
+          <ol>
+            <li><b>Tier 1: Changing How Current Devices Are Used (Behavioral &amp; Software Shift):</b>
+              <ul>
+                <li>Power down end-user computers, displays, and printers when not in use.</li>
+                <li>Enforce automated group policies for sleep and hibernate modes after 15 minutes of idle time.</li>
+                <li>Educate employees to build sustainable computing habits.</li>
+                <li>Implement dynamic server load management (spinning down servers during off-peak windows).</li>
+              </ul>
+            </li>
+            <li><b>Tier 2: Upgrading to More Efficient Devices in the Same Class (Hardware Shift):</b>
+              <ul>
+                <li>Replace older servers with models utilizing 80 Plus Platinum power supplies and low-TDP processors.</li>
+                <li>Procure laptops and monitors certified with high Energy Star and EPEAT ratings.</li>
+              </ul>
+            </li>
+            <li><b>Tier 3: Transitioning to Entirely Different Device Classes (Architecture Shift):</b>
+              <ul>
+                <li>Replace power-hungry 250W desktop towers with 30W thin clients, mini PCs, or tablets.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.5 Moving to cloud services</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <ul>
+            <li><b>Superior Facility Efficiency:</b> Hyperscale cloud providers operate state-of-the-art data centers with Power Usage Effectiveness (PUE) ratings near 1.1–1.2 (vs. traditional on-premises facilities averaging 1.8–2.0).</li>
+            <li><b>High Server Utilization:</b> Multi-tenant workload pooling pushes average physical server utilization from 10–15% on-premises up to 65%+ in the cloud.</li>
+            <li><b>Utility-Scale Green Power:</b> Major cloud providers purchase massive volumes of off-site renewable power (solar and wind power purchase agreements).</li>
+            <li><b>Is Cloud Always Automatically Green?</b> No—it depends on the specific geographic region's local energy grid mix and whether legacy on-premise servers are properly decommissioned rather than left idling.</li>
+            <li><b>Financial Shift &amp; Pricing Risk:</b>
+              <ul>
+                <li>Converts high upfront capital expenditures (CapEx) into predictable operational expenditures (OpEx).</li>
+                <li>Requires long-term Total Cost of Ownership (TCO) analysis to safeguard against subscription price hikes and unexpected cloud data egress charges.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.6 Digitalizing non-IT functions</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Five Key Non-IT Functions to Digitize (High Exam Yield - Spring 2026 Q4 &amp; Summer 2025 Q2):</b></p>
+          <ol>
+            <li><b>1. Postal Mail &amp; Paper Invoicing $\rightarrow$ Email &amp; Electronic Billing:</b>
+              <ul>
+                <li>Eliminates paper production, chemical printing inks, envelopes, and fossil fuel transportation emissions.</li>
+                <li>Dramatically speeds up billing cycles and reduces storage archiving costs.</li>
+              </ul>
+            </li>
+            <li><b>2. Physical Checks &amp; Signatures $\rightarrow$ Digital Payments &amp; E-Signatures:</b>
+              <ul>
+                <li>Replaces physical trips to the bank, paper checks, and physical courier transit with instant electronic fund transfers and cryptographic e-signatures.</li>
+              </ul>
+            </li>
+            <li><b>3. Traditional Fixed Telephony $\rightarrow$ Cloud VoIP &amp; Unified Messaging:</b>
+              <ul>
+                <li>Eliminates dedicated copper telephone wiring and specialized PBX hardware boxes by transmitting voice data over existing computer networks.</li>
+              </ul>
+            </li>
+            <li><b>4. In-Person Conferences $\rightarrow$ Virtual Teleconferencing:</b>
+              <ul>
+                <li>Replaces carbon-heavy long-distance commercial flights, hotel stays, and rental cars with video conferencing collaboration tools.</li>
+              </ul>
+            </li>
+            <li><b>5. Daily Office Commuting $\rightarrow$ Remote Work &amp; Telecommuting:</b>
+              <ul>
+                <li>Eliminates vehicle exhaust emissions from daily traffic jams.</li>
+                <li>Allows organizations to downsize physical office real estate, slashing facility heating, lighting, and cooling energy.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.7 Greening your energy-saving moves</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Three Categories of Money-Saving Moves:</b></p>
+          <ol>
+            <li><b>1. Saves Money &amp; Highly Green:</b> Actions that cut operational expenses while reducing environmental impact (e.g., virtualizing servers, installing smart thermostat controls, deploying automated PC sleep policies).</li>
+            <li><b>2. Saves Money &amp; Marginally Green:</b> Bulk purchasing agreements that lower shipping package volume and unit purchase costs, but do not reduce the devices' ongoing operational power draw.</li>
+            <li><b>3. Saves Money &amp; Not Green at All:</b> Shifting manufacturing or data operations to regions with loose environmental laws and dirty coal grids, or laying off local staff to increase executive travel.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">2.8 Money-saving efforts</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Three Strategic Approaches to Cost Optimization:</b></p>
+          <ol>
+            <li><b>1. Stop Doing Stuff (Elimination):</b> Eliminate unnecessary business travel, cancel redundant software licenses, and stop printing hardcopy internal reports.</li>
+            <li><b>2. Do Similar Stuff Differently (Substitution):</b> Replace 250W desktop computers with energy-efficient laptops or tablets; replace physical filing cabinets with secure cloud storage.</li>
+            <li><b>3. Do New Stuff (Transformation):</b> Implement automated digital self-service portals and deploy AI-driven energy optimization models.</li>
           </ol>
         </div>
       </details>
@@ -2437,48 +2675,53 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>6.1 What makes a device green? (class-10)</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">6.1 What makes a device green? (class-10)</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <ul>
-            <li>Smallest class of device</li>
-            <li>Smaller size</li>
-            <li>Lower weight</li>
-            <li>Longer battery life</li>
-            <li>Lower power usage per hour</li>
-            <li>Green packaging</li>
-            <li>Slimline packaging</li>
-            <li>Slimline or electronic documentation</li>
-            <li>Volume purchase option</li>
-            <li>Meets or exceeds Energy Star standards</li>
-            <li>Products free of hazardous substances</li>
-            <li>Use of recycled plastics</li>
-            <li>Durability</li>
-            <li>Ease of repair</li>
-            <li>Product take back</li>
-            <li>Reusability</li>
-            <li>Supplier green goodness</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="sec">
-        <summary>
-          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>6.2 What makes a supplier green?</span>
-        </summary>
-        <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Comprehensive Green Hardware Evaluation Criteria (Spring 2025 Q4, Summer 2025 Q3, Spring 2026 Q6):</b></p>
           <ol>
-            <li>Leadership commitment</li>
-            <li>Company-wide commitment</li>
-            <li>Long-standing commitment</li>
-            <li>Green supply chain</li>
-            <li>Leading point in marketing</li>
-            <li>Promotion to employees</li>
-            <li>Case studies</li>
-            <li>Carbon footprint assessment</li>
-            <li>Industry leadership</li>
-            <li>External verification</li>
+            <li><b>1. Operational Energy Efficiency:</b>
+              <ul>
+                <li>Meets or exceeds <b>Energy Star</b> international efficiency standards.</li>
+                <li>Lowest active power consumption (watts/hour) and low-TDP processor architecture.</li>
+                <li>Aggressive automated sleep, hibernate, and display-off power management states.</li>
+                <li>Extended battery operating life to minimize charging cycles.</li>
+              </ul>
+            </li>
+            <li><b>2. Compact Form Factor &amp; Low Embodied Carbon:</b>
+              <ul>
+                <li>Smallest viable device class (tablet or mini PC instead of desktop tower).</li>
+                <li>Lower weight and smaller physical volume reduce manufacturing materials and transportation fuel.</li>
+              </ul>
+            </li>
+            <li><b>3. Material Composition &amp; Non-Toxicity:</b>
+              <ul>
+                <li>Strict compliance with <b>RoHS (Restriction of Hazardous Substances)</b>: completely free of lead, mercury, cadmium, hexavalent chromium, and brominated flame retardants (PBB/PBDE).</li>
+                <li>High proportion of post-consumer recycled (PCR) plastics and sustainably sourced aluminum.</li>
+              </ul>
+            </li>
+            <li><b>4. Sustainable Packaging &amp; Logistics:</b>
+              <ul>
+                <li>Slimline, unbleached, 100% biodegradable and recyclable cardboard packaging.</li>
+                <li>Digital documentation (QR codes/web manuals) replacing printed paper manuals.</li>
+                <li>Bulk enterprise packaging (multiple units per shipping carton to reduce transit volume).</li>
+              </ul>
+            </li>
+            <li><b>5. Product Longevity &amp; Circularity:</b>
+              <ul>
+                <li>High durability and rugged design to ensure a long operational lifespan (5+ years).</li>
+                <li>Modular design enabling simple memory, storage, and battery replacement.</li>
+                <li>Vendor-backed take-back programs ensuring ethical end-of-life recycling.</li>
+              </ul>
+            </li>
+            <li><b>6. Third-Party Environmental Certifications:</b>
+              <ul>
+                <li>Certified under <b>EPEAT (Electronic Product Environmental Assessment Tool)</b> at Bronze, Silver, or Gold tier.</li>
+              </ul>
+            </li>
           </ol>
         </div>
       </details>
@@ -2486,14 +2729,24 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Why greener companies are better suppliers</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">6.2 What makes a supplier green?</span>
+            <span class="pyq-star-badge">⭐⭐ Common in PYQ</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <p>Three major reasons:</p>
+          <p><span class="star-point">⭐</span><b>Ten Core Indicators of a Truly Green Technology Supplier:</b></p>
           <ol>
-            <li>The peacock effect (pointing to "unwanted" in the notes)</li>
-            <li>The serendipity effect</li>
-            <li>Longer-term orientation</li>
+            <li><b>1. Executive Leadership Commitment:</b> Senior board leadership actively championing sustainability targets.</li>
+            <li><b>2. Company-Wide Culture:</b> Environmental accountability integrated into employee KPIs and everyday business operations.</li>
+            <li><b>3. Long-Standing Track Record:</b> Multi-year history of measurable sustainability progress, not a sudden marketing reaction.</li>
+            <li><b>4. Green Supply Chain Management:</b> Enforcing strict environmental standards across upstream component suppliers (Scope 3 management).</li>
+            <li><b>5. Core Brand Identity:</b> Environmental sustainability positioned as a central product design philosophy.</li>
+            <li><b>6. Employee Green Initiatives:</b> Active internal green teams and ongoing employee environmental training programs.</li>
+            <li><b>7. Verifiable Case Studies:</b> Documented, audited success metrics demonstrating real-world energy and waste reductions.</li>
+            <li><b>8. Comprehensive Carbon Accounting:</b> Rigorous public reporting of Scope 1, Scope 2, and Scope 3 greenhouse gas emissions.</li>
+            <li><b>9. Industry Consortium Leadership:</b> Active participation in green computing organizations (e.g., The Green Grid, Responsible Business Alliance).</li>
+            <li><b>10. External Third-Party Audits:</b> Independent verification through international standards such as <b>ISO 14001</b> and CDP reporting.</li>
           </ol>
         </div>
       </details>
@@ -2501,13 +2754,30 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>6.4 Giving suppliers and vendors feedback</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Why greener companies are better suppliers</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Three Structural Advantages of Partnering with Green Suppliers:</b></p>
           <ol>
-            <li>Tell them what you're going to tell them.</li>
-            <li>Tell them.</li>
-            <li>Tell them what you've told them.</li>
+            <li><span class="star-point">⭐</span><b>1. The Peacock Effect:</b>
+              <ul>
+                <li>Just as a peacock's plumage signals biological health and fitness, a supplier's ability to maintain rigorous green credentials proves superior management discipline, tight operational control, and financial health.</li>
+                <li>Careless, poorly managed companies cannot sustain green supply chain standards.</li>
+              </ul>
+            </li>
+            <li><span class="star-point">⭐</span><b>2. The Serendipity Effect:</b>
+              <ul>
+                <li>The disciplined pursuit of environmental efficiency leads to unexpected innovations—streamlined packaging discovers cheaper transport methods, and energy-efficient designs uncover superior product reliability.</li>
+              </ul>
+            </li>
+            <li><b>3. Long-Term Partnership Orientation:</b>
+              <ul>
+                <li>Sustainable suppliers focus on lasting, multi-year customer relationships rather than cutting corners for quick quarterly profits.</li>
+              </ul>
+            </li>
           </ol>
         </div>
       </details>
@@ -2515,23 +2785,42 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>6.5 Publicizing your selection process and the winner</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">6.4 Giving suppliers and vendors feedback</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <p><b>Benefits:</b></p>
+          <p><b>The Three-Step Structured Vendor Feedback Model:</b></p>
+          <ol>
+            <li><b>1. Pre-RFP Briefing:</b> "Tell them what you are going to tell them" — communicate green procurement evaluation criteria, scoring weightings, and expectations before bids are prepared.</li>
+            <li><b>2. Post-Evaluation Debrief:</b> "Tell them" — provide transparent, score-based feedback explaining exactly where their environmental criteria succeeded or failed.</li>
+            <li><b>3. Follow-Up Roadmap:</b> "Tell them what you told them" — document clear improvement milestones for subsequent procurement rounds.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="sec">
+        <summary>
+          <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">6.5 Publicizing your selection process and the winner</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
+        </summary>
+        <div class="sec-body">
+          <p><b>Strategic Benefits of Publicizing Green Procurement:</b></p>
           <ul>
-            <li>Enhanced vendor participation</li>
-            <li>A greener offer</li>
-            <li>Better financial terms</li>
-            <li>Better support</li>
-            <li>Better products</li>
+            <li><b>Enhanced Vendor Participation:</b> Inspires other technology vendors to compete aggressively on sustainability.</li>
+            <li><b>Greener Market Offerings:</b> Incentivizes manufacturers to develop cleaner, more efficient hardware options.</li>
+            <li><b>Better Commercial Terms:</b> High competition secures better bulk volume pricing and support terms.</li>
           </ul>
-          <p><b>Suggestions to follow in publicity efforts:</b></p>
-          <ul>
-            <li>Keep it low key</li>
-            <li>Keep it positive</li>
-            <li>Measure success</li>
-          </ul>
+          <p><b>Three Cardinal Rules for Effective Publicity:</b></p>
+          <ol>
+            <li><b>Keep It Low-Key:</b> Remain factual, objective, and professional; avoid exaggerated corporate hype.</li>
+            <li><b>Keep It Positive:</b> Praise the winning supplier's achievements without disparaging losing vendors.</li>
+            <li><b>Measure and Share Success:</b> Quantify real-world energy and financial metrics achieved by the deployment.</li>
+          </ol>
         </div>
       </details>
       <!-- Previous Year Questions Section -->
@@ -2626,17 +2915,41 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Chapter 1</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Chapter 1</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><b>Parallel System Architectures:</b></p>
           <ul>
-            <li>Parallel vs (comparison left unfinished in notes).</li>
-            <li>Tight coupling &amp; loose coupling.</li>
-            <li><b>Amdahl's law:</b> the limits of parallelism.</li>
+            <li><b>Tightly Coupled Systems:</b> Multiprocessors sharing a centralized memory space and operating under a single operating system; low latency, but limited scalability.</li>
+            <li><b>Loosely Coupled Systems:</b> Distributed compute nodes with private memory connected via network interconnects (clusters and grid networks); high scalability and fault tolerance.</li>
           </ul>
+          <p><span class="star-point">⭐</span><b>Amdahl's Law (Limits of Parallel Speedup - Exam Favorite):</b></p>
           <div class="formula">Speedup ≤ 1 / ( S + (1 − S) / N )</div>
           <ul>
-            <li>Comparisons (heading only; no details in notes).</li>
+            <li><b>Variables:</b> $S$ is the strictly serial fraction of the workload ($0 \le S \le 1$), and $N$ is the number of parallel processing cores.</li>
+            <li><b>Mathematical Reality:</b> If 20% of an algorithm is serial ($S = 0.20$), the maximum theoretical speedup cannot exceed $1 / 0.20 = 5\times$, even with an infinite number of processors ($N \to \infty$).</li>
+            <li><span class="star-point">⭐</span><b>Energy &amp; Green Computing Implication:</b> Adding processors to a serial-bound workload consumes extra electrical wattage and produces heavy waste heat with diminishing performance returns, severely ruining energy efficiency.</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>Key Data Center Energy &amp; Efficiency Metrics:</b></p>
+          <ul>
+            <li><b>PUE (Power Usage Effectiveness):</b>
+              <div class="formula">PUE = Total Facility Power / IT Equipment Power</div>
+              <ul>
+                <li>Measures overhead energy consumed by cooling, lighting, and power distribution.</li>
+                <li>Ideal benchmark: <b>PUE = 1.0</b> (100% of facility power feeds computing hardware).</li>
+                <li>Traditional data centers average 1.8–2.0; ultra-green modern data centers achieve 1.1–1.2.</li>
+              </ul>
+            </li>
+            <li><b>CUE (Carbon Usage Effectiveness):</b> $\text{Total CO}_2\text{ Emissions} / \text{IT Equipment Energy}$ ($\text{kg CO}_2\text{/kWh}$).</li>
+            <li><b>WUE (Water Usage Effectiveness):</b> $\text{Annual Facility Water Consumption} / \text{IT Equipment Energy}$ ($\text{L/kWh}$).</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>Thermal Management &amp; Data Center Cooling:</b></p>
+          <ul>
+            <li><b>Hot Aisle / Cold Aisle Containment:</b> Arranging server racks so cold air intake faces the cold aisle and hot exhaust vents into the hot aisle. Physical containment barriers prevent air mixing, reducing cooling energy by 20–30%.</li>
+            <li><b>Free Cooling (Air/Water Economizers):</b> Using cool outdoor ambient air or water during colder seasons, allowing mechanical chillers to be powered off.</li>
           </ul>
         </div>
       </details>
@@ -2644,28 +2957,30 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>Chapter 5</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">Chapter 5</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Data Temperature Tiering (Hot Data vs. Cold Data):</b></p>
           <ul>
-            <li><b>Hot data</b> → frequently used data → keep in faster storage to access easily.</li>
-            <li><b>Cold data</b> → less used data.</li>
-            <li>SSD → tier hot; HDD → tier cold.</li>
+            <li><b>Hot Data:</b> Frequently accessed, mission-critical active data. Stored on high-speed, low-latency, energy-efficient <b>Solid State Drives (SSDs)</b>.</li>
+            <li><b>Cold Data:</b> Infrequently accessed archival records, backups, and historical data. Stored on high-capacity, cost-effective <b>Hard Disk Drives (HDDs)</b> or optical/tape media.</li>
           </ul>
-          <p><b>Spin down and PUE (class-13)</b></p>
+          <p><span class="star-point">⭐</span><b>Disk Power States (Fall 2025 Q8b Core):</b></p>
+          <ol>
+            <li><b>1. Active Mode:</b> Spindle motor runs at full speed (7,200–15,000 RPM), read/write heads actively tracking data (~8–10 Watts).</li>
+            <li><b>2. Idle Mode:</b> Platter spins at full operating speed, heads parked in landing zone (~4–6 Watts).</li>
+            <li><b>3. Standby Mode (Spin-Down):</b> Spindle motor stopped, heads parked, interface electronics listening for commands (~0.5–1 Watt). Saves up to 90% power on cold drives.</li>
+            <li><b>4. Sleep Mode:</b> All disk electronics and motor completely powered down (~0.2 Watts); requires system bus reset to wake.</li>
+          </ol>
+          <p><span class="star-point">⭐</span><b>The Energy vs. Reliability Trade-Off (Thermal Cycling &amp; Mechanical Stress):</b></p>
           <ul>
-            <li>Spin down → target cold data.</li>
-            <li><b>PUE</b> = total facility power / IT equipment power.</li>
-            <li>Facility power → maintain power.</li>
-            <li>A value closer to 1 is most efficient.</li>
+            <li>Repeatedly spinning down and spinning up disk drives causes mechanical wear on spindle bearings and motor coils.</li>
+            <li>Power transitions induce rapid thermal expansion and contraction (<b>thermal cycling</b>), accelerating component fatigue and reducing drive lifespan.</li>
+            <li><b>Green Best Practice:</b> Only spin down drives hosting verified <b>cold data</b> with prolonged idle intervals (hours or days). Never toggle active/idle drives rapidly.</li>
           </ul>
-          <p><b>Energy vs reliability</b></p>
-          <ul>
-            <li>Mechanical stress</li>
-            <li>Thermal cycling</li>
-            <li>Decreased lifetime</li>
-          </ul>
-          <p>Cycle: Active → idle → spin down. Temperature rises when active; spin up and temperature falls on spin down.</p>
         </div>
       </details>
       <!-- Previous Year Questions Section -->
@@ -2799,20 +3114,24 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.1 Why greenhouse gas emissions are important</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.1 Why greenhouse gas emissions are important</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Major cause of global warming.</li>
-            <li>IT contributes through the energy required to manufacture and operate electronic devices.</li>
-            <li>Greenhouse gases are gases in the atmosphere that trap heat, e.g. CO₂, CH₄.</li>
-            <li><b>Energy vs GHG emissions:</b>
+            <li><b>Greenhouse Gases (GHGs):</b> Atmospheric gases ($\text{CO}_2$, $\text{CH}_4$, $\text{N}_2\text{O}$, fluorinated gases) that trap outgoing solar infrared radiation, driving global warming.</li>
+            <li><b>IT Contribution:</b> Computing drives emissions through the electricity required to operate hardware and the embodied energy consumed during manufacturing.</li>
+            <li><b>Energy vs. Emissions:</b>
               <ul>
-                <li>Energy consumption = how much electricity / fuel is used.</li>
-                <li>GHG emissions = how much greenhouse gas is released as a result.</li>
+                <li><i>Energy Consumption:</i> The quantity of kilowatt-hours (kWh) drawn from the electrical grid.</li>
+                <li><i>GHG Emissions:</i> The mass of greenhouse gases released by power generation plants to produce that energy.</li>
               </ul>
             </li>
-            <li>Carbon emissions = energy consumed × emission factor.</li>
+            <li><b>Carbon Footprint Formula:</b>
+              <div class="formula">Carbon Emissions (kg CO₂) = Energy Consumed (kWh) × Emission Factor (kg CO₂/kWh)</div>
+            </li>
           </ul>
         </div>
       </details>
@@ -2823,8 +3142,14 @@ details.sec > summary > .pyq-star-badge {
           <span>9.2 Sources of greenhouse gases and warming</span>
         </summary>
         <div class="sec-body">
-          <p><b>Natural:</b> volcanic eruptions, fires, decomposition, respiration and digestion.</p>
-          <p><b>Human:</b> burning coal; burning oil (including diesel and gasoline); burning natural gas; fracking for gas.</p>
+          <p><b>Natural Sources:</b> Volcanic eruptions, forest fires, organic decomposition, animal respiration and digestion.</p>
+          <p><b>Anthropogenic (Human) Sources:</b></p>
+          <ul>
+            <li><b>Coal Combustion:</b> Primary fossil fuel burned for baseload electric grid power.</li>
+            <li><b>Petroleum (Oil):</b> Refined into gasoline, diesel, and jet fuel for transportation.</li>
+            <li><b>Natural Gas:</b> Burned for industrial heating and peak electricity generation.</li>
+            <li><b>Hydraulic Fracturing (Fracking):</b> Extraction process causing methane leakage into the atmosphere.</li>
+          </ul>
         </div>
       </details>
 
@@ -2835,11 +3160,13 @@ details.sec > summary > .pyq-star-badge {
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Yes, there are doubters, but not significant doubt in mainstream climate science.</li>
-            <li>Some people question or reject aspects of climate change.</li>
-            <li>We should respect scientific evidence when evaluating environmental problems.</li>
-            <li><b>Facts:</b> strong scientific evidence.</li>
-            <li><b>Solutions / policies:</b> reasonable debate.</li>
+            <li><b>Scientific Consensus:</b> Peer-reviewed mainstream climate science agrees without significant doubt that human activities are the dominant cause of global warming.</li>
+            <li><b>Separating Facts from Policies:</b>
+              <ul>
+                <li><i>Physical Reality:</i> The warming of atmosphere and oceans is established scientific fact.</li>
+                <li><i>Policy Debate:</i> Legitimate debate focuses on the most cost-effective economic and engineering policies to reduce emissions.</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </details>
@@ -2847,25 +3174,26 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.4 Why are there still doubters and deniers?</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.4 Why are there still doubters and deniers?</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
           <ul>
-            <li>People don't like facts that may lead to uncomfortable consequences (psychological resistance).</li>
-            <li>Being skeptical is not automatically bad; sometimes it means asking for evidence and testing claims.</li>
-            <li>Disinformation campaigns create public uncertainty.</li>
-            <li>Public opinion can be influenced not only by scientific evidence but also by economic interests, political communication, and media.</li>
-            <li><b>Echo chamber:</b> an environment where people mostly encounter information that agrees with what they already believe.</li>
+            <li><b>Psychological Resistance:</b> People resist scientific facts when the implications demand uncomfortable changes to economic habits.</li>
+            <li><b>Economic &amp; Political Interests:</b> Fossil fuel industries have funded disinformation campaigns to sow doubt.</li>
+            <li><b>Echo Chambers:</b> Media environments where audiences consume only viewpoints that reinforce pre-existing beliefs.</li>
           </ul>
-          <p><b>Many reasons to do green computing, believing in it or not:</b></p>
+          <p><span class="star-point">⭐</span><b>Seven Practical Reasons to Adopt Green Computing Regardless of Climate Beliefs:</b></p>
           <ol>
-            <li>Saving money</li>
-            <li>Reducing business risk</li>
-            <li>Cutting pollution</li>
-            <li>Treating people better</li>
-            <li>Attracting and retaining customers, employees and supply-chain partners</li>
-            <li>Complying with current and likely future regulations</li>
-            <li>Positive publicity for the IT group and company</li>
+            <li><b>1. Financial Savings:</b> Lower electricity utility bills and reduced cooling overhead.</li>
+            <li><b>2. Business Risk Reduction:</b> Insulation against fossil fuel price volatility and future carbon taxes.</li>
+            <li><b>3. Pollution Abatement:</b> Cutting toxic e-waste and local air pollution.</li>
+            <li><b>4. Worker Health &amp; Welfare:</b> Improving ergonomics and ethical factory standards.</li>
+            <li><b>5. Talent &amp; Customer Magnet:</b> Attracting top university graduates and eco-conscious clients.</li>
+            <li><b>6. Regulatory Compliance:</b> Proactively complying with mandatory e-waste and efficiency laws.</li>
+            <li><b>7. Positive Public Relations:</b> Enhancing brand reputation across the technology industry.</li>
           </ol>
         </div>
       </details>
@@ -2877,11 +3205,9 @@ details.sec > summary > .pyq-star-badge {
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Climate change news tracking weather extremes.</li>
-            <li>A steady increase in events related to climate change.</li>
-            <li>Gradual decrease in doubt and denial as facts accumulate.</li>
-            <li>Climate change becoming "normal".</li>
-            <li>Disproportionate rewards to early adopters.</li>
+            <li><b>Escalating Weather Extremes:</b> Increasing frequency and severity of heatwaves, floods, and megadroughts.</li>
+            <li><b>Declining Denial:</b> Public skepticism decreases steadily as empirical weather data accumulates.</li>
+            <li><b>Disproportionate Rewards for Early Adopters:</b> Organizations that transition to sustainable IT early secure market leadership and avoid panic compliance costs when strict regulations hit.</li>
           </ul>
         </div>
       </details>
@@ -2889,19 +3215,27 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.7 Reducing emissions I: embodied energy</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.7 Reducing emissions I: embodied energy</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Embodied Energy Definition (Spring 2025 Q7 Exam Core):</b></p>
           <ul>
-            <li>Energy used to manufacture, transport, and build a product before it is used is called <b>embodied energy</b>.</li>
-            <li>Reducing embodied energy gives double benefits:
-              <ol type="i">
-                <li>Lower manufacturing or construction emissions</li>
-                <li>Lower operating emissions</li>
-              </ol>
-            </li>
-            <li><b>Example:</b> tablet vs laptop (embodied energy ⅓, 90% less operating emissions).</li>
-            <li><b>Data center trade-off:</b> a new building needs embodied energy, but long-term energy savings may be much greater.</li>
+            <li>The total cumulative energy consumed across a product's entire pre-use lifecycle—including raw material mining, chemical refining, component fabrication, factory assembly, and worldwide shipping.</li>
+          </ul>
+          <p><span class="star-point">⭐</span><b>The Double Environmental Benefit:</b></p>
+          <ol>
+            <li><b>Lower Upfront Manufacturing Emissions:</b> Less raw material extraction and fabrication carbon.</li>
+            <li><b>Lower Operational Lifetime Emissions:</b> Hardware engineered with lower physical material mass draws significantly less electricity throughout its operational lifespan.</li>
+          </ol>
+          <p><b>Real-World Example (Device Classes):</b> A modern tablet uses only <b>⅓ of the embodied energy</b> of a desktop PC and emits <b>90% fewer operating emissions</b> during daily use.</p>
+          <p><b>Strategies to Reduce Embodied Carbon:</b></p>
+          <ul>
+            <li>Extend hardware refresh cycles from 3 years to 5–6 years.</li>
+            <li>Purchase certified refurbished and remanufactured hardware.</li>
+            <li>Deploy low-power thin clients and virtual desktops instead of bulky desktop towers.</li>
           </ul>
         </div>
       </details>
@@ -2909,23 +3243,30 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.8 Reducing emissions II: daily energy use (class-15)</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.8 Reducing emissions II: daily energy use (class-15)</span>
+            <span class="pyq-star-badge">⭐⭐⭐ Top PYQ Favorite</span>
+          </span>
         </summary>
         <div class="sec-body">
+          <p><span class="star-point">⭐</span><b>Operational Energy Reduction Strategies (Summer 2025 Q5 &amp; Spring 2026 Q8):</b></p>
           <ul>
-            <li>Reducing electricity use generally reduces the greenhouse gas footprint, but it also depends on the source of electricity.</li>
+            <li><b>Automated Power Management:</b> Enforcing centralized sleep/standby policies across all client machines after 15 minutes of inactivity; auto-powering down monitors and peripheral devices.</li>
+            <li><b>Virtualization Consolidation:</b> Consolidating lightly loaded physical servers to eliminate idle server electricity draw.</li>
+            <li><b>Off-Peak Workload Scheduling:</b> Scheduling heavy data backups and batch computing during off-peak nighttime grid hours.</li>
           </ul>
+          <p><span class="star-point">⭐</span><b>Carbon Intensity of Electrical Energy Sources:</b></p>
           <div class="scroll">
             <table>
               <thead>
-                <tr><th>Source</th><th>Notes</th></tr>
+                <tr><th>Power Source</th><th>Emissions Profile</th><th>Strategic Considerations</th></tr>
               </thead>
               <tbody>
-                <tr><td>Coal</td><td>Cheap but high carbon emission.</td></tr>
-                <tr><td>Oil</td><td>Small but declining source of electricity; more valuable for transportation, petrochemical products etc.</td></tr>
-                <tr><td>Natural gas</td><td>Lower carbon footprint than coal (¼) and oil (½), but fracking can cause environmental problems.</td></tr>
-                <tr><td>Hydroelectric</td><td>Renewable, cheap, low emission. New dams can cause environmental damage.</td></tr>
-                <tr><td>Solar and wind</td><td>Renewable, low emission, increasing steadily.</td></tr>
+                <tr><td><b>Coal</b></td><td>Highest carbon footprint (1.0 kg CO₂/kWh)</td><td>Baseload fuel; cheapest, but highest air pollution.</td></tr>
+                <tr><td><b>Oil / Diesel</b></td><td>High carbon footprint (0.8 kg CO₂/kWh)</td><td>Declining for grid power; reserved for data center emergency generators.</td></tr>
+                <tr><td><b>Natural Gas</b></td><td>Moderate carbon footprint (0.4 kg CO₂/kWh)</td><td>Half the carbon of coal; hydraulic fracturing risks methane leakage.</td></tr>
+                <tr><td><b>Hydroelectric</b></td><td>Near-zero carbon footprint (Renewable)</td><td>Low-cost clean electricity; large dams can disrupt local ecosystems.</td></tr>
+                <tr><td><b>Solar &amp; Wind</b></td><td>Zero operational carbon footprint (Renewable)</td><td>Cleanest power; intermittent generation requires battery storage or grid balancing.</td></tr>
               </tbody>
             </table>
           </div>
@@ -2935,14 +3276,17 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.9 Reducing emissions III: using different sources</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.9 Reducing emissions III: using different sources</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
           <ul>
-            <li>Use cleaner energy (reduce dependency on coal); get more natural gas and renewable energy.</li>
-            <li>Reduce peak energy demand.</li>
-            <li>Use solar energy.</li>
-            <li>Solar thermal (sunlight to heat).</li>
+            <li><b>Greening the Grid Mix:</b> Shifting corporate power contracts from coal-heavy baseload utilities to renewable energy Power Purchase Agreements (PPAs).</li>
+            <li><b>On-Site Renewable Generation:</b> Installing rooftop solar photovoltaic (PV) arrays on data center and office facilities.</li>
+            <li><b>Solar Thermal:</b> Harnessing sunlight directly for facility water and building heating without electrical conversion losses.</li>
+            <li><b>Peak Shaving:</b> Utilizing on-site battery storage during peak demand hours to avoid high utility peak tariffs.</li>
           </ul>
         </div>
       </details>
@@ -2950,16 +3294,20 @@ details.sec > summary > .pyq-star-badge {
       <details class="sec">
         <summary>
           <svg class="chevron-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          <span>9.10 Reducing emissions IV: supply chain success</span>
+          <span class="sec-title-wrap">
+            <span class="sec-title-text">9.10 Reducing emissions IV: supply chain success</span>
+            <span class="pyq-star-badge">⭐ PYQ Topic</span>
+          </span>
         </summary>
         <div class="sec-body">
-          <ul>
-            <li>Cut at home.</li>
-            <li>Pocket outsourcing savings.</li>
-            <li>Sweat your supply chain.</li>
-            <li>Consider nonuse.</li>
-            <li>Repeat (last word unclear in notes).</li>
-          </ul>
+          <p><span class="star-point">⭐</span><b>The Five-Step Supply Chain Decarbonization Framework:</b></p>
+          <ol>
+            <li><b>1. Cut at Home:</b> Optimize internal IT operations, eliminate zombie servers, and enforce power management inside your own facilities first.</li>
+            <li><b>2. Pocket Outsourcing Savings:</b> Migrate non-core workloads to energy-efficient hyperscale cloud and co-location providers.</li>
+            <li><b>3. Sweat Your Supply Chain:</b> Require upstream hardware vendors and component manufacturers to provide auditable carbon disclosures (Scope 3 accounting).</li>
+            <li><b>4. Consider Non-Use:</b> Challenge whether hardware purchases or travel are necessary at all—prioritize software optimization and digital collaboration.</li>
+            <li><b>5. Repeat &amp; Continuously Improve:</b> Audit results annually, adjust targets against international frameworks, and iterate.</li>
+          </ol>
         </div>
       </details>
       <!-- Previous Year Questions Section -->
