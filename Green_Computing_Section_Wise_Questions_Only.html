@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Green Computing - Section-wise Questions</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-right {
+    content: "Page " counter(page);
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #444444;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.document-header {
+  border-bottom: 2pt solid #000000;
+  padding-bottom: 8pt;
+  margin-bottom: 20pt;
+  text-align: center;
+}
+
+.document-title {
+  font-size: 16pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 4pt 0;
+  letter-spacing: 0.5pt;
+}
+
+.document-subtitle {
+  font-size: 10.5pt;
+  color: #222222;
+  margin: 0;
+}
+
+.section-container {
+  margin-bottom: 24pt;
+}
+
+.section-title {
+  font-size: 13.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1.5pt solid #000000;
+  padding-bottom: 3pt;
+  margin-top: 18pt;
+  margin-bottom: 12pt;
+  page-break-after: avoid;
+}
+
+.question-block {
+  margin-bottom: 16pt;
+  page-break-inside: avoid;
+  border-bottom: 0.5pt solid #cccccc;
+  padding-bottom: 14pt;
+}
+
+.question-block:last-child {
+  border-bottom: none;
+}
+
+.question-heading {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0 0 6pt 0;
+  page-break-after: avoid;
+}
+
+.question-body {
+  margin: 0 0 8pt 0;
+  font-size: 10.5pt;
+}
+
+.question-body p {
+  margin: 4pt 0;
+}
+
+.question-body ol, .question-body ul {
+  margin: 4pt 0 6pt 20pt;
+  padding-left: 0;
+}
+
+.question-body li {
+  margin-bottom: 3pt;
+}
+
+.answer-container {
+  margin-top: 8pt;
+  padding-left: 10pt;
+  border-left: 2pt solid #000000;
+}
+
+.answer-header {
+  font-size: 10.5pt;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0 0 4pt 0;
+  page-break-after: avoid;
+}
+
+.answer-body h4 {
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 8pt 0 3pt 0;
+  page-break-after: avoid;
+}
+
+.answer-body p {
+  margin: 3pt 0;
+}
+
+.answer-body ul, .answer-body ol {
+  margin: 3pt 0 6pt 18pt;
+  padding-left: 0;
+}
+
+.answer-body li {
+  margin-bottom: 3pt;
+  line-height: 1.45;
+}
+
+.answer-body li > ul {
+  margin-top: 2pt;
+  margin-bottom: 3pt;
+  margin-left: 16pt;
+}
+
+.answer-body b {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0 8pt 0;
+  font-size: 9.5pt;
+}
+
+table, th, td {
+  border: 1pt solid #000000;
+}
+
+th, td {
+  padding: 4pt 6pt;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="document-header">
+  <h1 class="document-title">Green Computing (EEE4261)</h1>
+  <p class="document-subtitle">Section-wise Previous Year Questions Bank (Spring 2025 – Spring 2026)</p>
+</div>
+
+<div class="section-container">
+  <div class="section-title">1. Cloud Computing</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>A growing e-commerce company expects a massive increase in web traffic during the holiday season. Rather than buying new physical servers, they rent virtual machines, storage, and networking resources from a cloud provider. They configure the operating systems themselves and scale the resources up or down depending on the load.</p><p>Which cloud services model is being used by the company? Mention the key characteristics of this model and explain your logic for choosing this model as your answer. How does adopting this model contribute to green computing and sustainability?</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 8 (c) (Data Center Interconnect)</div>
+    <div class="question-body">
+      <p>Draw the block diagram of a data center interconnect network.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>Analyze how virtualization, SOA, web services, and Web 3.0/ mashups work together to enable modern cloud computing platforms. Support your answer with an example of a real-world cloud application.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">2. IoT (Green IoT)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 8 [CO3] (3 + 2 = 5 Marks)</div>
+    <div class="question-body">
+      <p>Sajol Agro & Farms, a large-scale agricultural enterprise, is implementing smart farming practices to improve sustainability by reducing water and fertilizer usage. To do this, they have deployed a vast network of IoT sensors across their fields to collect real-time data on soil moisture, nutrient levels, and weather conditions. However, continuously streaming this massive volume of data to a distant central cloud for analysis is causing high network latency, delaying critical actions like precision irrigation, and resulting in significant energy consumption and data transmission costs.</p><ol type="a"><li>As a Green Computing consultant, propose a solution to address these latency, cost, and energy consumption issues.</li><li>Explain how your proposed architecture differs from a traditional cloud-centric model. What specific benefits does your solution offer in terms of energy efficiency and resource optimization for Verdant Valley Farms?</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <p>A growing smart city is facing challenges with excessive energy consumption, water wastage, and poor waste management. The city council decides to implement an IoT-based Green Management System to make the city more sustainable. The system should use sensors and data analytics to monitor and optimize resource usage in real time. As a Computer Engineer, you are tasked with designing an IoT-based green system to support the city’s sustainability goals. In this connection answer the following questions:</p><ol type="a"><li>What IoT components (sensors, networks, platforms) would you include?</li><li>How would data be collected, processed, and used for decision-making?</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>A university plans to reduce its electricity consumption by deploying IoT-enabled smart sensors to monitor classroom occupancy, lighting, air conditioning, and energy usage. The collected data is analyzed in real time to automatically switch off unused devices and optimize energy consumption.</p><p>Explain how IoT technologies can be used to implement this smart energy management system. And discuss how the proposed solution supports the principles of green computing.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">3. Chapter 1 (+ SDG)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 1 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>A tech company releases a new line of laptops branded as "EcoSmart Devices." In its marketing materials, the company claims these laptops are "Environmentally Friendly" and have "Zero Environmental Impact." The promotional content highlights a sleek design with minimal packaging and uses green-themed visuals to reinforce the eco-conscious image. However, a recent investigative report reveals that the laptops are built with non-recyclable materials, the manufacturing process consumes high levels of energy from non-renewable sources, and there is no environmental certification or data to support their claims.</p><p>What key issue or practice is being illustrated in this scenario? Identify the misleading elements in the company’s campaign, and discuss the potential consequences of this type of marketing practice for consumers, the environment, and the company itself.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 5 [CO3] (5 Marks)</div>
+    <div class="question-body">
+      <p>Consider a multinational electronics corporation, "GlobalTech Inc.", which previously based its corporate social responsibility program on the Millennium Development Goals (MDGs). With the global transition to the more comprehensive Sustainable Development Goals (SDGs), the company faces increasing pressure to address issues like e-waste from its products and labor conditions in its supply chain. In this context, evolve the company's outdated approach by proposing a robust green computing strategy that addresses the following SDGs:</p><ol type="i"><li>SDG-12: Responsible Consumption and Production</li><li>SDG-8: Decent Work and Economic Growth</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>TechNova Inc. is a mid-sized consumer electronics company recently released a line of wireless earbuds and added a small label on the packaging that says: “Eco-smart packaging: 20% less plastic!” They promoted this feature in ads and social media but didn’t change the product's manufacturing process, energy use, or lifecycle management. The initiative was driven more by the marketing team than by any formal sustainability plan.</p><ol type="a"><li>Based on its approach to sustainability, how would you classify TechNova’s business strategy?</li><li>What kind of green misrepresentation or false advertizing is TechNova engaging in, according to the scenario?</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>A technology company advertises its new line of laptops as “100% eco-friendly” and “carbon-neutral”. The marketing campaign highlights recyclable packaging and the use of energy-efficient processors. However, independent reports reveal that the company still relies on coal-based electricity for manufacturing and does not have a transparent e-waste recycling program.</p><p>Identify and explain why this situation can be considered an example of green washing. Suggest two genuine sustainability practices the company should adopt to avoid green washing and truly support environmental goals.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <p>A multinational IT company operates a large data center that consumes massive amounts of electricity and produces significant electronic waste due to frequent hardware upgrades. Recent reports show that the data center contributes heavily to carbon emissions because it relies on non-renewable energy sources. To align its operations with the Sustainable Development Goals (SDGs), the company decides to adopt green computing practices.</p><p>As an IT consultant, propose three green computing strategies the company can implement to reduce its environmental impact. Explain how each strategy supports one or more SDGs.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>A cloud service company replaces older servers with energy-efficient hardware, uses virtualization to reduce the number of physical machines, and powers part of its data center with renewable energy. At the same time, it implements a customer feedback and rating system to monitor service quality and quickly address user complaints.</p><p>Analyze how combining sustainability initiatives with effective reputation management can improve customer trust and business performance.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">4. Chapter 2</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 2 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>A mid-sized software company, CodeNova, recently decided to upgrade its infrastructure to become more energy-efficient. The company replaced its old servers with energy-efficient cloud-based solutions, switched all office lighting to LED systems, and programmed all devices to enter sleep mode after periods of inactivity. Additionally, they introduced an employee awareness program on energy-saving habits. Six months after implementation, CodeNova reported a 25% reduction in energy consumption and a noticeable drop in their electricity bills.</p><p>Discuss how CodeNova’s implementation of energy-efficient practices positively impacts both the environment and the company. In your answer, explain the environmental benefits of reduced energy consumption and how such initiatives contribute to sustainable development.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>A small business plans to transition many of its services to the cloud and digitize previously paper-based non-IT functions to save money and improve sustainability. You’re asked to create a roadmap. What steps would you recommend to ensure the transition is both cost-effective and green?</p><p>Focus on the functions you would digitize first. How would you evaluate when moving to cloud services is advantageous from a cost and energy perspective? Justify your answer.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>After the pandemic, a company shifts to remote work. This reduces commuting but increases household energy use and reliance on cloud storage. Analyze how remote working practices align with green computing principles and contribute to the following SDG:</p><ol type="a"><li>Sustainable cities (SDG 11)</li><li>Climate action (SDG 13)</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>State the concept of <b>Nega watts</b>. A mid-sized software company operates an office with 300 desktop computers, multiple servers, and networking equipment that run continuously, even during non-working hours. The company has noticed a steady increase in electricity bills and a higher carbon footprint due to inefficient energy usage. Management wants to implement energy-efficient green computing practices without affecting employee productivity.</p><p>As an IT manager, identify three energy-efficient green computing measures that can be implemented in the organization. Explain how these measures reduce energy consumption and carbon emissions.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>A city authority introduces an electronic ticketing system for public transportation that requires dedicated ticketing machines at every station. The machines run continuously, require regular maintenance, and are replaced frequently due to hardware failures. An environmental audit suggests that many users already carry smartphones capable of performing the same function.</p><p>Explain how this system could be redesigned to minimize reliance on dedicated computing devices. Why can computer-less or reduced-computer approaches be more environmentally sustainable? Discuss the benefits and possible challenges of implementing such solutions.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>A large university aims to reduce operational costs and improve environmental sustainability by digitizing several non-IT functions. The university is also adopting green computing practices step by step.</p><p>Identify five non-IT functions based on the scenario that have been digitized and explain how digitization improves their efficiency.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">5. Chapter 3</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 3 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>The government of a developing country, Zarovia, after reviewing the latest IPCC reports, initiates a national policy aiming to align with the global effort to keep temperature rise below 2°C—ideally targeting 1.5°C. The policy includes transitioning to renewable energy, improving public transportation, enforcing stricter emissions standards for industries, and investing in energy efficiency for urban infrastructure. While some sectors welcome the move, others—particularly in the fossil fuel industry—argue that the transition could slow economic growth and increase unemployment in the short term.</p><p>Discuss the significance of the 2°C warming limit in the context of Zarovia’s climate policy. Why is staying below this threshold critical for both global and national sustainability?</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>The IT sector is rapidly expanding: data centers, cloud computing, crypto currency mining, abundance of smart devices, etc. A 2025 report estimates that the global ICT sector could account for up to 8% of global carbon emissions by 2030 if no corrective action is taken. You are part of a sustainability task force at a global tech company aiming to align operations that support the 2°C limit.</p><p>What concrete steps should your company take to reduce its own impact, and how can it help other industries achieve climate targets through digital innovation?</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>A university campus is modernizing its digital infrastructure by introducing smart classrooms, high-performance computing labs, and always-on networking equipment. Although these upgrades improve learning and research capabilities, the university’s annual electricity bill and carbon footprint increase significantly. Additionally, outdated computers and networking devices are being discarded without proper recycling.</p><p>Based on this scenario, analyze how IT systems contribute to environmental problems. Why is it important for a computer engineer to consider environmental sustainability when designing and managing IT systems? Explain how green computing practices can be applied in this context to reduce energy consumption, electronic waste, and environmental impact.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A rapidly developing country continues expanding coal-fired power plants and increasing industrial production to support economic growth. At the same time, transportation and energy demand continue to rise, leading to higher carbon dioxide (CO₂) emissions each year. Climate analysts warn that if such trends continue globally, Earth’s average surface temperature may exceed the 2°C threshold.</p><p>Discuss the consequences of allowing Earth’s average surface temperature to rise beyond 2°C.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">6. Chapter 6</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 4 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>ABC Tech has recently announced its commitment to becoming carbon-neutral. The company decided to shift to green devices and work only with green-certified suppliers. It begins designing laptops and smartphones using recyclable materials, energy-efficient components, and modular parts to extend product lifespan. ABC Tech also revises its supply chain policy to only partner with suppliers who meet strict environmental standards—such as using renewable energy, minimizing water waste, and maintaining ethical labor practices. While the move increases production costs slightly, it enhances the company's brand image and meets growing consumer demand for environmentally responsible products.</p><p>Analyze how this focus on green devices and green suppliers contributes to environmental sustainability. What are the potential long-term benefits and challenges of this approach from both an environmental and business perspective?</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>ABC is a startup deciding between purchasing high-end laptops from Supplier A (non-green certified but well-established) or mid-tier laptops from Supplier B that claim lower power-consumption and support take-back/disposal programmes. They also expect rapid turnover of devices in 3 years. As the IT consultant of ABC, how would you advise them on the green computing decision given their business model of frequent refresh and replacement?</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>A software company is planning to upgrade all office computers to support business expansion and replace older systems. Management wants to reduce environmental impact and align procurement decisions with sustainability goals.</p><p>Propose a sample buying statement explaining how the company will make environmentally friendly purchasing decisions by considering green devices and suppliers.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">7. Book 2 (Ch 1, 5)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 6 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>AetherCloud Solutions is a rapidly expanding cloud service provider. They are planning a new flagship data center at Notun Bazar to manage its growth. The company's key objectives are to significantly reduce the high operational costs of its current facilities and to meet the growing demand from corporate clients for environmentally sustainable services.</p><p>As the lead Green Computing consultant for this project, provide a proposal for designing this green data center, focusing your recommendations on the following two foundational areas: Building infrastructure and Power Supply Considerations.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 8 (5 Marks)</div>
+    <div class="question-body">
+      <p>A large university plans to build a new data center to support its cloud computing, AI research, and digital learning platforms. However, the administration is concerned about the high energy consumption and carbon emissions associated with traditional data centers. They want the new facility to be environmentally sustainable, energy-efficient, and aligned with the principles of green computing. As the lead system designer, you are asked to propose a design plan for a Green Data Center that supports the university’s sustainability vision. Based on this scenario, answer the following questions:</p><ol type="a"><li>What key technologies and architectural choices would you include to make the data center energy-efficient?</li><li>How would renewable energy sources and smart cooling systems be integrated?</li></ol>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A small data center is trying to reduce execution time by adding more processors. After reviewing their entire codebase and system architecture, engineers found that at most 80% code running on their system can be parallelized. What is the theoretical speedup when using:</p><ol type="a"><li>16 processors</li><li>12 processors</li></ol><p>What happens to the speedup predicted by Amdahl’s Law when the number of processors approaches infinity? Explain briefly.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 8 (a & b) (Hot/Cold Data & Disk Power State)</div>
+    <div class="question-body">
+      <p>Explain the concept of Hot Data and Cold Data. State the impact of disk power state on the storage.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <ol type="a"><li>A cloud computing company is upgrading its data center to improve performance for processing large-scale scientific simulations. Engineers analyze the workload and find that 80% of the application code can be parallelized and executed across multiple processors. If the company wants to achieve a theoretical speedup of 4, determine the minimum number of processors required.</li><li>Disk spin-down can potentially reduce energy consumption by 20% to 50% in large-scale storage clusters. Analyze the trade-off between energy savings and system performance.</li></ol>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">8. Chapter 9</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 7 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>What is Embodied Energy? Discuss how understanding and reducing a product's embodied energy can be a key strategy for lowering its overall greenhouse gas emissions.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A tech company operates a regional data-center and some remote branch offices. They discover that the vast majority of their IT energy use comes from equipment running 24/7 (even when idle) and the cooling systems in the data-center are outdated. A recent internal survey shows that the IT division accounts for 30% of the company’s total emissions (electricity use + upstream hardware manufacturing). The VP of IT wants you to propose a pilot project that targets both Energy Consumption and Greenhouse Gas Emissions reduction. Explain your proposal in detail.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 8 (5 Marks)</div>
+    <div class="question-body">
+      <p>A company notices that its electricity bills and carbon footprint have been increasing due to heavy daily energy consumption in offices, including lighting, air conditioning, computers, and other electrical equipment. Management decides to adopt more sustainable energy practices and encourage employees to reduce environmental impact by changing everyday energy usage habits.</p><p>Explain the steps that can be taken in daily energy use by the company to reduce greenhouse gas emissions.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

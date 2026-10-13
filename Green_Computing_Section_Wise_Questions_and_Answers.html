@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Green Computing - Section-wise Questions and Answers</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-right {
+    content: "Page " counter(page);
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #444444;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.document-header {
+  border-bottom: 2pt solid #000000;
+  padding-bottom: 8pt;
+  margin-bottom: 20pt;
+  text-align: center;
+}
+
+.document-title {
+  font-size: 16pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 4pt 0;
+  letter-spacing: 0.5pt;
+}
+
+.document-subtitle {
+  font-size: 10.5pt;
+  color: #222222;
+  margin: 0;
+}
+
+.section-container {
+  margin-bottom: 24pt;
+}
+
+.section-title {
+  font-size: 13.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1.5pt solid #000000;
+  padding-bottom: 3pt;
+  margin-top: 18pt;
+  margin-bottom: 12pt;
+  page-break-after: avoid;
+}
+
+.question-block {
+  margin-bottom: 16pt;
+  page-break-inside: avoid;
+  border-bottom: 0.5pt solid #cccccc;
+  padding-bottom: 14pt;
+}
+
+.question-block:last-child {
+  border-bottom: none;
+}
+
+.question-heading {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0 0 6pt 0;
+  page-break-after: avoid;
+}
+
+.question-body {
+  margin: 0 0 8pt 0;
+  font-size: 10.5pt;
+}
+
+.question-body p {
+  margin: 4pt 0;
+}
+
+.question-body ol, .question-body ul {
+  margin: 4pt 0 6pt 20pt;
+  padding-left: 0;
+}
+
+.question-body li {
+  margin-bottom: 3pt;
+}
+
+.answer-container {
+  margin-top: 8pt;
+  padding-left: 10pt;
+  border-left: 2pt solid #000000;
+}
+
+.answer-header {
+  font-size: 10.5pt;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0 0 4pt 0;
+  page-break-after: avoid;
+}
+
+.answer-body h4 {
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 8pt 0 3pt 0;
+  page-break-after: avoid;
+}
+
+.answer-body p {
+  margin: 3pt 0;
+}
+
+.answer-body ul, .answer-body ol {
+  margin: 3pt 0 6pt 18pt;
+  padding-left: 0;
+}
+
+.answer-body li {
+  margin-bottom: 3pt;
+  line-height: 1.45;
+}
+
+.answer-body li > ul {
+  margin-top: 2pt;
+  margin-bottom: 3pt;
+  margin-left: 16pt;
+}
+
+.answer-body b {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0 8pt 0;
+  font-size: 9.5pt;
+}
+
+table, th, td {
+  border: 1pt solid #000000;
+}
+
+th, td {
+  padding: 4pt 6pt;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="document-header">
+  <h1 class="document-title">Green Computing (EEE4261)</h1>
+  <p class="document-subtitle">Section-wise Previous Year Questions &amp; Model Answers (Spring 2025 – Spring 2026)</p>
+</div>
+
+<div class="section-container">
+  <div class="section-title">1. Cloud Computing</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>A growing e-commerce company expects a massive increase in web traffic during the holiday season. Rather than buying new physical servers, they rent virtual machines, storage, and networking resources from a cloud provider. They configure the operating systems themselves and scale the resources up or down depending on the load.</p><p>Which cloud services model is being used by the company? Mention the key characteristics of this model and explain your logic for choosing this model as your answer. How does adopting this model contribute to green computing and sustainability?</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Cloud Services Model Identified</h4>
+      <ul>
+        <li><b>Model:</b> <b>IaaS (Infrastructure as a Service)</b>.</li>
+        <li><b>Logic for Selection:</b> The company rents raw computing resources (virtual machines, storage, and networking) and configures the operating systems and software stacks themselves, rather than consuming pre-built applications (SaaS) or developer runtime platforms (PaaS).</li>
+      </ul>
+
+      <h4>2. Key Characteristics of IaaS (Section 1.3)</h4>
+      <ul>
+        <li><b>Raw Virtualized Infrastructure:</b> Delivers dynamically scalable virtual compute instances, block storage, and network routing.</li>
+        <li><b>Client Management Responsibility:</b> The cloud provider manages the physical hardware, hypervisors, and data center facilities; the <b>client configures and manages the operating system, middleware, runtime, and software applications</b>.</li>
+        <li><b>Pay-As-You-Go Utility Billing:</b> Metered charging based strictly on active resource consumption (CPU hours, memory, gigabytes stored).</li>
+        <li><b>Rapid Elasticity:</b> Compute resources scale up during peak holiday web traffic and instantly scale down when traffic normalizes.</li>
+      </ul>
+
+      <h4>3. How Adopting IaaS Contributes to Green Computing & Sustainability</h4>
+      <ul>
+        <li><b>Server Consolidation & High Utilization:</b> Multi-tenant hyperscale data centers run servers at <b>65%+ capacity</b>, eliminating dozens of underutilized on-premise physical servers running at only 5–15% capacity.</li>
+        <li><b>Elimination of Over-Provisioning:</b> Renting elastic cloud VMs eliminates the need to purchase physical hardware that sits idle during non-holiday months, slashing embodied manufacturing carbon.</li>
+        <li><b>Dynamic Off-Peak Power Savings:</b> Virtual machine instances can be automatically terminated during low-traffic hours, cutting electricity draw and data center cooling loads.</li>
+        <li><b>Superior Cloud Energy Efficiency (PUE):</b> Hyperscale cloud providers achieve efficient PUE ratings (1.1–1.2 vs. 1.8–2.0 on-premises) and procure large-scale renewable power contracts.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 8 (c) (Data Center Interconnect)</div>
+    <div class="question-body">
+      <p>Draw the block diagram of a data center interconnect network.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Block Diagram of Data Center Interconnect Network (Section 1.6)</h4>
+      <div class="scroll">
+        <pre style="background:#f8fafc; border:1px solid #e2e8f0; padding:12px; border-radius:6px; font-family:var(--font-mono); font-size:0.85rem; line-height:1.4;">
+               [ Internet / WAN Backbone ]
+                            │
+               ┌────────────┴────────────┐
+               │    CORE LAYER SWITCHES   │  (High-Speed Packet Routing)
+               └────────────┬────────────┘
+                            │
+         ┌──────────────────┴──────────────────┐
+         │                                     │
+┌────────┴────────┐                   ┌────────┴────────┐
+│  AGGREGATION    │                   │  AGGREGATION    │  (Load Balancing, Security,
+│  LAYER SWITCHES │                   │  LAYER SWITCHES │   Firewalls, Inter-VLAN Routing)
+└────────┬────────┘                   └────────┬────────┘
+         │                                     │
+   ┌─────┴─────┐                         ┌─────┴─────┐
+┌──┴──┐     ┌──┴──┐                   ┌──┴──┐     ┌──┴──┐
+│ ToR │     │ ToR │ (Top-of-Rack)     │ ToR │     │ ToR │ (Access Layer Switches)
+└──┬──┘     └──┬──┘                   └──┬──┘     └──┬──┘
+   │           │                         │           │
+[Servers]   [Servers]                 [Servers]   [Servers] (Compute / Storage Nodes)
+        </pre>
+      </div>
+
+      <h4>2. Architectural Layer Descriptions</h4>
+      <ul>
+        <li><b>1. Core Layer:</b> The high-speed network backbone that switches incoming and outgoing traffic between the data center and the external Internet / WAN with ultra-low latency.</li>
+        <li><b>2. Aggregation Layer:</b> The middle tier interconnecting multiple access switches; enforces access control policies, security firewalls, and traffic load balancing.</li>
+        <li><b>3. Access Layer (Top-of-Rack / ToR Switches):</b> Direct physical access point installed in each server rack, connecting compute blades and storage arrays to the internal data center network.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>Analyze how virtualization, SOA, web services, and Web 3.0/ mashups work together to enable modern cloud computing platforms. Support your answer with an example of a real-world cloud application.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. The Four Enabling Technologies (Section 1.2 & 1.6)</h4>
+      <ul>
+        <li><b>Virtualization (The Hardware Abstraction Layer):</b>
+          <ul>
+            <li>Hypervisors abstract physical CPUs, memory, and storage into isolated, elastic Virtual Machines (VMs).</li>
+            <li>Enables high-density server consolidation and dynamic resource allocation on demand.</li>
+          </ul>
+        </li>
+        <li><b>SOA - Service-Oriented Architecture (The Design Pattern):</b>
+          <ul>
+            <li>Structures complex enterprise software into independent, modular, loosely coupled services.</li>
+            <li>Each service delivers a discrete business function that can be independently updated and scaled.</li>
+          </ul>
+        </li>
+        <li><b>Web Services (The Communication Standard):</b>
+          <ul>
+            <li><b>Universal Standard Protocols:</b>
+          <ul>
+            <li>REST</li>
+            <li>SOAP</li>
+            <li>XML</li>
+            <li>JSON</li>
+          </ul>
+        </li>
+            <li>Enables heterogeneous services running on different operating systems and languages to communicate seamlessly.</li>
+          </ul>
+        </li>
+        <li><b>Web 3.0 & Mashups (The Aggregation & Presentation Layer):</b>
+          <ul>
+            <li>Mashup applications combine data and functionality from multiple independent web APIs into a unified user application.</li>
+            <li>Delivers responsive, interactive, and intelligent digital interfaces to end-users.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. How They Work Together in Modern Cloud Platforms (The Integration Pipeline)</h4>
+      <ol>
+        <li><b>Hardware Foundation:</b> <b>Virtualization</b> pools physical data center hardware into scalable, elastic virtual compute resources.</li>
+        <li><b>Software Architecture:</b> <b>SOA</b> organizes enterprise applications into modular, reusable service components hosted on those virtual instances.</li>
+        <li><b>Network Interoperability:</b> <b>Web Services</b> provide the standard communication bridge allowing those distributed SOA services to exchange data across cloud networks.</li>
+        <li><b>User Experience:</b> <b>Mashups</b> consume those web services via APIs, synthesizing multiple cloud data streams into seamless, rich enterprise web applications.</li>
+      </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">2. IoT (Green IoT)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 8 [CO3] (3 + 2 = 5 Marks)</div>
+    <div class="question-body">
+      <p>Sajol Agro & Farms, a large-scale agricultural enterprise, is implementing smart farming practices to improve sustainability by reducing water and fertilizer usage. To do this, they have deployed a vast network of IoT sensors across their fields to collect real-time data on soil moisture, nutrient levels, and weather conditions. However, continuously streaming this massive volume of data to a distant central cloud for analysis is causing high network latency, delaying critical actions like precision irrigation, and resulting in significant energy consumption and data transmission costs.</p><ol type="a"><li>As a Green Computing consultant, propose a solution to address these latency, cost, and energy consumption issues.</li><li>Explain how your proposed architecture differs from a traditional cloud-centric model. What specific benefits does your solution offer in terms of energy efficiency and resource optimization for Verdant Valley Farms?</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Smart Agriculture Practices (Spring 2025 Q8)</h4>
+      <ul>
+        <li><b>Implementation:</b>
+          <ul>
+            <li>Soil moisture sensors</li>
+            <li>Temperature sensors</li>
+            <li>Nitrogen-Phosphorus-Potassium (NPK) sensors</li>
+          </ul>
+        </li>
+        <li><b>Sustainability Impact:</b>
+          <ul>
+            <li>Automated precision drip irrigation</li>
+            <li>Targeted fertilizer delivery</li>
+            <li>Reduces water consumption by up to 50%</li>
+            <li>Prevents groundwater contamination</li>
+          </ul>
+        </li>
+        <li><b>Hop-to-Hop (Multi-Hop) Routing:</b>
+          <ul>
+            <li>Nodes relay readings through intermediate neighbor nodes in short hops</li>
+            <li>Drastically reduces radio transmission power (P ∝ d²)</li>
+            <li>Extends overall sensor network battery life</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. Edge Computing & Sensor Lifetime Strategies</h4>
+      <ul>
+        <li><b>Duty Cycling:</b>
+          <ul>
+            <li>Nodes operate in deep sleep mode for 90%–99% of the time</li>
+            <li>Wakes up for milliseconds only to sample and transmit</li>
+            <li>Preserves battery charge over multiple growing seasons</li>
+          </ul>
+        </li>
+        <li><b>Ambient Energy Harvesting:</b>
+          <ul>
+            <li>Solar micro-cells</li>
+            <li>Thermal gradient harvesters</li>
+            <li>Eliminates disposable chemical batteries and toxic e-waste</li>
+          </ul>
+        </li>
+        <li><b>Edge Data Filtering:</b>
+          <ul>
+            <li>Edge gateways aggregate and filter local sensor readings</li>
+            <li>Transmits data to cloud only upon detecting significant anomalies</li>
+            <li>Eliminates energy-draining redundant RF packet transmissions</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <p>A growing smart city is facing challenges with excessive energy consumption, water wastage, and poor waste management. The city council decides to implement an IoT-based Green Management System to make the city more sustainable. The system should use sensors and data analytics to monitor and optimize resource usage in real time. As a Computer Engineer, you are tasked with designing an IoT-based green system to support the city’s sustainability goals. In this connection answer the following questions:</p><ol type="a"><li>What IoT components (sensors, networks, platforms) would you include?</li><li>How would data be collected, processed, and used for decision-making?</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Smart Cities (Summer 2025 Q7)</h4>
+      <ul>
+        <li><b>Energy Management:</b>
+          <ul>
+            <li>Motion sensors</li>
+            <li>Ambient light sensors</li>
+            <li>Adaptive LED street lighting</li>
+            <li>Reduces energy consumption during empty hours (dims to 20% power)</li>
+          </ul>
+        </li>
+        <li><b>Water Management:</b>
+          <ul>
+            <li>Acoustic sensors</li>
+            <li>Flow sensors</li>
+            <li>Detects underground pipe leaks</li>
+            <li>Prevents clean water wastage</li>
+          </ul>
+        </li>
+        <li><b>Waste Management:</b>
+          <ul>
+            <li>Ultrasonic fill-level sensors</li>
+            <li>Optimizes garbage truck routes</li>
+            <li>Reduces diesel fuel consumption</li>
+            <li>Lowers carbon emissions</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. Green Communication & Low-Power Protocols (Section 2.2 & 2.3)</h4>
+      <ul>
+        <li><b>Low-Power Wireless Protocols:</b>
+          <ul>
+            <li>LoRaWAN</li>
+            <li>Zigbee</li>
+            <li>6LoWPAN</li>
+            <li>Bluetooth Low Energy (BLE)</li>
+          </ul>
+        </li>
+        <li><b>Power Optimization Strategies:</b>
+          <ul>
+            <li>Duty cycling (sleeping 95%+ of the time)</li>
+            <li>Solar micro-cell energy harvesting</li>
+            <li>Edge data aggregation and local filtering</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>A university plans to reduce its electricity consumption by deploying IoT-enabled smart sensors to monitor classroom occupancy, lighting, air conditioning, and energy usage. The collected data is analyzed in real time to automatically switch off unused devices and optimize energy consumption.</p><p>Explain how IoT technologies can be used to implement this smart energy management system. And discuss how the proposed solution supports the principles of green computing.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Smart Campuses & Buildings (Spring 2026 Q2)</h4>
+      <ul>
+        <li><b>Implementation:</b>
+          <ul>
+            <li>Passive Infrared (PIR) occupancy sensors</li>
+            <li>Ambient light sensors</li>
+            <li>Automated lighting systems</li>
+            <li>Automated Heating, Ventilation, and Air Conditioning (HVAC) systems</li>
+            <li>IoT smart plugs for lab computers and projectors</li>
+          </ul>
+        </li>
+        <li><b>Sustainability Impact:</b>
+          <ul>
+            <li>Powers down lighting in vacant rooms</li>
+            <li>Adjusts HVAC systems when rooms are vacant</li>
+            <li>Reduces campus electricity bills by 30–40%</li>
+            <li>Eliminates idle lab power consumption outside scheduled hours</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. Sensor Network Energy Efficiency (Section 2.3)</h4>
+      <ul>
+        <li><b>Duty Cycling:</b>
+          <ul>
+            <li>Nodes sleep 95%+ of the time</li>
+            <li>Wakes up briefly every few minutes to check occupancy and light levels</li>
+          </ul>
+        </li>
+        <li><b>Ambient Energy Harvesting:</b>
+          <ul>
+            <li>Indoor photovoltaic cells (capturing room light)</li>
+            <li>Piezoelectric vibration harvesters</li>
+            <li>Eliminates chemical battery replacement and toxic e-waste</li>
+          </ul>
+        </li>
+        <li><b>Multi-Hop Wireless Routing:</b>
+          <ul>
+            <li>Short low-power mesh hops via Zigbee or BLE</li>
+            <li>Avoids power-hungry direct long-range transmissions</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">3. Chapter 1 (+ SDG)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 1 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>A tech company releases a new line of laptops branded as "EcoSmart Devices." In its marketing materials, the company claims these laptops are "Environmentally Friendly" and have "Zero Environmental Impact." The promotional content highlights a sleek design with minimal packaging and uses green-themed visuals to reinforce the eco-conscious image. However, a recent investigative report reveals that the laptops are built with non-recyclable materials, the manufacturing process consumes high levels of energy from non-renewable sources, and there is no environmental certification or data to support their claims.</p><p>What key issue or practice is being illustrated in this scenario? Identify the misleading elements in the company’s campaign, and discuss the potential consequences of this type of marketing practice for consumers, the environment, and the company itself.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Key Issue Identified: Greenwashing (Section 1.2)</h4>
+      <ul>
+        <li>The scenario illustrates <b>Greenwashing</b>—the deceptive practice of misleading consumers regarding the environmental practices of an organization or the eco-performance of a product.</li>
+      </ul>
+
+      <h4>2. Misleading Elements in the Campaign (The Sins of Greenwashing)</h4>
+      <ul>
+        <li><b>Sin of Vagueness:</b> Using sweeping, undefined buzzwords like <i>"Environmentally Friendly"</i> and <i>"Zero Environmental Impact"</i> with zero concrete technical metrics.</li>
+        <li><b>Sin of No Proof:</b> Asserting absolute environmental claims without providing third-party verification, published audits, or recognized eco-labels.</li>
+        <li><b>Sin of the Hidden Trade-off:</b> Emphasizing sleek minimalist packaging and green visuals while concealing that the laptops use non-recyclable materials and high-carbon, non-renewable manufacturing.</li>
+        <li><b>Sin of Fibbing:</b> Claiming "zero impact," which is physically impossible for manufactured electronics containing silicon processors and batteries.</li>
+      </ul>
+
+      <h4>3. Consequences of This Marketing Practice</h4>
+      <ul>
+        <li><b>For Consumers:</b> Misleads well-intentioned buyers into paying eco-premiums for dirty products; breeds cynicism and distrust toward genuine green products.</li>
+        <li><b>For the Environment:</b> Causes ongoing environmental damage, accelerates fossil fuel depletion, and generates non-recyclable toxic e-waste.</li>
+        <li><b>For the Company:</b> Destroys corporate brand reputation, revokes the company's <b>Social License to Operate (Section 1.3)</b>, invites regulatory penalties for false advertising, and repels talented job candidates.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 5 [CO3] (5 Marks)</div>
+    <div class="question-body">
+      <p>Consider a multinational electronics corporation, "GlobalTech Inc.", which previously based its corporate social responsibility program on the Millennium Development Goals (MDGs). With the global transition to the more comprehensive Sustainable Development Goals (SDGs), the company faces increasing pressure to address issues like e-waste from its products and labor conditions in its supply chain. In this context, evolve the company's outdated approach by proposing a robust green computing strategy that addresses the following SDGs:</p><ol type="i"><li>SDG-12: Responsible Consumption and Production</li><li>SDG-8: Decent Work and Economic Growth</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Transitioning Corporate CSR to the SDGs (Section 1.3 & SDG)</h4>
+      <ul>
+        <li>Moving beyond outdated philanthropic charity (MDGs) to integrated operational sustainability across the entire technology lifecycle under the UN 2030 Agenda.</li>
+      </ul>
+
+      <h4>2. Strategy for SDG-12: Responsible Consumption and Production</h4>
+      <ul>
+        <li><b>Circular Hardware Design:</b> Build modular electronics with standardized screws and replaceable batteries to extend product lifespan from 3 to 5+ years.</li>
+        <li><b>Toxic Material Elimination (RoHS Compliance):</b> Eliminate hazardous substances (lead, mercury, cadmium, halogenated flame retardants) and maximize post-consumer recycled (PCR) plastics.</li>
+        <li><b>Certified Take-Back & Closed-Loop Recycling:</b> Establish an official vendor take-back program; partner with certified e-waste recyclers to safely recover precious metals (gold, copper, rare-earths) and keep hardware out of landfills.</li>
+      </ul>
+
+      <h4>3. Strategy for SDG-8: Decent Work and Economic Growth</h4>
+      <ul>
+        <li><b>Supply Chain Code of Conduct:</b> Enforce strict labor and environmental standards across all tier-1 and tier-2 manufacturing partners (fair wages, safe working hours, protective gear).</li>
+        <li><b>Eradication of Hazardous E-Waste Handling:</b> Ban exporting toxic e-waste to informal, unregulated overseas dumps where vulnerable workers burn circuit boards over open fires.</li>
+        <li><b>Green Job Creation & Training:</b> Invest in formal, certified domestic recycling and remanufacturing facilities, creating skilled green engineering jobs.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>TechNova Inc. is a mid-sized consumer electronics company recently released a line of wireless earbuds and added a small label on the packaging that says: “Eco-smart packaging: 20% less plastic!” They promoted this feature in ads and social media but didn’t change the product's manufacturing process, energy use, or lifecycle management. The initiative was driven more by the marketing team than by any formal sustainability plan.</p><ol type="a"><li>Based on its approach to sustainability, how would you classify TechNova’s business strategy?</li><li>What kind of green misrepresentation or false advertizing is TechNova engaging in, according to the scenario?</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Classification of TechNova's Business Strategy</h4>
+      <ul>
+        <li><b>Superficial Greenwashing / Marketing-Led Approach:</b> The initiative is driven by the marketing department rather than an integrated corporate sustainability plan.</li>
+        <li>It prioritizes short-term sales appeal and green PR without investing in operational decarbonization, renewable energy, or hardware lifecycle management.</li>
+      </ul>
+
+      <h4>2. Form of Green Misrepresentation Identified (Section 1.2)</h4>
+      <ul>
+        <li><b>Sin of the Hidden Trade-off:</b> TechNova heavily advertises a trivial packaging improvement (<i>"20% less plastic in the box"</i>) to create an eco-friendly aura, while entirely concealing the massive environmental footprint of the product itself—toxic battery materials, unrecyclable earbuds, and high-carbon manufacturing.</li>
+        <li><b>Sin of Vagueness:</b> Using the promotional slogan <i>"Eco-smart packaging"</i> without providing verifiable data or lifecycle assessments.</li>
+        <li><b>Publicizing in Advance / Without Depth:</b> Violates the cardinal rule of green computing: never promote cosmetic packaging tweaks as proof of true environmental sustainability.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 1 (5 Marks)</div>
+    <div class="question-body">
+      <p>A technology company advertises its new line of laptops as “100% eco-friendly” and “carbon-neutral”. The marketing campaign highlights recyclable packaging and the use of energy-efficient processors. However, independent reports reveal that the company still relies on coal-based electricity for manufacturing and does not have a transparent e-waste recycling program.</p><p>Identify and explain why this situation can be considered an example of green washing. Suggest two genuine sustainability practices the company should adopt to avoid green washing and truly support environmental goals.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Why This Situation is Greenwashing (Section 1.2)</h4>
+      <ul>
+        <li><b>Sin of the Hidden Trade-off:</b> The company highlights visible green attributes (recyclable packaging, efficient CPUs) to distract the public from core environmental harms (manufacturing with dirty coal electricity and having no e-waste recycling program).</li>
+        <li><b>Sin of Fibbing / False Claims:</b> Advertising laptops as <i>"100% eco-friendly"</i> and <i>"carbon-neutral"</i> while coal-fired power plants supply the factory is a deceptive and scientifically false claim.</li>
+        <li><b>Sin of No Proof:</b> Making bold carbon neutrality claims without verifiable, third-party audited carbon offset documentation.</li>
+      </ul>
+
+      <h4>2. Two Genuine Sustainability Practices to Adopt</h4>
+      <ul>
+        <li><b>1. Transition Manufacturing to Renewable Energy (PPA Contracts):</b> Contract with renewable utility providers or install on-site solar/wind to eliminate reliance on coal-based grid power, verifiable via greenhouse gas accounting.</li>
+        <li><b>2. Certified Take-Back & Closed-Loop E-Waste Program:</b> Implement a verifiable hardware take-back program and partner with certified e-waste processors to recover materials safely, earning third-party certifications like <b>EPEAT Gold and ISO 14001</b>.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <p>A multinational IT company operates a large data center that consumes massive amounts of electricity and produces significant electronic waste due to frequent hardware upgrades. Recent reports show that the data center contributes heavily to carbon emissions because it relies on non-renewable energy sources. To align its operations with the Sustainable Development Goals (SDGs), the company decides to adopt green computing practices.</p><p>As an IT consultant, propose three green computing strategies the company can implement to reduce its environmental impact. Explain how each strategy supports one or more SDGs.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Three Green Computing Strategies for the Data Center</h4>
+      <ul>
+        <li><b>Strategy 1: Server Virtualization & Consolidation (Chapter 1 & Section 1.2)</b>
+          <ul>
+            <li>Consolidate multiple underutilized physical servers onto high-density virtualized host servers; decommission and power down idle hardware.</li>
+            <li><b>SDG Alignment:</b> Supports <b>SDG 9 (Industry, Innovation, and Infrastructure)</b> and <b>SDG 13 (Climate Action)</b> by drastically lowering electricity consumption and data center cooling overhead.</li>
+          </ul>
+        </li>
+        <li><b>Strategy 2: Shifting to 100% Renewable Energy Sources (Chapter 9 & Section 9.9)</b>
+          <ul>
+            <li>Transition the data center from fossil fuel grid power to renewable Power Purchase Agreements (PPAs) for solar and wind energy; install on-site solar arrays.</li>
+            <li><b>SDG Alignment:</b> Directly supports <b>SDG 7 (Affordable and Clean Energy)</b> and <b>SDG 13 (Climate Action)</b> by eliminating operational greenhouse gas emissions.</li>
+          </ul>
+        </li>
+        <li><b>Strategy 3: Hardware Lifecycle Extension & Certified E-Waste Recycling (Chapter 6 & 9)</b>
+          <ul>
+            <li>Extend server refresh lifecycles from 3 years to 5–6 years via modular component upgrades; dispose of decommissioned servers exclusively through certified take-back recycling partners.</li>
+            <li><b>SDG Alignment:</b> Supports <b>SDG 12 (Responsible Consumption and Production)</b> by lowering embodied manufacturing carbon and halting toxic landfill e-waste.</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>A cloud service company replaces older servers with energy-efficient hardware, uses virtualization to reduce the number of physical machines, and powers part of its data center with renewable energy. At the same time, it implements a customer feedback and rating system to monitor service quality and quickly address user complaints.</p><p>Analyze how combining sustainability initiatives with effective reputation management can improve customer trust and business performance.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. The Power of Combining Sustainability with Reputation Management</h4>
+      <ul>
+        <li><b>Three Dimensions of Reputation (Section 1.1):</b>
+          <ol>
+            <li><i>Doing the Right Thing:</i> Genuine environmental action (virtualization, renewable power) fulfills corporate social responsibility.</li>
+            <li><i>Saving Money:</i> High-efficiency hardware and virtualization lower electricity bills, improving financial margins.</li>
+            <li><i>Making Money:</i> Verifiable green credentials attract enterprise clients who require sustainable cloud supply chains.</li>
+          </ol>
+        </li>
+      </ul>
+
+      <h4>2. How This Improves Customer Trust & Business Performance</h4>
+      <ul>
+        <li><b>Securing the Social License to Operate (Section 1.3):</b> Operating clean data centers with renewable energy earns long-term community trust and shields the business from public backlash.</li>
+        <li><b>Responsive Feedback Builds High Trust:</b> Pairing eco-friendly infrastructure with an active customer feedback mechanism proves that the company values both environmental and customer welfare, turning clients into loyal advocates.</li>
+        <li><b>The Virtuous Reputation Cycle (Section 1.6):</b> Proven sustainability + high service ratings → premium brand reputation → attracts high-paying clients and top engineering talent → superior business performance and retention.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">4. Chapter 2</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 2 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>A mid-sized software company, CodeNova, recently decided to upgrade its infrastructure to become more energy-efficient. The company replaced its old servers with energy-efficient cloud-based solutions, switched all office lighting to LED systems, and programmed all devices to enter sleep mode after periods of inactivity. Additionally, they introduced an employee awareness program on energy-saving habits. Six months after implementation, CodeNova reported a 25% reduction in energy consumption and a noticeable drop in their electricity bills.</p><p>Discuss how CodeNova’s implementation of energy-efficient practices positively impacts both the environment and the company. In your answer, explain the environmental benefits of reduced energy consumption and how such initiatives contribute to sustainable development.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Environmental Benefits of CodeNova's Energy-Efficient Practices</h4>
+      <ul>
+        <li><b>Direct Greenhouse Gas Reduction:</b> A 25% cut in electricity consumption directly cuts fossil fuel combustion at the power grid, lowering the company's operational carbon footprint.</li>
+        <li><b>The Concept of Negawatts (Section 2.1):</b> Every watt of electricity conserved through sleep modes and efficient cloud architecture is a <b>Negawatt</b>—energy saved that eliminates the need for power generation, coal burning, and grid transmission losses.</li>
+        <li><b>Resource Conservation:</b> Transitioning to efficient cloud servers replaces dozens of on-premise physical servers, reducing physical e-waste and embodied manufacturing carbon.</li>
+      </ul>
+
+      <h4>2. Business & Financial Benefits for the Company</h4>
+      <ul>
+        <li><b>100% Impact on Bottom-Line Profit (Section 2.1):</b> Profit = Revenues - Costs. Every dollar saved on monthly electric bills flows 100% directly into net corporate profit.</li>
+        <li><b>Predictable Annual ROI (Section 2.2):</b> Cost-cutting through automated sleep policies and LED lighting delivers compounding financial savings year after year.</li>
+        <li><b>Enhanced Brand & Employee Morale:</b> Employee energy awareness programs foster a positive workplace culture and strengthen corporate sustainability credentials for recruiting.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>A small business plans to transition many of its services to the cloud and digitize previously paper-based non-IT functions to save money and improve sustainability. You’re asked to create a roadmap. What steps would you recommend to ensure the transition is both cost-effective and green?</p><p>Focus on the functions you would digitize first. How would you evaluate when moving to cloud services is advantageous from a cost and energy perspective? Justify your answer.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Roadmap: Non-IT Functions to Digitize First (Section 2.6)</h4>
+      <ol>
+        <li><b>1. Postal Mail & Invoicing → Email & E-Invoicing:</b> Eliminates paper, toner, envelopes, courier travel, and postage expenses immediately.</li>
+        <li><b>2. Physical Checks & Signatures → Digital Payments & E-Signatures:</b> Replaces physical trips to the bank and courier delivery with secure instant electronic transfers.</li>
+        <li><b>3. Physical Meetings & Travel → Virtual Teleconferencing:</b> Replaces car and flight travel with video conferencing, drastically cutting transportation fuel and travel budgets.</li>
+      </ol>
+
+      <h4>2. Evaluating When Moving to Cloud Services is Advantageous (Section 2.5)</h4>
+      <ul>
+        <li><b>Energy & Environmental Perspective:</b>
+          <ul>
+            <li>Advantageous when the cloud provider achieves superior efficiency (<b>PUE 1.1–1.2</b>) compared to on-premises servers (averaging 1.8–2.0).</li>
+            <li>Advantageous when workload sharing pools server capacity from 10–15% utilization to 65%+, cutting idle power waste.</li>
+          </ul>
+        </li>
+        <li><b>Cost Perspective:</b>
+          <ul>
+            <li>Advantageous when switching from high capital expenses (buying physical servers, cooling units, UPS) to pay-as-you-go operational expenses (OpEx).</li>
+            <li>Must perform a <b>Total Cost of Ownership (TCO)</b> analysis to ensure recurring subscription fees and data egress bandwidth costs do not exceed on-premise operating costs over 3–5 years.</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>After the pandemic, a company shifts to remote work. This reduces commuting but increases household energy use and reliance on cloud storage. Analyze how remote working practices align with green computing principles and contribute to the following SDG:</p><ol type="a"><li>Sustainable cities (SDG 11)</li><li>Climate action (SDG 13)</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Alignment with Green Computing Principles (Section 2.6 & 3.12)</h4>
+      <ul>
+        <li><b>Substitutability:</b> Replaces high-carbon physical transport (daily car and bus commutes) with low-carbon digital data transmission (video calls, cloud documents).</li>
+        <li><b>Dematerialization:</b> Eliminates printed paper memos and physical office supplies via digital collaboration tools.</li>
+      </ul>
+
+      <h4>2. Contribution to SDG 11: Sustainable Cities and Communities</h4>
+      <ul>
+        <li><b>Reduced Traffic Congestion & Urban Air Pollution:</b> Eliminating millions of daily vehicle commutes removes nitrogen oxides, particulates, and carbon monoxide from city air.</li>
+        <li><b>Downsized Commercial Real Estate Footprint:</b> Enables companies to reduce office square footage, cutting urban commercial building heating, lighting, and air-conditioning loads.</li>
+      </ul>
+
+      <h4>3. Contribution to SDG 13: Climate Action</h4>
+      <ul>
+        <li><b>Direct Carbon Emission Abatement:</b> Daily passenger transport is a major source of greenhouse gases; cutting vehicle miles traveled directly lowers fossil fuel combustion.</li>
+        <li><b>Offsetting Household & Cloud Energy:</b> While remote work shifts some electricity use to homes and cloud storage, studies prove net greenhouse gas emissions drop substantially because vehicular fuel combustion is far more carbon-intensive than domestic laptop power consumption.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 2 (5 Marks)</div>
+    <div class="question-body">
+      <p>State the concept of <b>Nega watts</b>. A mid-sized software company operates an office with 300 desktop computers, multiple servers, and networking equipment that run continuously, even during non-working hours. The company has noticed a steady increase in electricity bills and a higher carbon footprint due to inefficient energy usage. Management wants to implement energy-efficient green computing practices without affecting employee productivity.</p><p>As an IT manager, identify three energy-efficient green computing measures that can be implemented in the organization. Explain how these measures reduce energy consumption and carbon emissions.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. The Concept of Negawatts (Section 2.1)</h4>
+      <ul>
+        <li><b>Definition:</b> A theoretical unit of electrical power representing an amount of <b>energy saved through conservation and efficiency rather than generated</b>.</li>
+        <li><b>Origin & Significance:</b> Coined by energy theorist Amory Lovins; saving one watt of energy (a Negawatt) is significantly cheaper, cleaner, and faster to implement than building new power plants to generate an additional watt of electricity.</li>
+      </ul>
+
+      <h4>2. Three Energy-Efficient Measures for the 300-PC Office (Section 2.3)</h4>
+      <ul>
+        <li><b>1. Automated Power Management Policies (Tier 1):</b>
+          <ul>
+            <li>Enforce central group policies configuring all 300 desktops and monitors to enter <b>sleep/standby mode after 15 minutes of idle time</b> and fully shut down outside office hours.</li>
+            <li><i>Impact:</i> Eliminates 14+ hours of nightly idle power draw per PC, cutting office electrical consumption by over 40%.</li>
+          </ul>
+        </li>
+        <li><b>2. Server Virtualization & Cloud Migration (Tier 1 & 2):</b>
+          <ul>
+            <li>Consolidate multiple continuously running on-premise servers into a few dense virtualized servers or migrate to a high-efficiency cloud provider.</li>
+            <li><i>Impact:</i> Cuts baseline server electricity and 24/7 server room air-conditioning loads.</li>
+          </ul>
+        </li>
+        <li><b>3. Transition to Thin Clients / Mini PCs (Tier 3):</b>
+          <ul>
+            <li>Replace bulky 250W desktop towers with 30W energy-efficient mini PCs or thin clients during the next hardware refresh.</li>
+            <li><i>Impact:</i> Reduces active hardware wattage by up to 85% without sacrificing worker productivity.</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>A city authority introduces an electronic ticketing system for public transportation that requires dedicated ticketing machines at every station. The machines run continuously, require regular maintenance, and are replaced frequently due to hardware failures. An environmental audit suggests that many users already carry smartphones capable of performing the same function.</p><p>Explain how this system could be redesigned to minimize reliance on dedicated computing devices. Why can computer-less or reduced-computer approaches be more environmentally sustainable? Discuss the benefits and possible challenges of implementing such solutions.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Redesigning the System to Minimize Dedicated Computing Devices</h4>
+      <ul>
+        <li><b>Smartphone-Based QR / NFC Transit:</b> Replace physical station ticketing machines with a mobile app or digital wallet NFC/QR ticketing system using passengers' existing personal smartphones.</li>
+        <li><b>Contactless Bank Card Tapping:</b> Install simple contactless readers at turnstiles that directly charge standard debit/credit cards, eliminating dedicated ticket dispensing kiosks.</li>
+      </ul>
+
+      <h4>2. Why "Reduced-Computer" Approaches are More Sustainable (Section 2.8 & 9.7)</h4>
+      <ul>
+        <li><b>Massive Embodied Energy Savings (Section 9.7):</b> Manufacturing thousands of dedicated station ticketing kiosks requires heavy mining of metals, silicon fabrication, and shipping; leveraging existing smartphones requires <b>zero additional embodied manufacturing energy</b>.</li>
+        <li><b>Zero Standby Electricity Waste:</b> Eliminates 24/7 continuous electricity consumption drawn by idle ticketing kiosks across every station.</li>
+        <li><b>E-Waste Elimination:</b> Avoids constant component failure, maintenance travel, and discarded kiosk hardware in landfills.</li>
+      </ul>
+
+      <h4>3. Benefits and Possible Implementation Challenges</h4>
+      <ul>
+        <li><b>Benefits:</b> Drastically lowers city capital and maintenance costs; speeds up passenger boarding; scales effortlessly during peak rush hours.</li>
+        <li><b>Challenges:</b> Digital divide (passengers without smartphones or credit cards require a backup physical option); dependency on phone battery life; offline validation during station internet outages.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>A large university aims to reduce operational costs and improve environmental sustainability by digitizing several non-IT functions. The university is also adopting green computing practices step by step.</p><p>Identify five non-IT functions based on the scenario that have been digitized and explain how digitization improves their efficiency.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>Five Non-IT Functions Digitized & Their Efficiency Improvements (Section 2.6)</h4>
+      <ol>
+        <li><b>1. Student Admissions & Paper Mail → Digital Application Portal:</b>
+          <ul>
+            <li>Replaces physical paper forms, postal envelopes, and courier transport with online admissions.</li>
+            <li><i>Efficiency:</i> Eliminates paper manufacturing and delivery emissions; speeds up applicant processing from weeks to minutes.</li>
+          </ul>
+        </li>
+        <li><b>2. Tuition Fee Checks & Billing → Online Payment & E-Invoicing:</b>
+          <ul>
+            <li>Replaces manual paper receipts, physical bank drafts, and in-person cashier queues with instant digital bank transfers.</li>
+            <li><i>Efficiency:</i> Eliminates banking travel emissions, cuts paper ledger waste, and provides automated financial accounting.</li>
+          </ul>
+        </li>
+        <li><b>3. Physical Course Handouts & Books → Learning Management System (LMS):</b>
+          <ul>
+            <li>Replaces thousands of printed paper lecture handouts, exam booklets, and physical library cards with digital documents.</li>
+            <li><i>Efficiency:</i> Cuts campus paper and printing toner consumption by over 70%; enables 24/7 student access from any device.</li>
+          </ul>
+        </li>
+        <li><b>4. Campus Telephone Network → Cloud VoIP & Unified Messaging:</b>
+          <ul>
+            <li>Replaces dedicated copper telecom wiring and proprietary PBX hardware with voice-over-IP software (Zoom/Teams).</li>
+            <li><i>Efficiency:</i> Eliminates specialized hardware maintenance and power consumption.</li>
+          </ul>
+        </li>
+        <li><b>5. Staff Commuting & Administrative Travel → Remote Work & Teleconferencing:</b>
+          <ul>
+            <li>Enables staff to conduct administrative meetings virtually and work remotely on select days.</li>
+            <li><i>Efficiency:</i> Cuts vehicular fuel emissions and allows the university to downsize lighting and air-conditioning in office complexes.</li>
+          </ul>
+        </li>
+      </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">5. Chapter 3</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 3 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>The government of a developing country, Zarovia, after reviewing the latest IPCC reports, initiates a national policy aiming to align with the global effort to keep temperature rise below 2°C—ideally targeting 1.5°C. The policy includes transitioning to renewable energy, improving public transportation, enforcing stricter emissions standards for industries, and investing in energy efficiency for urban infrastructure. While some sectors welcome the move, others—particularly in the fossil fuel industry—argue that the transition could slow economic growth and increase unemployment in the short term.</p><p>Discuss the significance of the 2°C warming limit in the context of Zarovia’s climate policy. Why is staying below this threshold critical for both global and national sustainability?</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Significance of the 2°C Limit in Zarovia's Policy</h4>
+      <ul>
+        <li><b>Scientific Ceiling (IPCC):</b> 2°C is the globally accepted threshold set by the IPCC to avoid irreversible, self-reinforcing planetary tipping points.</li>
+        <li><b>Atmospheric CO₂ Budget:</b> Pre-industrial CO₂ was <b>280 ppm</b>; current levels are ~<b>390 ppm</b> (rising by <b>3 ppm/year</b>); doubling is <b>560 ppm</b>. Staying below 2°C requires an <b>80% cut in global emissions by 2050</b>.</li>
+        <li><b>Policy Direction:</b> Provides Zarovia with a binding standard to shift from coal to renewables, invest in electric transit, and enforce industrial emissions limits.</li>
+      </ul>
+
+      <h4>2. Why Staying Below 2°C is Critical for Global Sustainability</h4>
+      <ul>
+        <li><b>Prevents Runaway Warming:</b> Breaching 2°C triggers positive feedback loops, causing global temperatures to spike by <b>4°C to 6°C</b> this century.</li>
+        <li><b>Prevents Sea Level Rise:</b> Polar ice melting threatens coastal settlements and <b>littoral zones</b> worldwide.</li>
+        <li><b>Averts Mass Extinction:</b> Prevents <i>"a great die-off in the natural world"</i> and ocean acidification that destroys marine food chains.</li>
+        <li><b>Global Food & Water Security:</b> Prevents severe agricultural collapse and freshwater shortages projected for <b>2060–2069</b>.</li>
+      </ul>
+
+      <h4>3. Why Staying Below 2°C is Critical for Zarovia's National Sustainability</h4>
+      <ul>
+        <li><b>Vulnerability of Developing Nations:</b> Developing countries suffer worst from extreme floods, droughts, and heatwaves due to weaker infrastructure.</li>
+        <li><b>Long-Term Economy vs Short-Term Disruption:</b> While the fossil fuel sector fears short-term job loss, unchecked climate destruction would wreck agriculture, health, and urban infrastructure.</li>
+        <li><b>Triple Bottom Line (People, Planet, Profit):</b> Developing green transit and renewable energy creates sustainable local jobs and energy independence.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 4 (5 Marks)</div>
+    <div class="question-body">
+      <p>The IT sector is rapidly expanding: data centers, cloud computing, crypto currency mining, abundance of smart devices, etc. A 2025 report estimates that the global ICT sector could account for up to 8% of global carbon emissions by 2030 if no corrective action is taken. You are part of a sustainability task force at a global tech company aiming to align operations that support the 2°C limit.</p><p>What concrete steps should your company take to reduce its own impact, and how can it help other industries achieve climate targets through digital innovation?</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Concrete Steps to Reduce Company's Own Impact (Internal)</h4>
+      <ul>
+        <li><b>Leverage "Greenability" (Dynamic Workloads):</b> Data center workloads are <i>fungible</i> (flexible); shift heavy compute/batch jobs to regions and times with surplus renewable energy (solar/wind).</li>
+        <li><b>100% Renewable Power:</b> Power all data centers and cloud facilities through renewable energy contracts, cutting grid coal dependency.</li>
+        <li><b>Server Virtualization:</b> Consolidate multiple virtual machines onto fewer physical servers; turn off and decommission idle hardware to cut power waste.</li>
+        <li><b>Hardware Lifecycle & E-Waste:</b> Extend server life cycles, repair modular parts, and partner only with certified e-waste recyclers.</li>
+        <li><b>Follow the 5-Step Process:</b> (1) Think sustainability → (2) Analyze profits → (3) Sort ideas (Yes/Maybe/No) → (4) Take action → (5) Measure and report.</li>
+      </ul>
+
+      <h4>2. Helping Other Industries via Digital Innovation (External)</h4>
+      <ul>
+        <li><b>Leverage "Substitutability" (Replacing Physical with Digital):</b>
+          <ul>
+            <li><b>Teleconferencing & Remote Work:</b> Replace high-emission business travel and daily commutes with video conferencing and cloud collaboration.</li>
+            <li><b>Paperless Dematerialization:</b> Replace physical paper, shipping, and storage with digital workflows and cloud documents.</li>
+          </ul>
+        </li>
+        <li><b>Smart IoT & Optimization Software:</b> Provide AI and IoT tools for transport, logistics, and factories to optimize vehicle routes and HVAC energy use.</li>
+        <li><b>Smart Energy Grids:</b> Develop software to help utilities balance supply and demand for intermittent renewable energy.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>A university campus is modernizing its digital infrastructure by introducing smart classrooms, high-performance computing labs, and always-on networking equipment. Although these upgrades improve learning and research capabilities, the university’s annual electricity bill and carbon footprint increase significantly. Additionally, outdated computers and networking devices are being discarded without proper recycling.</p><p>Based on this scenario, analyze how IT systems contribute to environmental problems. Why is it important for a computer engineer to consider environmental sustainability when designing and managing IT systems? Explain how green computing practices can be applied in this context to reduce energy consumption, electronic waste, and environmental impact.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. How IT Systems Contribute to Environmental Problems (4 Core Vectors)</h4>
+      <ul>
+        <li><b>1. Electricity Consumption:</b> Always-on servers, switches, and high-performance labs consume massive electrical power, generating greenhouse gases.</li>
+        <li><b>2. Electronic Waste (E-Waste):</b> Outdated computers discarded without proper recycling leach toxic heavy metals (lead, mercury, cadmium) into landfills and water.</li>
+        <li><b>3. Mining Rare Materials:</b> Hardware manufacturing requires intensive mining of rare-earth metals, causing habitat destruction, pollution, and high embodied emissions.</li>
+        <li><b>4. Worker Welfare:</b> Unsafe informal recycling in developing nations exposes workers to toxic chemical fumes without protection.</li>
+      </ul>
+
+      <h4>2. Why Computer Engineers Must Consider Sustainability</h4>
+      <ul>
+        <li><b>Professional Responsibility:</b> Regardless of personal beliefs, engineers have an ethical duty to design energy-efficient systems and comply with environmental laws.</li>
+        <li><b>Long-Term Architectural Impact:</b> Hardware specifications and software efficiency decisions made at design time dictate energy use for years of operation.</li>
+        <li><b>Career & Institutional Value:</b> Green computing skills lower operational costs, enhance company reputation, and make engineers highly attractive to employers.</li>
+      </ul>
+
+      <h4>3. Campus Green Computing Practices to Apply</h4>
+      <ul>
+        <li><b>Automated Power Management:</b> Automatically shut down smart classroom displays, PC monitors, and lab machines outside university hours; enforce sleep modes.</li>
+        <li><b>HPC Workload Virtualization:</b> Consolidate compute jobs across virtual machines and dynamically power down idle server blades.</li>
+        <li><b>Certified Take-Back & Recycling:</b> Establish an official campus take-back program and dispose of e-waste only through certified recyclers.</li>
+        <li><b>Hardware Lifecycle Extension:</b> Upgrade RAM and SSDs to extend PC lifespans from 3 to 5–6 years; repurpose older PCs as library/kiosk terminals.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A rapidly developing country continues expanding coal-fired power plants and increasing industrial production to support economic growth. At the same time, transportation and energy demand continue to rise, leading to higher carbon dioxide (CO₂) emissions each year. Climate analysts warn that if such trends continue globally, Earth’s average surface temperature may exceed the 2°C threshold.</p><p>Discuss the consequences of allowing Earth’s average surface temperature to rise beyond 2°C.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Context of the 2°C Threshold (Section 3.8)</h4>
+      <ul>
+        <li><b>Pre-industrial CO₂:</b> 280 ppm → current level: ~390 ppm (rising by <b>3 ppm/year</b>) → doubling: <b>560 ppm</b>.</li>
+        <li>Breaching 2°C triggers uncontrollable planetary feedback loops and runaway warming.</li>
+      </ul>
+
+      <h4>2. Key Consequences of Exceeding 2°C (Section 3.8 & 3.10)</h4>
+      <ul>
+        <li><b>1. Rapid Warming of 4°C to 6°C:</b> Self-amplifying feedbacks (melting polar ice, thawing permafrost releasing methane) accelerate global heating to <b>4°C–6°C</b> this century.</li>
+        <li><b>2. Faster Sea Level Rise:</b> Melting ice caps and glaciers cause rapid sea level rise, submerging coastal and <b>littoral zones</b> and displacing coastal populations.</li>
+        <li><b>3. "A Great Die-Off in the Natural World":</b> Because warming happens in only 100 years, ecosystems cannot adapt, leading to catastrophic mass extinction of plants and animals.</li>
+        <li><b>4. Severe Food & Water Shortages (2060–2069):</b> Global crop yields collapse and glacial freshwater reserves deplete, causing widespread acute famines and water crises by <b>2060–2069</b>.</li>
+        <li><b>5. Extreme Weather Spikes:</b> Dramatic increase in high-category cyclones, flash floods, megadroughts, and deadly heatwaves.</li>
+        <li><b>6. Ocean Acidification:</b> High atmospheric CO₂ dissolves into oceans, destroying coral reefs and marine food chains.</li>
+        <li><b>7. Economic & Health Collapse:</b> For developing countries relying on coal, resulting agricultural and infrastructure destruction far outweighs short-term industrial gains.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">6. Chapter 6</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 4 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>ABC Tech has recently announced its commitment to becoming carbon-neutral. The company decided to shift to green devices and work only with green-certified suppliers. It begins designing laptops and smartphones using recyclable materials, energy-efficient components, and modular parts to extend product lifespan. ABC Tech also revises its supply chain policy to only partner with suppliers who meet strict environmental standards—such as using renewable energy, minimizing water waste, and maintaining ethical labor practices. While the move increases production costs slightly, it enhances the company's brand image and meets growing consumer demand for environmentally responsible products.</p><p>Analyze how this focus on green devices and green suppliers contributes to environmental sustainability. What are the potential long-term benefits and challenges of this approach from both an environmental and business perspective?</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. How Green Devices & Green Suppliers Contribute to Sustainability</h4>
+      <ul>
+        <li><b>Green Device Impact (Section 6.1):</b> Low-power components reduce daily electricity consumption; modular design and recyclable materials extend product lifecycles, cutting embodied manufacturing carbon and e-waste.</li>
+        <li><b>Green Supplier Impact (Section 6.2):</b> Requiring suppliers to use renewable energy and water conservation addresses <b>Scope 3 supply chain emissions</b>, which account for the vast majority of an electronics company's true carbon footprint.</li>
+      </ul>
+
+      <h4>2. Long-Term Business & Environmental Benefits</h4>
+      <ul>
+        <li><b>The Peacock Effect (Section 6.3):</b> Superior green practices signal disciplined management, tight quality control, and operational fitness to investors and enterprise buyers.</li>
+        <li><b>The Serendipity Effect (Section 6.3):</b> Streamlining packaging and engineering for energy efficiency uncovers unexpected manufacturing cost savings and increases product reliability.</li>
+        <li><b>Customer & Talent Magnet:</b> Builds strong brand loyalty among eco-conscious consumers and acts as a powerful recruiting magnet for top engineering graduates.</li>
+      </ul>
+
+      <h4>3. Potential Challenges to Manage</h4>
+      <ul>
+        <li><b>Higher Initial Component Costs:</b> Procuring certified conflict-free, recycled, and low-power modular components slightly raises initial manufacturing costs.</li>
+        <li><b>Supply Chain Audit Complexity:</b> Enforcing multi-tier supplier compliance requires rigorous ongoing third-party audits (ISO 14001, CDP reporting) and dedicated compliance staff.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 3 (5 Marks)</div>
+    <div class="question-body">
+      <p>ABC is a startup deciding between purchasing high-end laptops from Supplier A (non-green certified but well-established) or mid-tier laptops from Supplier B that claim lower power-consumption and support take-back/disposal programmes. They also expect rapid turnover of devices in 3 years. As the IT consultant of ABC, how would you advise them on the green computing decision given their business model of frequent refresh and replacement?</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Consultant Recommendation: Choose Supplier B</h4>
+      <ul>
+        <li>Given the startup's business model of frequent hardware refresh (every 3 years), <b>Supplier B is the superior green and financial choice</b>.</li>
+      </ul>
+
+      <h4>2. Justification Based on Green Device Criteria (Section 6.1 & 9.7)</h4>
+      <ul>
+        <li><b>1. Mandatory Take-Back & Recycling Programs:</b>
+          <ul>
+            <li>With a rapid 3-year turnover, discarded laptops represent an acute e-waste hazard. Supplier B's certified take-back program guarantees closed-loop recycling and safe component recovery.</li>
+            <li>Supplier A offers no take-back, shifting the liability and disposal costs of toxic e-waste directly onto the startup.</li>
+          </ul>
+        </li>
+        <li><b>2. Operational Energy & Battery Efficiency:</b>
+          <ul>
+            <li>Supplier B's mid-tier laptops draw lower continuous wattage per hour than high-end non-certified laptops, reducing daily office electric bills and cooling load.</li>
+          </ul>
+        </li>
+        <li><b>3. The Peacock Effect (Section 6.3):</b>
+          <ul>
+            <li>Supplier B's certified green credentials demonstrate reliable operational discipline, transparent supply chains, and adherence to international environmental standards (Energy Star / EPEAT).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>3. Advice on Maximizing Sustainability with a 3-Year Refresh Cycle</h4>
+      <ul>
+        <li>Negotiate a contractual trade-in credit with Supplier B so refreshed 3-year laptops are refurbished for secondary educational markets rather than scrapped.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 6 (5 Marks)</div>
+    <div class="question-body">
+      <p>A software company is planning to upgrade all office computers to support business expansion and replace older systems. Management wants to reduce environmental impact and align procurement decisions with sustainability goals.</p><p>Propose a sample buying statement explaining how the company will make environmentally friendly purchasing decisions by considering green devices and suppliers.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>Sample Corporate Green Purchasing Policy / Buying Statement (Section 6.1, 6.2 & 6.4)</h4>
+      <div style="background:#f8fafc; border-left:3px solid var(--accent); padding:14px; border-radius:0 6px 6px 0; margin-bottom:12px;">
+        <p style="margin:0 0 8px 0; font-weight:700; color:var(--text-main);">ENVIRONMENTALLY RESPONSIBLE IT PROCUREMENT STATEMENT</p>
+        <p style="margin:0; font-size:0.95rem; color:var(--text-secondary);">
+          "Our company is committed to minimizing our environmental footprint by procuring only high-efficiency, sustainable computer systems and partnering exclusively with environmentally responsible technology suppliers."
+        </p>
+      </div>
+
+      <h4>1. Mandatory Green Device Criteria (Section 6.1)</h4>
+      <ul>
+        <li><b>Energy Efficiency:</b> All computers and displays must be <b>Energy Star</b> compliant and rated <b>EPEAT Silver or Gold</b>.</li>
+        <li><b>Material Non-Toxicity (RoHS Standards):</b> Hardware must be 100% compliant with RoHS:
+          <ul>
+            <li>Lead-free (Pb)</li>
+            <li>Mercury-free (Hg)</li>
+            <li>Cadmium-free (Cd)</li>
+            <li>Free from toxic brominated flame retardants</li>
+          </ul>
+        </li>
+        <li><b>Sustainable Packaging:</b> Delivered in bulk or slimline 100% unbleached, recyclable packaging with electronic-only documentation.</li>
+        <li><b>Durability & Repairability:</b> Systems must feature modular RAM/storage components for easy upgrades, extending expected life to at least 5 years.</li>
+      </ul>
+
+      <h4>2. Mandatory Green Supplier Criteria (Section 6.2 & 6.4)</h4>
+      <ul>
+        <li><b>Environmental Certification:</b> Vendors must hold verified <b>ISO 14001</b> certification and provide transparent Scope 1, 2, and 3 greenhouse gas disclosures.</li>
+        <li><b>Certified Take-Back Program:</b> Suppliers must guarantee a no-cost, certified take-back and closed-loop recycling program for all decommissioned units.</li>
+        <li><b>Structured Feedback (Section 6.4):</b> The company will provide pre-RFP scoring criteria and transparent post-selection debriefs to foster healthy green competition across all vendors.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">7. Book 2 (Ch 1, 5)</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 6 [CO2] (5 Marks)</div>
+    <div class="question-body">
+      <p>AetherCloud Solutions is a rapidly expanding cloud service provider. They are planning a new flagship data center at Notun Bazar to manage its growth. The company's key objectives are to significantly reduce the high operational costs of its current facilities and to meet the growing demand from corporate clients for environmentally sustainable services.</p><p>As the lead Green Computing consultant for this project, provide a proposal for designing this green data center, focusing your recommendations on the following two foundational areas: Building infrastructure and Power Supply Considerations.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>Proposal for AetherCloud Green Data Center (Notun Bazar)</h4>
+
+      <h4>1. Building Infrastructure Recommendations (Chapter 1)</h4>
+      <ul>
+        <li><b>Hot Aisle / Cold Aisle Containment:</b>
+          <ul>
+            <li>Arrange server racks in alternating rows so cold air intake faces the cold aisle and hot exhaust discharges into the hot aisle.</li>
+            <li>Install physical solid ceiling and end-door containment barriers to prevent hot and cold air mixing, <b>reducing cooling fan and chiller power by 20–30%</b>.</li>
+          </ul>
+        </li>
+        <li><b>Free Cooling (Air & Water Economizers):</b>
+          <ul>
+            <li>Incorporate free cooling economizers that draw in naturally cool ambient air during winter and nighttime, allowing energy-hungry mechanical chillers to be turned off.</li>
+          </ul>
+        </li>
+        <li><b>Target PUE (Power Usage Effectiveness):</b>
+          <ul>
+            <li>Design facility cooling and airflow to achieve a target <b>PUE of 1.15 to 1.2</b> (approaching the ideal 1.0 benchmark, vastly superior to traditional 1.8 facilities).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. Power Supply Considerations (Chapter 1)</h4>
+      <ul>
+        <li><b>High-Efficiency Modular Power Distribution:</b>
+          <ul>
+            <li>Deploy 80 Plus Platinum / Titanium modular power supplies and high-efficiency transformerless Uninterruptible Power Supply (UPS) units running at 96%+ efficiency.</li>
+          </ul>
+        </li>
+        <li><b>Renewable Energy Integration & PPAs:</b>
+          <ul>
+            <li>Install rooftop solar photovoltaic (PV) arrays on the facility and contract utility-scale Power Purchase Agreements (PPAs) for dedicated wind/solar grid power.</li>
+          </ul>
+        </li>
+        <li><b>Sustainability Metric Tracking:</b>
+          <ul>
+            <li>Continuously monitor <b>CUE (Carbon Usage Effectiveness)</b> and <b>WUE (Water Usage Effectiveness)</b> to maintain corporate client sustainability compliance.</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 8 (5 Marks)</div>
+    <div class="question-body">
+      <p>A large university plans to build a new data center to support its cloud computing, AI research, and digital learning platforms. However, the administration is concerned about the high energy consumption and carbon emissions associated with traditional data centers. They want the new facility to be environmentally sustainable, energy-efficient, and aligned with the principles of green computing. As the lead system designer, you are asked to propose a design plan for a Green Data Center that supports the university’s sustainability vision. Based on this scenario, answer the following questions:</p><ol type="a"><li>What key technologies and architectural choices would you include to make the data center energy-efficient?</li><li>How would renewable energy sources and smart cooling systems be integrated?</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Key Technologies & Architectural Choices (Chapter 1)</h4>
+      <ul>
+        <li><b>Server Virtualization & Workload Consolidation:</b> Consolidate academic, AI, and cloud workloads onto dense multi-core blade clusters; spin down idle servers dynamically during off-peak night hours.</li>
+        <li><b>Hot Aisle / Cold Aisle Containment:</b> Seal cold aisles with physical doors and ceiling panels to eliminate thermal mixing and optimize computer room air handler (CRAH) efficiency.</li>
+        <li><b>Target PUE of 1.2:</b> PUE = Total Facility Power / IT Equipment Power. Design airflow and power delivery to keep overhead power under 20% of total energy.</li>
+      </ul>
+
+      <h4>2. Smart Cooling Systems & Renewable Energy Integration</h4>
+      <ul>
+        <li><b>Smart Variable-Speed Cooling:</b> Deploy IoT temperature sensors across server rack intake zones to dynamically adjust cooling airflow and chilled water flow in real time.</li>
+        <li><b>Free Cooling Economizers:</b> Utilize cool ambient outside air during colder seasons to bypass mechanical refrigeration chillers completely.</li>
+        <li><b>Campus Solar & Microgrid Integration:</b> Integrate the data center into campus rooftop solar arrays; utilize battery energy storage systems (BESS) for peak shaving to avoid high utility peak demand tariffs.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A small data center is trying to reduce execution time by adding more processors. After reviewing their entire codebase and system architecture, engineers found that at most 80% code running on their system can be parallelized. What is the theoretical speedup when using:</p><ol type="a"><li>16 processors</li><li>12 processors</li></ol><p>What happens to the speedup predicted by Amdahl’s Law when the number of processors approaches infinity? Explain briefly.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Amdahl's Law Formula (Chapter 1)</h4>
+      <div class="formula">Speedup ≤ 1 / ( S + (1 − S) / N )</div>
+      <ul>
+        <li><b>Given:</b> Maximum parallelizable fraction = 80\% = 0.80.</li>
+        <li>Therefore, strictly serial fraction S = 1 - 0.80 = \mathbf{0.20.</li>
+      </ul>
+
+      <h4>2. Calculations</h4>
+      <ul>
+        <li><b>For N = 16 Processors:</b>
+          Speedup = \frac{1{0.20 + \frac{0.80{16 = \frac{1{0.20 + 0.05 = \frac{1{0.25 = \mathbf{4.0×
+        </li>
+        <li><b>For N = 12 Processors:</b>
+          Speedup = \frac{1{0.20 + \frac{0.80{12 = \frac{1{0.20 + 0.0667 = \frac{1{0.2667 \approx \mathbf{3.75×
+        </li>
+      </ul>
+
+      <h4>3. Speedup as Processors Approach Infinity (N \to \infty)</h4>
+      <ul>
+        <li>As N \to \infty, the parallel term \frac{1 - S{N \to 0.</li>
+        <li>Speedup_{\max = \frac{1{S = \frac{1{0.20 = \mathbf{5.0×</li>
+        <li><b>Explanation:</b> The maximum theoretical speedup is strictly capped at <b>5.0×</b>, regardless of whether you add 1,000 or 1,000,000 processors. The serial portion limits the entire system. Adding more processors beyond this consumes massive electrical power with virtually zero performance gain, drastically worsening energy efficiency.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Fall 2025] - Question 8 (a & b) (Hot/Cold Data & Disk Power State)</div>
+    <div class="question-body">
+      <p>Explain the concept of Hot Data and Cold Data. State the impact of disk power state on the storage.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Concept of Hot Data and Cold Data (Chapter 5)</h4>
+      <ul>
+        <li><b>Hot Data:</b> Frequently accessed, mission-critical active data requiring ultra-low latency and high input/output operations (IOPS). Kept on high-speed, energy-efficient <b>Solid State Drives (SSDs)</b>.</li>
+        <li><b>Cold Data:</b> Infrequently accessed archival records, compliance backups, and historical logs. Kept on cost-effective, high-capacity <b>Hard Disk Drives (HDDs)</b> or optical/tape libraries.</li>
+      </ul>
+
+      <h4>2. Impact of Disk Power States on Storage (Chapter 5)</h4>
+      <ol>
+        <li><b>1. Active Mode:</b> Spindle motor runs at full speed (7,200–15,000 RPM), heads actively reading/writing (~8–10 Watts).</li>
+        <li><b>2. Idle Mode:</b> Platter spins at full operating speed, heads parked (~4–6 Watts).</li>
+        <li><b>3. Standby Mode (Spin-Down):</b> Spindle motor completely stopped, heads parked, electronics waiting (~0.5–1 Watt). <b>Saves up to 90% power on cold storage!</b></li>
+        <li><b>4. Sleep Mode:</b> All disk electronics powered down (~0.2 Watts); requires system bus reset.</li>
+      </ol>
+
+      <h4>3. The Energy vs. Reliability Trade-Off (Thermal Cycling)</h4>
+      <ul>
+        <li><b>Mechanical & Thermal Stress:</b> Spinning down drives saves massive electricity, but frequent spin-ups create mechanical wear on motor bearings and induce rapid heating/cooling cycles (<b>thermal cycling</b>).</li>
+        <li>Thermal expansion and contraction can shorten drive lifespan. Therefore, spin-down must <b>only target verified cold data</b> with long idle windows (hours or days), never active drives.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 7 (5 Marks)</div>
+    <div class="question-body">
+      <ol type="a"><li>A cloud computing company is upgrading its data center to improve performance for processing large-scale scientific simulations. Engineers analyze the workload and find that 80% of the application code can be parallelized and executed across multiple processors. If the company wants to achieve a theoretical speedup of 4, determine the minimum number of processors required.</li><li>Disk spin-down can potentially reduce energy consumption by 20% to 50% in large-scale storage clusters. Analyze the trade-off between energy savings and system performance.</li></ol>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Minimum Processors Required for Speedup of 4 (Chapter 1)</h4>
+      <ul>
+        <li><b>Amdahl's Law:</b> Speedup = \frac{1{S + \frac{1 - S{N</li>
+        <li>Given parallel fraction = 80\% = 0.80 \implies S = 0.20. Target Speedup = 4.</li>
+        <li>4 = \frac{1{0.20 + \frac{0.80{N</li>
+        <li>0.20 + \frac{0.80{N = \frac{1{4 = 0.25</li>
+        <li>\frac{0.80{N = 0.25 - 0.20 = 0.05</li>
+        <li>N = \frac{0.80{0.05 = \mathbf{16 processors</li>
+        <li><b>Conclusion:</b> A minimum of <b>16 processors</b> is mathematically required.</li>
+      </ul>
+
+      <h4>2. Trade-Off Between Energy Savings & System Performance for Disk Spin-Down (Chapter 5)</h4>
+      <ul>
+        <li><b>Energy Savings (The Benefit):</b> Placing idle hard disk drives into standby (spin-down) mode cuts drive power draw from ~6W down to ~0.5W, reducing overall storage cluster electricity consumption by <b>20% to 50%</b> and lowering cooling loads.</li>
+        <li><b>Performance Penalty (The Cost):</b> Waking a spun-down drive requires spinning the heavy mechanical platters back up to full speed, causing an unavoidable <b>spin-up access latency of 3 to 10 seconds</b>. If active workloads hit spun-down drives, system throughput collapses.</li>
+        <li><b>Reliability Impact:</b> Frequent spin-up cycles cause mechanical wear and <b>thermal cycling</b> (rapid expansion and contraction), accelerating drive failure.</li>
+        <li><b>Optimal Strategy:</b> Apply spin-down exclusively to segregated <b>Cold Data tiers</b> with long idle periods, while keeping Hot Data on SSDs.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-title">8. Chapter 9</div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2025] - Question 7 [CO1] (5 Marks)</div>
+    <div class="question-body">
+      <p>What is Embodied Energy? Discuss how understanding and reducing a product's embodied energy can be a key strategy for lowering its overall greenhouse gas emissions.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>1. Definition of Embodied Energy (Section 9.7)</h4>
+      <ul>
+        <li><b>Embodied Energy:</b> The total cumulative non-renewable energy consumed across a product's entire pre-use lifecycle—including raw material mining, chemical refining, component fabrication, factory assembly, and worldwide distribution.</li>
+      </ul>
+
+      <h4>2. How Reducing Embodied Energy Lowers Overall GHG Emissions</h4>
+      <ul>
+        <li><b>The Double Environmental Benefit (Section 9.7):</b>
+          <ol>
+            <li><b>Lower Upfront Manufacturing Emissions:</b> Prevents heavy industrial fossil fuel burning during raw mineral extraction and semiconductor chip fabrication.</li>
+            <li><b>Lower Operational Emissions:</b> Hardware engineered with lower physical material mass and smaller form factors inherently draws significantly less daily electricity throughout its operational lifespan.</li>
+          </ol>
+        </li>
+        <li><b>Concrete Example (Device Classes):</b> A modern tablet consumes only <b>⅓ of the embodied manufacturing energy</b> of a traditional desktop PC and emits <b>90% fewer operating emissions</b> during daily use.</li>
+      </ul>
+
+      <h4>3. Key Strategies to Reduce Embodied Energy</h4>
+      <ul>
+        <li><b>Hardware Lifecycle Extension:</b> Extend enterprise computer replacement cycles from 3 years to 5–6 years via RAM and SSD upgrades.</li>
+        <li><b>Procuring Refurbished & Remanufactured Hardware:</b> Reusing existing chassis and components avoids the carbon cost of manufacturing new hardware from scratch.</li>
+        <li><b>Right-Sizing Hardware:</b> Deploy low-power thin clients and mini PCs rather than oversized workstation towers.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Summer 2025] - Question 5 (5 Marks)</div>
+    <div class="question-body">
+      <p>A tech company operates a regional data-center and some remote branch offices. They discover that the vast majority of their IT energy use comes from equipment running 24/7 (even when idle) and the cooling systems in the data-center are outdated. A recent internal survey shows that the IT division accounts for 30% of the company’s total emissions (electricity use + upstream hardware manufacturing). The VP of IT wants you to propose a pilot project that targets both Energy Consumption and Greenhouse Gas Emissions reduction. Explain your proposal in detail.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>Pilot Project Proposal: Enterprise Energy & GHG Reduction (Sections 9.7, 9.8 & 9.10)</h4>
+
+      <h4>1. Target Area 1: Branch Offices (Daily Operational Energy Use - Section 9.8)</h4>
+      <ul>
+        <li><b>Centralized Automated PC Power Management:</b> Deploy central group policies enforcing deep sleep/standby mode after 15 minutes of inactivity on all desktop computers, displays, and printers; enforce automatic complete shutdown outside office hours and on weekends.</li>
+        <li><b>Branch Hardware Modernization:</b> Replace aging 250W desktop towers with 30W energy-efficient mini PCs or laptops during scheduled upgrades.</li>
+      </ul>
+
+      <h4>2. Target Area 2: Regional Data Center (Equipment & Cooling - Chapter 1 & Section 9.8)</h4>
+      <ul>
+        <li><b>Virtualization Consolidation:</b> Consolidate workloads onto high-density virtualized server clusters; decommission and completely shut down idle "zombie" servers.</li>
+        <li><b>Cooling System Modernization (Hot/Cold Aisle Containment):</b> Install physical barriers to contain cold air supply and prevent mixing with hot exhaust, raising cooling efficiency by 20–30% and lowering facility PUE.</li>
+      </ul>
+
+      <h4>3. Target Area 3: Greenhouse Gas Emissions & Upfront Hardware (Scope 2 & 3 - Section 9.7 & 9.10)</h4>
+      <ul>
+        <li><b>Green Energy Contracts (PPA):</b> Negotiate renewable energy power purchase agreements for the data center to shift away from high-carbon coal grid electricity.</li>
+        <li><b>Hardware Lifecycle Extension:</b> Extend server replacement cycles from 3 to 5 years via modular component upgrades, eliminating upstream manufacturing carbon emissions.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-heading">Questions [Spring 2026] - Question 8 (5 Marks)</div>
+    <div class="question-body">
+      <p>A company notices that its electricity bills and carbon footprint have been increasing due to heavy daily energy consumption in offices, including lighting, air conditioning, computers, and other electrical equipment. Management decides to adopt more sustainable energy practices and encourage employees to reduce environmental impact by changing everyday energy usage habits.</p><p>Explain the steps that can be taken in daily energy use by the company to reduce greenhouse gas emissions.</p>
+    </div>
+    <div class="answer-container">
+      <div class="answer-header">Model Answer (from Notes):</div>
+      <div class="answer-body">
+        <h4>Actionable Steps in Daily Energy Use to Reduce GHG Emissions (Section 9.8)</h4>
+
+      <h4>1. Computing & Office IT Equipment</h4>
+      <ul>
+        <li><b>Automated Sleep Plans (Tier 1):</b> Configure operating systems across all office computers and monitors to enter low-power sleep mode after 15 minutes of idle time.</li>
+        <li><b>Nightly and Weekend Power Shutdown:</b> Enforce a mandatory end-of-day policy powering off computers, monitors, printers, and copiers, eliminating vampire power draw.</li>
+        <li><b>Batch Workload Scheduling:</b> Schedule heavy data backups and software updates during off-peak nighttime grid hours.</li>
+      </ul>
+
+      <h4>2. Lighting & Environmental Controls</h4>
+      <ul>
+        <li><b>Daylight Harvesting & Smart LED Fixtures:</b> Upgrade all lighting to efficient LEDs; install motion/occupancy sensors to automatically turn off lights in empty meeting rooms, restrooms, and hallways.</li>
+        <li><b>Smart Thermostat Set-Points:</b> Moderate air conditioning temperatures (setting AC to 24°C–25°C in summer); avoid overcooling empty office zones.</li>
+      </ul>
+
+      <h4>3. Understanding the Electricity Grid Mix (Carbon Footprint Formula - Section 9.1 & 9.8)</h4>
+      <ul>
+        <li>Carbon Emissions (kg CO₂) = Energy Consumed (kWh) × Emission Factor (kg CO₂/kWh)</li>
+        <li>Because coal generates the highest emissions (1.0 kg CO₂/kWh) compared to natural gas (0.4 kg CO₂/kWh) and solar/wind (0 kg CO₂/kWh), conserving kilowatt-hours directly slashes real-world carbon emissions at utility power plants.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
